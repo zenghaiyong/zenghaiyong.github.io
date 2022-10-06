@@ -256,7 +256,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="2">
-<input type="hidden" id="yelog_site_word_count" value="3.2k">
+<input type="hidden" id="yelog_site_word_count" value="5.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -364,12 +364,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-10-06 05:21:32'>2022-10-06 05:21</time>
+            发布时间 : <time class="date" title='最后更新: 2022-10-06 07:35:25'>2022-10-06 05:21</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:2.4k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -388,7 +388,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#crypto"><span class="toc-text">crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-unusual-base"><span class="toc-text">1.unusual_base</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Affine"><span class="toc-text">2.Affine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-robot"><span class="toc-text">3.robot</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#misc"><span class="toc-text">misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Yesec-no-drumsticks-2"><span class="toc-text">1.Yesec no drumsticks 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Coldwinds%E2%80%99s-Desktop"><span class="toc-text">2.Coldwinds’s Desktop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A5%87%E6%80%AA%E7%9A%84%E4%BA%8C%E7%BB%B4%E7%A0%81"><span class="toc-text">3.奇怪的二维码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-qsdz%E2%80%99s-girlfriend-2"><span class="toc-text">4.qsdz’s girlfriend 2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reverse"><span class="toc-text">reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%89%8D%E5%8F%AF%E8%A7%81%E5%8F%A4%E4%BA%BA%EF%BC%8C%E5%90%8E%E5%BE%97%E8%A7%81%E6%9D%A5%E8%80%85"><span class="toc-text">1.前可见古人，后得见来者</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#0x01-%E6%B5%85%E6%B5%85%E5%88%86%E6%9E%90"><span class="toc-text">0x01  浅浅分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x02-GetFlag"><span class="toc-text">0x02 GetFlag</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-FindME"><span class="toc-text">2.FindME</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#0x-01-main%E5%87%BD%E6%95%B0"><span class="toc-text">0x 01 main函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x02-GetFlag-1"><span class="toc-text">0x02 GetFlag</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Petals"><span class="toc-text">3.Petals</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#0x-01-%E6%85%A2%E6%85%A2%E5%88%86%E6%9E%90"><span class="toc-text">0x 01 慢慢分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#0x-02-GetFlag"><span class="toc-text">0x 02 GetFlag</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -405,6 +405,427 @@
     <div class="article-entry" itemprop="articleBody">
       
         <meta name="referrer" content="no-referrer" />
+
+<h2 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h2><h3 id="1-unusual-base"><a href="#1-unusual-base" class="headerlink" title="1.unusual_base"></a>1.unusual_base</h3><blockquote>
+<p>这个编码咋不一样咧</p>
+</blockquote>
+<p>unusual_base.py：</p>
+<pre><code class="py">from secret import flag
+from Crypto.Util.number import *
+from random import shuffle
+from string import ascii_lowercase, ascii_uppercase, digits
+
+alphabet = ascii_uppercase + ascii_lowercase + digits +&#39;$&amp;&#39;
+alphabet = list(alphabet)
+bits = &#39;&#39;
+pad_len = len(flag) % 3
+
+for f in flag:
+            bits += bin(f)[2:].rjust(8,&#39;0&#39;)
+bits += &#39;0000&#39;*pad_len
+encoded = &#39;&#39;
+shuffle(alphabet)
+alphabet = &quot;&quot;.join(alphabet)
+for i in range(0, len(bits), 6):
+    encoded += alphabet[int(bits[i:i+6], 2)]
+encoded += &#39;%&#39;*pad_len
+print(f&#39;encoded = &quot;&#123;encoded&#125;&quot;&#39;)
+print(f&#39;alphabet = &quot;&#123;alphabet&#125;&quot;&#39;)
+</code></pre>
+<p>output.txt:</p>
+<pre><code class="apl">encoded = &quot;GjN3G$B3de58ym&amp;7wQh9dgVNGQhfG2hndsGjlOyEdaxRFY%&quot;
+alphabet = &quot;c5PKAQmgI&amp;qSdyDZYCbOV2seXGloLwtFW3f9n7j481UMHBp6vNETRJa$rxuz0hik&quot;
+</code></pre>
+<p>alphabt长度为64，猜测为base64变表</p>
+<p>将alphabt作为base64表，尝试变表解码</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221005230351556.png" alt="image-20221005230351556" style="zoom:50%;" />
+
+
+
+<h3 id="2-Affine"><a href="#2-Affine" class="headerlink" title="2.Affine"></a>2.Affine</h3><blockquote>
+<p>你知道flag的格式吗</p>
+</blockquote>
+<p>affine.py</p>
+<pre><code class="py">from secret import flag
+from Crypto.Util.number import *
+
+a = getPrime(8)
+b = getPrime(8)
+
+ciphertext = []
+
+for f in flag:
+    ciphertext.append((a*f + b) % 0x100)
+
+print(bytes(ciphertext))
+</code></pre>
+<p>out.txt</p>
+<pre><code>b&quot;\xb1\x83\x82T\x10\x80\xc9O\x84\xc9&lt;\x0f\xf2\x82\x9a\xc9\x9b8&#39;\x9b&lt;\xdb\x9b\x9b\x82\xc8\xe0V&quot;
+</code></pre>
+<p><strong>仿射密码</strong>（Affine Cipher）是对称加密的（非常简单的）一种，其本质是基于取模运算的替换密码。</p>
+<p>根据flag的前四位进行爆破</p>
+<pre><code class="py">import gmpy2
+c=b&quot;\xb1\x83\x82T\x10\x80\xc9O\x84\xc9&lt;\x0f\xf2\x82\x9a\xc9\x9b8&#39;\x9b&lt;\xdb\x9b\x9b\x82\xc8\xe0V&quot;
+
+for a in range(255):
+    for b in range(255):
+        res=&#39;&#39;
+        if gmpy2.gcd(a,255)==1:
+         for i in c:
+            res+= chr((i-b)*gmpy2.invert(a,255)%0x100)
+        if &#39;flag&#39; in res:
+            print(res)
+#flag&#123;Kn0wn_p1aint3xt_4ttack&#125;
+</code></pre>
+<h3 id="3-robot"><a href="#3-robot" class="headerlink" title="3.robot"></a>3.robot</h3><blockquote>
+<p>人类的本质是什么？</p>
+</blockquote>
+<pre><code class="py">from hashlib import sha256
+from secret import flag
+from base64 import *
+import random
+
+cipher = []
+
+def fun1(x):
+    return sha256(x.encode()).hexdigest()
+
+def fun2(x):
+    return pow(114514,ord(x),1919810)
+
+def fun3(x):
+    key = random.randint(0,1145141919810)
+    ans = x.encode()
+    if key &amp; 1:
+        ans = b32encode(ans)
+    key &gt;&gt;= 1
+    if key &amp; 1:
+        ans = b64encode(ans)
+    key &gt;&gt;= 1
+    if key &amp; 1:
+        ans = b16encode(ans)
+    key &gt;&gt;= 1
+    return ans
+
+def encrypt(msg):
+    res = []
+    for i in msg:
+        tmp = list(map(random.choice([fun1,fun2,fun3]),[i]))[0]
+        res.append(tmp)
+    return res
+
+print(encrypt(flag))
+</code></pre>
+<p>out:</p>
+<pre><code>[&#39;252f10c83610ebca1a059c0bae8255eba2f95be4d1d7bcfa89d7248a82d9f111&#39;, 1495846, 1452754, b&#39;M4======&#39;, &#39;021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96&#39;, &#39;2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6&#39;, &#39;4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a&#39;, b&#39;Tg==&#39;, &#39;1b16b1df538ba12dc3f97edbb85caa7050d46c148134290feba80f8236c83db9&#39;, b&#39;52304539505430395054303D&#39;, &#39;e3b98a4da31a127d4bde6e43033f66ba274cab0eb7eb1c70ec41402bf6273dd8&#39;, b&#39;58773D3D&#39;, &#39;3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43&#39;, &#39;4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce&#39;, &#39;2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6&#39;, b&#39;T0k9PT09PT0=&#39;, &#39;18f5384d58bcb1bba0bcd9e6a6781d1a6ac2cc280c330ecbab6cb7931b721552&#39;, b&#39;T0E9PT09PT0=&#39;, 825026, &#39;d2e2adf7177b7a8afddbc12d1634cf23ea1a71020f6a1308070a16400fb68fde&#39;, 1455816, b&#39;4F553D3D3D3D3D3D&#39;, 1165366, 1242964, b&#39;4F493D3D3D3D3D3D&#39;, 652094, 597296, &#39;4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce&#39;, &#39;4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a&#39;, b&#39;54314539505430395054303D&#39;, 1242964, 368664, b&#39;TVU9PT09PT0=&#39;, b&#39;cw==&#39;, 1602214]
+</code></pre>
+<p>在三个funx函数中随机选择一个对每一个密文进行加密，建议直接爆破，对每一种可能进行枚举。</p>
+<p>不过得对fun3函数进行特殊关照</p>
+<pre><code class="py">def fun3(x):
+    key = random.randint(0,1145141919810)
+    ans = x.encode()
+    if key &amp; 1:
+        ans = b32encode(ans)
+    key &gt;&gt;= 1
+    if key &amp; 1:
+        ans = b64encode(ans)
+    key &gt;&gt;= 1
+    if key &amp; 1:
+        ans = b16encode(ans)
+    key &gt;&gt;= 1
+    return ans
+</code></pre>
+<p>func对密文加密不止一种可能，列举下没一种可能</p>
+<ul>
+<li>直接之encode了</li>
+<li>base32加密</li>
+<li>base64加密</li>
+<li>base16加密</li>
+<li>base32加密后，base64加密</li>
+<li>base32加密后，base16加密</li>
+<li>base64加密后，base16加密</li>
+<li>base32加密后，base64加密，bas16加密</li>
+</ul>
+<p>exp:</p>
+<pre><code class="py">from hashlib import sha256
+from base64 import *
+import random
+
+def fun1(x):
+    return sha256(x.encode()).hexdigest()
+
+def fun2(x):
+    return pow(114514,ord(x),1919810)
+
+def fun3(x):
+    key = random.randint(0,1145141919810)
+    ans = x.encode()
+    if key &amp; 1:
+        ans = b32encode(ans)
+    key &gt;&gt;= 1
+    if key &amp; 1:
+        ans = b64encode(ans)
+    key &gt;&gt;= 1
+    if key &amp; 1:
+        ans = b16encode(ans)
+    key &gt;&gt;= 1
+    return ans
+c=[&#39;252f10c83610ebca1a059c0bae8255eba2f95be4d1d7bcfa89d7248a82d9f111&#39;, 1495846, 1452754, b&#39;M4======&#39;, &#39;021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96&#39;, &#39;2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6&#39;, &#39;4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a&#39;, b&#39;Tg==&#39;, &#39;1b16b1df538ba12dc3f97edbb85caa7050d46c148134290feba80f8236c83db9&#39;, b&#39;52304539505430395054303D&#39;, &#39;e3b98a4da31a127d4bde6e43033f66ba274cab0eb7eb1c70ec41402bf6273dd8&#39;, b&#39;58773D3D&#39;, &#39;3f39d5c348e5b79d06e842c114e6cc571583bbf44e4b0ebfda1a01ec05745d43&#39;, &#39;4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce&#39;, &#39;2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6&#39;, b&#39;T0k9PT09PT0=&#39;, &#39;18f5384d58bcb1bba0bcd9e6a6781d1a6ac2cc280c330ecbab6cb7931b721552&#39;, b&#39;T0E9PT09PT0=&#39;, 825026, &#39;d2e2adf7177b7a8afddbc12d1634cf23ea1a71020f6a1308070a16400fb68fde&#39;, 1455816, b&#39;4F553D3D3D3D3D3D&#39;, 1165366, 1242964, b&#39;4F493D3D3D3D3D3D&#39;, 652094, 597296, &#39;4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce&#39;, &#39;4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a&#39;, b&#39;54314539505430395054303D&#39;, 1242964, 368664, b&#39;TVU9PT09PT0=&#39;, b&#39;cw==&#39;, 1602214]
+
+for i in range(len(c)):
+    for j in range(32,128):
+        res=chr(j)
+        a=fun1(res)
+        b=fun2(res)
+        p=b32encode(res.encode())
+        d=b64encode(res.encode())
+        e=b16encode(res.encode())
+        f=b64encode(b32encode(res.encode()))
+        h=b16encode(b32encode(res.encode()))
+        s=b16encode(b64encode(res.encode()))
+        k=b16encode(b64encode(b32encode(res.encode())))
+        if res.encode()== c[i] or a==c[i] or b==c[i] or p==c[i] or d==c[i] or e==c[i] or f==c[i] or h==c[i] or s==c[i] or k==c[i]:
+            print(res,end=&#39;&#39;)
+            break
+#c=&#39;flag&#123;c4Nn0t_D3crYpt_buT_r3p34t_Yes&#125;&#39;
+</code></pre>
+<h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><h3 id="1-Yesec-no-drumsticks-2"><a href="#1-Yesec-no-drumsticks-2" class="headerlink" title="1.Yesec no drumsticks 2"></a>1.Yesec no drumsticks 2</h3><blockquote>
+<p>Vim says that he can see Yesec’s 内心</p>
+</blockquote>
+<p>vim能看到Yesec’s内心</p>
+<p>vim查看下flag.txt</p>
+<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006101423517.png" alt="image-20221006101423517"></p>
+<p>很像零宽字符隐写的痕迹。</p>
+<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006101516024.png" alt="image-20221006101516024"></p>
+<p>小说写的真不戳 </p>
+<p>零宽得到一串base编码</p>
+<p>base58 –&gt; hex</p>
+<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006101602289.png" alt="image-20221006101602289"></p>
+<h3 id="2-Coldwinds’s-Desktop"><a href="#2-Coldwinds’s-Desktop" class="headerlink" title="2.Coldwinds’s Desktop"></a>2.Coldwinds’s Desktop</h3><blockquote>
+<p>Coldwinds的桌面被撕成了碎片！你能帮他复原吗？</p>
+</blockquote>
+<p>下载附件，得到一堆图片的碎片</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006102035236.png" alt="image-20221006102035236" style="zoom: 33%;" />
+
+<p>先用montage把拼图给拼到一起了</p>
+<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006102133422.png" alt="image-20221006102133422"></p>
+<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006105218065.png" alt="image-20221006105218065"></p>
+<p>再使用gaps工具还原原图</p>
+<pre><code class="sh">gaps --image=1_solution.jpg --generations=50 --population=144 --size=30 --verbose 
+</code></pre>
+<p>可以尝试修改–generations的参数，得到不同的图片，结合起来一起看。</p>
+<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/flag_solution_solution.jpg" alt="flag_solution_solution"></p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006105625368.png" alt="image-20221006105625368" style="zoom:50%;" />
+
+<p>得到flag</p>
+<p><code>flag&#123;Y0u_successfu11y_s01ved_the_puzz1e&#125;</code></p>
+<h3 id="3-奇怪的二维码"><a href="#3-奇怪的二维码" class="headerlink" title="3.奇怪的二维码"></a>3.奇怪的二维码</h3><blockquote>
+<p>这个二维码为啥扫不出来？</p>
+</blockquote>
+<p>code.png</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006105849488.png" alt="image-20221006105849488" style="zoom:50%;" />
+
+<p>一个长的很像二维码的东西，但是扫不了。</p>
+<p>放进010里面发现了还有一种png图片</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006110009424.png" alt="image-20221006110009424" style="zoom:50%;" />
+
+<p>分离出来</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006110052580.png" alt="image-20221006110052580" style="zoom:50%;" />
+
+<p>查下阿兹特克码</p>
+<blockquote>
+<p>Aztec码是1995年，由Hand HeldProducts公司的Dr.Andrew Longacre设计。 它是<strong>二维矩阵代码</strong></p>
+</blockquote>
+<p>发现了一种叫阿兹特克码的东西，</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006110249707.png" alt="image-20221006110249707" style="zoom:50%;" />
+
+<p>找个定位点补全</p>
+<img src="image-20221006110332791.png" alt="image-20221006110332791" style="zoom:50%;" />
+
+<p>找个在线网站识别<a target="_blank" rel="noopener" href="https://products.aspose.app/barcode/zh-hans/recognize/aztec#/recognized">在线阅读Aztec条码 (aspose.app)</a></p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006110424193.png" alt="image-20221006110424193" style="zoom: 33%;" />
+
+
+
+<h3 id="4-qsdz’s-girlfriend-2"><a href="#4-qsdz’s-girlfriend-2" class="headerlink" title="4.qsdz’s girlfriend 2"></a>4.qsdz’s girlfriend 2</h3><blockquote>
+<p>据说qsdz的girlfriend是会变化的猫猫。flag{图片中的文字}</p>
+</blockquote>
+<p>会变化的猫，很容易让人联想到猫脸变换，</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/girlfriend.png" alt="girlfriend" style="zoom: 200%;" />
+
+<p>想不到的话，将图中的参数hex解码也能得到是猫脸变换的信息。</p>
+<p>去网站找个脚本</p>
+<pre><code>from PIL import Image
+
+img = Image.open(&#39;flag.png&#39;)
+if img.mode == &quot;P&quot;:
+    img = img.convert(&quot;RGB&quot;)
+assert img.size[0] == img.size[1]
+dim = width, height = img.size
+
+st = 0x61
+a = 0x726e
+b = 0x6f6c64
+for _ in range(st):
+    with Image.new(img.mode, dim) as canvas:
+        for nx in range(img.size[0]):
+            for ny in range(img.size[0]):
+                y = (ny - nx * a) % width
+                x = (nx - y * b) % height
+                canvas.putpixel((y, x), img.getpixel((ny, nx)))
+canvas.show()
+canvas.save(&#39;ok2.png&#39;)
+</code></pre>
+<p>得到</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/ok.png" alt="ok" style="zoom:200%;" />
+
+<p>当时居然没想到这段文字就是flag，还一直去图片里找隐写，┭┮﹏┭┮</p>
+<p>得到flag</p>
+<p><code>flag&#123;按理说这个点猪也该醒了&#125;</code></p>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><h3 id="1-前可见古人，后得见来者"><a href="#1-前可见古人，后得见来者" class="headerlink" title="1.前可见古人，后得见来者"></a>1.前可见古人，后得见来者</h3><blockquote>
+<p>前可见古人，后得见来者</p>
+</blockquote>
+<p>细节查壳，走一波</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006202639113.png" alt="image-20221006202639113" style="zoom:50%;" />
+
+<p>32位c++ exe文件。</p>
+<h4 id="0x01-浅浅分析"><a href="#0x01-浅浅分析" class="headerlink" title="0x01  浅浅分析"></a>0x01  浅浅分析</h4><p>直接丢进IDA去，</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006202957952.png" alt="image-20221006202957952" style="zoom:50%;" />
+
+<p>输入flag进行验证</p>
+<p>首先来到Sub_4113DE函数丢输入进的字符，一顿花里胡哨的操作，最后得到的字符与byte_41A004数组进行对比</p>
+<p>Sub_4113DE函数</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006203322199.png" alt="image-20221006203322199" style="zoom:50%;" />
+
+<p>对大小写字母进行移位操作，<code>dword_41A000=3</code>移三位</p>
+<p>接着与0x22进行异或。</p>
+<p>byte_41A004里的值：<code>Q[LVYMPVTC&#125;LCS&#125;PCS&#125;GP&#125;LCS&#125;N@J_</code></p>
+<p>直接先异或，再移位就得到flag了。</p>
+<h4 id="0x02-GetFlag"><a href="#0x02-GetFlag" class="headerlink" title="0x02 GetFlag"></a>0x02 GetFlag</h4><p>exp:</p>
+<pre><code class="py">c=b&#39;Q[LVYMPVTC&#125;LCS&#125;PCS&#125;GP&#125;LCS&#125;N@J_&#39;
+flag=&#39;&#39;
+for i in c:
+    flag+=chr(i^0x22)
+
+for i in flag.encode():
+    if i&gt;=97 and i&lt;=122:
+        print(chr(((i-97)-13)%26+97),end=&#39;&#39;)
+    else:
+        print(chr(i),end=&#39;&#39;)
+#flag&#123;begin_and_end_re_and_you&#125;
+</code></pre>
+<h3 id="2-FindME"><a href="#2-FindME" class="headerlink" title="2.FindME"></a>2.FindME</h3><blockquote>
+<p>Where is my gift?</p>
+</blockquote>
+<p>浅浅查壳</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006212044799.png" alt="image-20221006212044799" style="zoom:50%;" />
+
+<p>64位elf文件，无壳。</p>
+<h4 id="0x-01-main函数"><a href="#0x-01-main函数" class="headerlink" title="0x 01 main函数"></a>0x 01 main函数</h4><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006212306551.png" alt="image-20221006212306551" style="zoom:50%;" />
+
+<p>输入一个长度为32的字符然后进入sub_1BCD函数中，然后来到了本体中的套中套了 <code>XD</code></p>
+<p>一种点进一个函数</p>
+<p>来到第一个加密函数</p>
+<p>sub_19A1()：</p>
+<p>将flag变成DWORD型数据：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006212451059.png" alt="image-20221006212451059" style="zoom:50%;" />
+
+<p>继续点，来到 sub_192E( )</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006212555919.png" alt="image-20221006212555919" style="zoom:50%;" />
+
+<p>紧接着来到 sub_151D()</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006212642762.png" alt="image-20221006212642762" style="zoom:50%;" />
+
+<p>最后来到了最终的比较函数</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006212719375.png" alt="image-20221006212719375" style="zoom:50%;" />
+
+<pre><code class="apl">dword_5020[i]: 0x67617FF4, 0x6E305341, 0x656C4DE0, 0x69744BEC, 0x625F7460, 0x6F7348F4, 0x656871C9,0x7D216ED3
+</code></pre>
+<h4 id="0x02-GetFlag-1"><a href="#0x02-GetFlag-1" class="headerlink" title="0x02 GetFlag"></a>0x02 GetFlag</h4><p>直接将密文反着来一次就能得到flag了。</p>
+<p>直接上exp:</p>
+<pre><code class="py">import libnum
+
+cipher=[ 0x67617FF4, 0x6E305341, 0x656C4DE0, 0x69744BEC, 0x625F7460, 0x6F7348F4, 0x656871C9,0x7D216ED3]
+for i in range(len(cipher)):
+    cipher[i]^=cipher[i]&gt;&gt;17
+    cipher[i]^=0x2022
+
+for i in cipher:
+    print(libnum.n2s(i)[::-1].decode(),end=&#39;&#39;)
+#flag&#123;D0nt_let_time_bo_so_cheap!&#125;
+</code></pre>
+<h3 id="3-Petals"><a href="#3-Petals" class="headerlink" title="3.Petals"></a>3.Petals</h3><blockquote>
+<p>mY fLoWer 2 yOu</p>
+</blockquote>
+<p>浅浅怪说得查壳！！！</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006214755721.png" alt="image-20221006214755721" style="zoom:50%;" />
+
+<p>64位elf文件，无壳。</p>
+<h4 id="0x-01-慢慢分析"><a href="#0x-01-慢慢分析" class="headerlink" title="0x 01 慢慢分析"></a>0x 01 慢慢分析</h4><p>main函数</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006215007087.png" alt="image-20221006215007087" style="zoom:50%;" />
+
+<p>输入一个25位的字符，点进loc_1209发现有花指令</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006215124279.png" alt="image-20221006215124279" style="zoom: 40%;" />
+
+<p>直接给他nop掉</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006215157458.png" alt="image-20221006215157458" style="zoom:50%;" />
+
+<p>然后选中loc_1209然后p一下</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006220018226.png" alt="image-20221006220018226" style="zoom:50%;" />
+
+<p>就得到了sub_1209加密函数</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006220429303.png" style="zoom:50%;" />
+
+<p>先进行i第一次循环得到v5数组</p>
+<p>然后将a1数组的值做为作为角标，得到v5中的值重新赋值给a1也就是我们输入的数。</p>
+<p>最后来到比较函数sub_160C(str1, &amp;unk_4020, v4)</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221006220854739.png" alt="image-20221006220854739" style="zoom:50%;" />
+
+<p>将得到str1的值与unk_4020中的值进行比较</p>
+<pre><code>unk_4020:
+  208, 208, 133, 133, 128, 128, 197, 138, 147, 137, 
+  146, 143, 135, 136, 159, 143, 197, 132, 214, 209, 
+  210, 130, 211, 222, 135
+</code></pre>
+<h4 id="0x-02-GetFlag"><a href="#0x-02-GetFlag" class="headerlink" title="0x 02 GetFlag"></a>0x 02 GetFlag</h4><p>好像自己得到的v5的值跟软件的值有点出入，直接动态调试获取v5了。具体操作可以去看第一周的逆向，这里就不赘述了。</p>
+<p>exp:</p>
+<pre><code class="py">import libnum
+
+cipher=[  208, 208, 133, 133, 128, 128, 197, 138, 147, 137,
+  146, 143, 135, 136, 159, 143, 197, 132, 214, 209,
+  210, 130, 211, 222, 135]
+
+key=[  230, 231, 228, 229, 226, 227, 224, 225, 238, 239,
+  236, 237, 234, 235, 232, 233, 246, 247, 244, 245,
+  242, 243, 240, 241, 254, 255, 252, 253, 250, 251,
+  248, 249, 198, 199, 196, 197, 194, 195, 192, 193,
+  206, 207, 204, 205, 202, 203, 200, 201, 214, 215,
+  212, 213, 210, 211, 208, 209, 222, 223, 220, 221,
+  218, 219, 216, 217, 166, 167, 164, 165, 162, 163,
+  160, 161, 174, 175, 172, 173, 170, 171, 168, 169,
+  182, 183, 180, 181, 178, 179, 176, 177, 190, 191,
+  188, 189, 186, 187, 184, 185, 134, 135, 132, 133,
+  130, 131, 128, 129, 142, 143, 140, 141, 138, 139,
+  136, 137, 150, 151, 148, 149, 146, 147, 144, 145,
+  158, 159, 156, 157, 154, 155, 152, 153, 102, 103,
+  100, 101,  98,  99,  96,  97, 110, 111, 108, 109,
+  106, 107, 104, 105, 118, 119, 116, 117, 114, 115,
+  112, 113, 126, 127, 124, 125, 122, 123, 120, 121,
+   70,  71,  68,  69,  66,  67,  64,  65,  78,  79,
+   76,  77,  74,  75,  72,  73,  86,  87,  84,  85,
+   82,  83,  80,  81,  94,  95,  92,  93,  90,  91,
+   88,  89,  38,  39,  36,  37,  34,  35,  32,  33,
+   46,  47,  44,  45,  42,  43,  40,  41,  54,  55,
+   52,  53,  50,  51,  48,  49,  62,  63,  60,  61,
+   58,  59,  56,  57,   6,   7,   4,   5,   2,   3,
+    0,   1,  14,  15,  12,  13,  10,  11,   8,   9,
+   22,  23,  20,  21,  18,  19,  16,  17,  30,  31,
+   28,  29,  26,  27,  24,  25]
+
+for i in key:
+    print(chr(key.index(i)),end=&#39;&#39;)
+#66ccff#luotianyi#b074d58a
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
