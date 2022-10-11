@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>xzenge</title>
+  <title>安卓逆向学习日记-day1 | xzenge</title>
   <meta name="keywords" content="">
-  <meta name="description" content="xzenge">
+  <meta name="description" content="安卓逆向学习日记-day1 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="初识APK文件结构、双开、汉化、基础修改    1.课程目标1.了解APK文件结构2.双开APK，简单了解原理3.汉化APK4.简单修改APK名字、图标 2.工具1.教程Demo2.MT管理器&#x2F;NP管理器3.开发者助手4.雷电模拟器 3.课程内容1.Apk结构apk 全称 Android Package，它相当于一个压缩文件，只要在电脑上将apk后缀改为zip即可解压。    文件">
 <meta property="og:type" content="article">
@@ -75,7 +75,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -386,12 +386,53 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-安卓逆向学习日记-day1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%A0%E6%89%A7%E5%BF%B5%E9%82%A3%E4%B9%88%E9%87%8D%EF%BC%8C%E6%80%8E%E4%B9%88%E8%83%BD%E5%BF%AB%E4%B9%90%EF%BC%81%EF%BC%81"><span class="toc-text">你执念那么重，怎么能快乐！！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%B6%E8%90%BD%E9%98%81"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">安卓逆向学习日记-day1</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="安卓逆向">安卓逆向</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-10-11 05:18:38'>2022-10-11 05:21</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.4k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E8%AF%86APK%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E3%80%81%E5%8F%8C%E5%BC%80%E3%80%81%E6%B1%89%E5%8C%96%E3%80%81%E5%9F%BA%E7%A1%80%E4%BF%AE%E6%94%B9"><span class="toc-text">初识APK文件结构、双开、汉化、基础修改</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87"><span class="toc-text">1.课程目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B7%A5%E5%85%B7"><span class="toc-text">2.工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9"><span class="toc-text">3.课程内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Apk%E7%BB%93%E6%9E%84"><span class="toc-text">1.Apk结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%8C%E5%BC%80%E5%8F%8A%E5%8E%9F%E7%90%86"><span class="toc-text">2.双开及原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B1%89%E5%8C%96APK"><span class="toc-text">3.汉化APK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%88%9D%E8%AF%86AndroidManifest-xml"><span class="toc-text">4.初识AndroidManifest.xml</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BD%9C%E4%B8%9A"><span class="toc-text">4.作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%8C%E5%BC%80"><span class="toc-text">1.双开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2%E5%8F%8A%E6%96%87%E5%AD%97%E6%B1%89%E5%8C%96"><span class="toc-text">2.图片替换及文字汉化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%8F%8A%E5%90%8D%E7%A7%B0"><span class="toc-text">3.修改应用图标及名称</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -404,37 +445,202 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="你执念那么重，怎么能快乐！！"><a href="#你执念那么重，怎么能快乐！！" class="headerlink" title="你执念那么重，怎么能快乐！！"></a>你执念那么重，怎么能快乐！！</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>一枚网安小白，菜而不自知。</p>
-</blockquote>
-<blockquote>
-<p>写些自己学习的心路历程和浅薄的见解</p>
-</blockquote>
-<blockquote>
-<p>通过写博客的方式，也是对自己大学生活的记录了。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是xzenge的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题使用交流可以加 Q群: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e8cf083cc097141eaf323396f1766809b8e90ff00c67bb441898f672892f6904"><img data-ignore border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="3-hexo使用交流" title="3-hexo使用交流"></a></p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad&#x2F;手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <meta name="referrer" content="no-referrer" />
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h1 id="初识APK文件结构、双开、汉化、基础修改"><a href="#初识APK文件结构、双开、汉化、基础修改" class="headerlink" title="初识APK文件结构、双开、汉化、基础修改"></a>初识APK文件结构、双开、汉化、基础修改</h1><img src="http://pic.rmb.bdstatic.com/bjh/0805127fa851ed69cc1b88602b4e030f.png" alt="MT" style="zoom: 50%;" />
+
+
+
+<h2 id="1-课程目标"><a href="#1-课程目标" class="headerlink" title="1.课程目标"></a>1.课程目标</h2><p>1.了解APK文件结构<br>2.双开APK，简单了解原理<br>3.汉化APK<br>4.简单修改APK名字、图标</p>
+<h2 id="2-工具"><a href="#2-工具" class="headerlink" title="2.工具"></a>2.工具</h2><p>1.教程Demo<br>2.MT管理器&#x2F;NP管理器<br>3.开发者助手<br>4.雷电模拟器</p>
+<h2 id="3-课程内容"><a href="#3-课程内容" class="headerlink" title="3.课程内容"></a>3.课程内容</h2><h3 id="1-Apk结构"><a href="#1-Apk结构" class="headerlink" title="1.Apk结构"></a>1.Apk结构</h3><p>apk 全称 Android Package，它相当于一个压缩文件，只要在电脑上将apk后缀改为zip即可解压。</p>
+<table>
+<thead>
+<tr>
+<th align="left">文件</th>
+<th align="left">注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">assets目录</td>
+<td align="left">存放APK的静态资源文件，比如视频，音频，图片等</td>
+</tr>
+<tr>
+<td align="left">lib 目录</td>
+<td align="left">armeabi-v7a基本通用所有android设备，arm64-v8a只适用于64位的android设备，x86常见用于android模拟器，其目录下的.so文件是c或c++编译的动态链接库文件</td>
+</tr>
+<tr>
+<td align="left">META-INF目录</td>
+<td align="left">保存应用的签名信息，签名信息可以验证APK文件的完整性，相当于APK的身份证(验证文件是否又被修改)</td>
+</tr>
+<tr>
+<td align="left">res目录</td>
+<td align="left">res目录存放资源文件，包括图片，字符串等等，APK的脸蛋由他的layout文件设计</td>
+</tr>
+<tr>
+<td align="left">AndroidMainfest.xml文件</td>
+<td align="left">APK的应用清单信息，它描述了应用的名字，版本，权限，引用的库文件等等信息</td>
+</tr>
+<tr>
+<td align="left">classes.dex文件</td>
+<td align="left">classes.dex是java源码编译后生成的java字节码文件，APK运行的主要逻辑</td>
+</tr>
+<tr>
+<td align="left">resources.arsc文件</td>
+<td align="left">resources.arsc是编译后的二进制资源文件，它是一个映射表，映射着资源和id，通过R文件中的id就可以找到对应的资源</td>
+</tr>
+</tbody></table>
+<h3 id="2-双开及原理"><a href="#2-双开及原理" class="headerlink" title="2.双开及原理"></a>2.双开及原理</h3><p>双开：简单来说，就是手机同时运行两个或多个相同的应用，例如同时运行两个微信</p>
+<table>
+<thead>
+<tr>
+<th align="left">原理</th>
+<th align="left">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">修改包名</td>
+<td align="left">让手机系统认为这是2个APP，这样的话就能生成2个数据存储路径，此时的多开就等于你打开了两个互不干扰的APP(如果安装者配置了签名的话，这种方法实现的双开就可能出现闪退)</td>
+</tr>
+<tr>
+<td align="left">修改Framework</td>
+<td align="left">对于有系统修改权限的厂商，可以修改Framework来实现双开的目的，例如：小米自带多开</td>
+</tr>
+<tr>
+<td align="left">通过虚拟化技术实现</td>
+<td align="left">虚拟Framework层、虚拟文件系统、模拟Android对组件的管理、虚拟应用进程管理 等一整套虚拟技术，将APK复制一份到虚拟空间中运行，例如：平行空间</td>
+</tr>
+<tr>
+<td align="left">以插件机制运行</td>
+<td align="left">利用反射替换，动态代{过}{滤}理，hook了系统的大部分与system—server进程通讯的函数，以此作为“欺上瞒下”的目的，欺骗系统“以为”只有一个apk在运行，瞒过插件让其“认为”自己已经安装。例如：VirtualApp</td>
+</tr>
+</tbody></table>
+<h3 id="3-汉化APK"><a href="#3-汉化APK" class="headerlink" title="3.汉化APK"></a>3.汉化APK</h3><p>汉化：使用专门的工具对外文版的软件资源进行读取、翻译、修改、回写等一系列处理，使软件的菜单、对话框、提示等用户界面显示为中文，而程序的内核和功能保持不变，这个过程即为软件汉化</p>
+<p><strong>基本上字符串都是在arsc里，建议一键汉化，然后再润色。<br>少量没汉化到的字符串参考视频中的方法定位去逐个汉化。</strong></p>
+<p><strong>流程图</strong></p>
+<p>这里还需要注意的是，如果要直装应用，那就应该先签名安装，看看是否有签名校验导致的闪退</p>
+<p><img src="http://pic.rmb.bdstatic.com/bjh/cb35179c3ff8786b19fc1d2d2ecae12e.png" alt="|1|800"></p>
+<h3 id="4-初识AndroidManifest-xml"><a href="#4-初识AndroidManifest-xml" class="headerlink" title="4.初识AndroidManifest.xml"></a>4.初识AndroidManifest.xml</h3><p>AndroidManifest.xml文件是整个应用程序的信息描述文件，定义了应用程序中包含的Activity,Service,Content provider和BroadcastReceiver组件信息。每个应用程序在根目录下必须包含一个AndroidManifest.xml文件，且文件名不能修改。它描述了package中暴露的组件，他们各自的实现类，各种能被处理的数据和启动位置。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">versionCode</td>
+<td align="left">版本号，主要用来更新，例如:12</td>
+</tr>
+<tr>
+<td align="left">versionName</td>
+<td align="left">版本名，给用户看的，例如:1.2</td>
+</tr>
+<tr>
+<td align="left">package</td>
+<td align="left">包名，例如：com.zj.52pj.demo</td>
+</tr>
+<tr>
+<td align="left">uses-permission android:name&#x3D;””</td>
+<td align="left">应用权限，例如：android.permission.INTERNET 代表网络权限</td>
+</tr>
+<tr>
+<td align="left">android:label&#x3D;”@string&#x2F;app_name”</td>
+<td align="left">应用名称</td>
+</tr>
+<tr>
+<td align="left">android:icon&#x3D;”@mipmap&#x2F;ic_launcher”</td>
+<td align="left">应用图标路径</td>
+</tr>
+<tr>
+<td align="left">android:debuggable&#x3D;”true”</td>
+<td align="left">应用是否开启debug权限</td>
+</tr>
+</tbody></table>
+<h2 id="4-作业"><a href="#4-作业" class="headerlink" title="4.作业"></a>4.作业</h2><h3 id="1-双开"><a href="#1-双开" class="headerlink" title="1.双开"></a>1.双开</h3><p>NP管理器–&gt;安装包提取，选种我们要双开的软件，点击选择功能中APK共存，</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011190758845.png" alt="image-20221011190758845" style="zoom:50%;" />
+
+<p>安装，桌面上成功出现两个一样的软件了。</p>
+<h3 id="2-图片替换及文字汉化"><a href="#2-图片替换及文字汉化" class="headerlink" title="2.图片替换及文字汉化"></a>2.图片替换及文字汉化</h3><p>打开第一关</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011190912266.png" alt="image-20221011190912266" style="zoom:50%;" />
+
+<p>先替换了第一处的 <code>Hello 52pojie</code></p>
+<p>打开MT管理器，定位安装包，选择搜索功能，查找Hello (选中高级搜索)</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191138642.png" alt="image-20221011191138642" style="zoom:50%;" />
+
+<p>成功找到文字所在位置Jf.xml</p>
+<p>将<code>Hello 52pojie</code>改成<code>你好 xzenge</code></p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191327914.png" alt="image-20221011191327914" style="zoom:33%;" />
+
+<p>保存，退出。对其进行更新</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191405897.png" alt="image-20221011191405897" style="zoom:50%;" />
+
+<p>更新软件（安装）</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191523304.png" alt="image-20221011191523304" style="zoom:50%;" />
+
+<p>第一步成功，</p>
+<p>在res中中找到图片的位置：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191952308.png" alt="image-20221011191952308" style="zoom: 43%;" />
+
+<p>找张jpg图片改成跟cf.jpg替换掉它（共享文件夹，长按添加）。</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194108232.png" alt="image-20221011194108232" style="zoom:50%;" />
+
+<p>进行下一行，将修改</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194227979.png" alt="image-20221011194227979" style="zoom:50%;" />
+
+<p>此时需要借助开发者助手：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194440223.png" alt="image-20221011194440223" style="zoom:33%;" />
+
+<p>复制红色框框中的，其余与第一处汉化相同：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011195404865.png" alt="image-20221011195404865" style="zoom:50%;" />
+
+<p>成功，最后一步：</p>
+<p>依旧搜索一下，在class.dex中发现了字符串进入进行修改，</p>
+<img src="../../../AppData/Roaming/Typora/typora-user-images/image-20221011195646006.png" alt="image-20221011195646006" style="zoom:50%;" />
+
+<p>成功完成所有步骤。</p>
+<h3 id="3-修改应用图标及名称"><a href="#3-修改应用图标及名称" class="headerlink" title="3.修改应用图标及名称"></a>3.修改应用图标及名称</h3><p>根据课程的学习，可以知道相关信息在AndroidManifest.xml中</p>
+<p>打开AndroidManifest.xml</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200001891.png" alt="image-20221011200001891" style="zoom:39%;" />
+
+<p><code>android:icon=&quot;@mipmap/ic_launcher&quot;  应用图标路径</code></p>
+<p><code>android:label=&quot;@string/app_name&quot;  应用名称</code></p>
+<p>根据AndroidManifest.xml信息可以得知相关文件的位置</p>
+<p>使用NP管理器的通用编程即可进行相关修改</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200531149.png" alt="image-20221011200531149" style="zoom:35%;" />
+
+<p>修改完成后，保存即可</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200611624.png" alt="image-20221011200611624" style="zoom:35%;" />
+
+<p>安装后，启动软件</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200737562.png" alt="image-20221011200737562" style="zoom:60%;" />
+
+<p>成功修改了桌面的图标.</p>
+<p>完结，撒花！！！</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -443,11 +649,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 <div class="hide_box" onclick="dashangToggle()"></div>
