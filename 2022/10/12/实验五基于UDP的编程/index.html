@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>xzenge</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="xzenge">
+  <title>实验五基于UDP的编程 | xzenge</title>
+  <meta name="keywords" content=" 网络编程 ">
+  <meta name="description" content="实验五基于UDP的编程 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="实验五基于UDP的编程实验要求一实验目的:熟练掌握UDP下的网络编程 二、实验内容：1、回射程序的基本功能：即回声，客户端发送什么数据，服务器端就客户端返回什么数据，服务器并显示客户端的IP地址即端口号。服务器端口号为4000. 2、计算面积功能： 服务器端口号为4000，客户端将矩形的长和宽发给服务器，服务器计算出矩形的面积，并把面积发送给客户端，客户端收到后，显示出来。 三效果要求实验1：">
 <meta property="og:type" content="article">
@@ -62,7 +62,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -386,12 +386,52 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-实验五基于UDP的编程" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%A0%E6%89%A7%E5%BF%B5%E9%82%A3%E4%B9%88%E9%87%8D%EF%BC%8C%E6%80%8E%E4%B9%88%E8%83%BD%E5%BF%AB%E4%B9%90%EF%BC%81%EF%BC%81"><span class="toc-text">你执念那么重，怎么能快乐！！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%B6%E8%90%BD%E9%98%81"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">实验五基于UDP的编程</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">网络编程</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-10-12 05:26:56'>2022-10-12 05:25</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%94%E5%9F%BA%E4%BA%8EUDP%E7%9A%84%E7%BC%96%E7%A8%8B"><span class="toc-text">实验五基于UDP的编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82"><span class="toc-text">实验要求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">一实验目的:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">二、实验内容：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%95%88%E6%9E%9C%E8%A6%81%E6%B1%82"><span class="toc-text">三效果要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%B1%82%E8%A7%A3"><span class="toc-text">实验求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1"><span class="toc-text">实验1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C2"><span class="toc-text">实验2</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -404,37 +444,251 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="你执念那么重，怎么能快乐！！"><a href="#你执念那么重，怎么能快乐！！" class="headerlink" title="你执念那么重，怎么能快乐！！"></a>你执念那么重，怎么能快乐！！</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>一枚网安小白，菜而不自知。</p>
-</blockquote>
-<blockquote>
-<p>写些自己学习的心路历程和浅薄的见解</p>
-</blockquote>
-<blockquote>
-<p>通过写博客的方式，也是对自己大学生活的记录了。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是xzenge的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题使用交流可以加 Q群: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e8cf083cc097141eaf323396f1766809b8e90ff00c67bb441898f672892f6904"><img data-ignore border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="3-hexo使用交流" title="3-hexo使用交流"></a></p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad&#x2F;手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <meta name="referrer" content="no-referrer" />
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h1 id="实验五基于UDP的编程"><a href="#实验五基于UDP的编程" class="headerlink" title="实验五基于UDP的编程"></a>实验五基于UDP的编程</h1><h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><h3 id="一实验目的"><a href="#一实验目的" class="headerlink" title="一实验目的:"></a>一实验目的:</h3><p>熟练掌握UDP下的网络编程</p>
+<h3 id="二、实验内容："><a href="#二、实验内容：" class="headerlink" title="二、实验内容："></a>二、实验内容：</h3><p>1、回射程序的基本功能：即回声，客户端发送什么数据，服务器端就客户端返回什么数据，服务器并显示客户端的IP地址即端口号。服务器端口号为4000.</p>
+<p>2、计算面积功能：</p>
+<p>服务器端口号为4000，客户端将矩形的长和宽发给服务器，服务器计算出矩形的面积，并把面积发送给客户端，客户端收到后，显示出来。</p>
+<h3 id="三效果要求"><a href="#三效果要求" class="headerlink" title="三效果要求"></a>三效果要求</h3><p>实验1：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012195718007.png" alt="image-20221012195718007" style="zoom: 67%;" />
+
+
+
+<p>实验2：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012195740742.png" alt="image-20221012195740742" style="zoom: 80%;" />
+
+
+
+<h2 id="实验求解"><a href="#实验求解" class="headerlink" title="实验求解"></a>实验求解</h2><h3 id="实验1"><a href="#实验1" class="headerlink" title="实验1"></a>实验1</h3><pre><code>ntohs()    			网络字节位转主机字节位
+inet_ntoa()			将网络地址转换成“.”点隔的字符串格式。
+</code></pre>
+<p><strong>服务器代码：</strong></p>
+<pre><code class="c">// 实验服务端.cpp : Defines the entry point for the console application.
+//
+
+#include &quot;stdafx.h&quot;
+#include&lt;winsock2.h&gt;
+int main(int argc, char* argv[])
+&#123;
+    WSADATA data;
+    
+    WSAStartup(MAKEWORD(2,2),&amp;data);
+    SOCKET s=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
+    if(s==INVALID_SOCKET)
+    &#123;
+        printf(&quot;套接字初始化失败!\n&quot;);
+        return -1;
+    &#125;
+    struct sockaddr_in hint;
+    hint.sin_port=htons(4000);
+    hint.sin_family=AF_INET;
+    hint.sin_addr.S_un.S_addr=inet_addr(&quot;172.22.60.78&quot;);
+    bind(s,(const struct sockaddr *)&amp;hint,sizeof(hint));
+    printf(&quot;服务器创建成功！\n&quot;);
+    char buf[100]=&#123;0&#125;;
+    struct sockaddr_in addr;
+    int len=sizeof(addr);
+    while(1)&#123;
+    memset(buf,0,sizeof(buf));
+    int i=recvfrom(s,buf,100,0,(struct sockaddr *)&amp;addr,&amp;len);
+    if(i&gt;=0)
+    &#123;
+        printf(&quot;接收成功，数据为：%s,来自IP=%s,prot=%d\n&quot;,buf,inet_ntoa(addr.sin_addr),ntohs(addr.sin_port));
+    &#125;
+    else
+    &#123;
+        printf(&quot;接收失败\n&quot;);
+    &#125;
+    &#125;
+    WSACleanup();
+
+&#125;
+</code></pre>
+<p><strong>客户端代码：</strong></p>
+<pre><code class="c">// 实验客户端.cpp : Defines the entry point for the console application.
+//
+
+#include &quot;stdafx.h&quot;
+#include&lt;winsock2.h&gt;
+int main(int argc, char* argv[])
+&#123;
+    WSADATA data;	
+
+    WSAStartup(MAKEWORD(2,2),&amp;data);
+    SOCKET s=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
+    if(s==INVALID_SOCKET)
+    &#123;
+        printf(&quot;套接字初始化失败!\n&quot;);
+        return -1;
+    &#125;
+    struct sockaddr_in hint;
+    hint.sin_port=htons(4000);
+    hint.sin_family=AF_INET;
+    hint.sin_addr.S_un.S_addr=inet_addr(&quot;172.22.60.78&quot;);
+
+    char buf[100]=&#123;0&#125;;
+    int len=sizeof(hint);
+    int a,b;
+    struct sockaddr_in addr;
+    printf(&quot;输入要发送数据：\n&quot;);
+    scanf(&quot;%s&quot;,buf);
+    int i=sendto(s,buf,100,0,(struct sockaddr *)&amp;hint,len);
+    if(i&gt;=0)
+    &#123;
+        printf(&quot;接收成功，数据为：%s\n&quot;,buf);
+    &#125;
+    else
+    &#123;
+        printf(&quot;接收失败\n&quot;);
+    &#125;
+    memset(buf,0,sizeof(buf));
+    int h=recvfrom(s,buf,100,0,(struct sockaddr *)&amp;addr,&amp;len);
+    if(h&gt;=0)
+    &#123;
+        printf(&quot;接收成功，数据为：%s\n&quot;,buf);
+    &#125;
+    else
+    &#123;
+        printf(&quot;接收失败\n&quot;);
+    &#125;
+    WSACleanup();
+
+&#125;
+</code></pre>
+<p><strong>实验截图：</strong></p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/QQ%E5%9B%BE%E7%89%8720221012200203.jpg" alt="图片20221012200203" style="zoom:50%;" />
+
+
+
+<h3 id="实验2"><a href="#实验2" class="headerlink" title="实验2"></a>实验2</h3><p><strong>服务器代码</strong></p>
+<pre><code class="c">// 实验服务端.cpp : Defines the entry point for the console application.
+//
+
+#include &quot;stdafx.h&quot;
+#include&lt;winsock2.h&gt;
+int main(int argc, char* argv[])
+&#123;
+    WSADATA data;
+    
+    WSAStartup(MAKEWORD(2,2),&amp;data);
+    SOCKET s=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
+    if(s==INVALID_SOCKET)
+    &#123;
+        printf(&quot;套接字初始化失败!\n&quot;);
+        return -1;
+    &#125;
+    struct sockaddr_in hint;
+    hint.sin_port=htons(4000);
+    hint.sin_family=AF_INET;
+    hint.sin_addr.S_un.S_addr=inet_addr(&quot;172.22.60.78&quot;);
+    bind(s,(const struct sockaddr *)&amp;hint,sizeof(hint));
+    printf(&quot;服务器创建成功！\n&quot;);
+    char buf[100]=&#123;0&#125;;
+    struct sockaddr_in addr;
+    int len=sizeof(addr);
+    int a,b;
+    
+    int i=recvfrom(s,buf,100,0,(struct sockaddr *)&amp;addr,&amp;len);
+    a=*(int *)buf;
+    b=*(int *)(buf+sizeof(int));
+    if(i&gt;=0)
+    &#123;
+        printf(&quot;接收到长：%d,宽：%d，来自IP=%s,prot=%d\n&quot;,a,b,inet_ntoa(addr.sin_addr),ntohs(addr.sin_port));
+    &#125;
+    else
+    &#123;
+        printf(&quot;接收失败\n&quot;);
+    &#125;
+    int c=a*b;
+    memset(buf,0,sizeof(buf));
+    *(int *)buf=c;
+    int j=sendto(s,buf,sizeof(int),0,(struct sockaddr *)&amp;addr,len);
+    
+
+    WSACleanup();
+
+&#125;
+</code></pre>
+<p><strong>客户端代码</strong></p>
+<pre><code class="c">// 实验客户端.cpp : Defines the entry point for the console application.
+//
+
+#include &quot;stdafx.h&quot;
+#include&lt;winsock2.h&gt;
+int main(int argc, char* argv[])
+&#123;
+    WSADATA data;	
+
+    WSAStartup(MAKEWORD(2,2),&amp;data);
+    SOCKET s=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
+    if(s==INVALID_SOCKET)
+    &#123;
+        printf(&quot;套接字初始化失败!\n&quot;);
+        return -1;
+    &#125;
+    struct sockaddr_in hint;
+    hint.sin_port=htons(4000);
+    hint.sin_family=AF_INET;
+    hint.sin_addr.S_un.S_addr=inet_addr(&quot;172.22.60.78&quot;);
+
+    char buf[100]=&#123;0&#125;;
+    int len=sizeof(hint);
+    int a,b;
+    struct sockaddr_in addr;
+    printf(&quot;输入宽：\n&quot;);
+    scanf(&quot;%d&quot;,&amp;a);
+    printf(&quot;输入长：\n&quot;);
+    scanf(&quot;%d&quot;,&amp;b);
+    *(int *)buf=a;
+    *(int *)(buf+sizeof(int))=b;
+    int i=sendto(s,buf,100,0,(struct sockaddr *)&amp;hint,len);
+    if(i&lt;0)
+    &#123;
+        printf(&quot;发送失败\n&quot;);
+    &#125;
+    int len1=sizeof(addr);
+    
+    int h=recvfrom(s,buf,100,0,(struct sockaddr *)&amp;addr,&amp;len1);
+    int c=*(int *)buf;
+    if(h&gt;=0)
+    &#123;
+        printf(&quot;面积为：%d\n&quot;,c);
+    &#125;
+    else
+    &#123;
+        printf(&quot;接收失败\n&quot;);
+    &#125;
+    WSACleanup();
+
+&#125;
+</code></pre>
+<p>实验截图：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012200408243.png" alt="image-20221012200408243" style="zoom:50%;" />
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -443,11 +697,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 <div class="hide_box" onclick="dashangToggle()"></div>
