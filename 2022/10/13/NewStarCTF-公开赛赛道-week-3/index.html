@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NewStarCTF-公开赛赛道-week-3 | xzenge</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="NewStarCTF-公开赛赛道-week-3 | xzenge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="misc1.Whats HTTP 这是什么东西？好像是HTTP，WireShark看看吧  根据提示直接去导出http文件看下，在里面发现了一个sssssercet文件，导出   查看是base64   base64  —&gt; hex ，得到flag flag&amp;#123;4f33649d030c6778426971b54dd72ece&amp;#125; 2.qsdz’s girlfriend 我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NewStarCTF-公开赛赛道-week-3">
+<meta property="og:url" content="http://example.com/2022/10/13/NewStarCTF-%E5%85%AC%E5%BC%80%E8%B5%9B%E8%B5%9B%E9%81%93-week-3/index.html">
+<meta property="og:site_name" content="xzenge">
+<meta property="og:description" content="misc1.Whats HTTP 这是什么东西？好像是HTTP，WireShark看看吧  根据提示直接去导出http文件看下，在里面发现了一个sssssercet文件，导出   查看是base64   base64  —&gt; hex ，得到flag flag&amp;#123;4f33649d030c6778426971b54dd72ece&amp;#125; 2.qsdz’s girlfriend 我">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013111822501.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013111929856.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013112515777.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013112550206.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013112654759.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013112825909.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013113056788.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013113156815.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013113349918.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013114155881.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013114628856.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013114816475.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013114951408.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115114308.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115209828.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115314255.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115838948.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115941619.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120133480.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120154912.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120252019.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120525044.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120618587.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120721540.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120745878.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120830612.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013121611501.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013121733423.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013145849113.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013150047157.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/QQ%E5%9B%BE%E7%89%8720221013164749.jpg">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013164854042.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011230328579.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011230412331.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011230513720.png">
+<meta property="article:published_time" content="2022-10-13T08:56:00.000Z">
+<meta property="article:modified_time" content="2022-10-13T08:57:43.985Z">
+<meta property="article:author" content="xzenge">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013111822501.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>xzenge</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(5)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="安卓逆向">
+                        
+                        安卓逆向
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="CTF">
+                        
+                        CTF
+                        <small>(3)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="5">
+<input type="hidden" id="yelog_site_word_count" value="11.3k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络编程</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 CTF "
+           href="/2022/10/13/NewStarCTF-%E5%85%AC%E5%BC%80%E8%B5%9B%E8%B5%9B%E9%81%93-week-3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NewStarCTF-公开赛赛道-week-3">NewStarCTF-公开赛赛道-week-3</span>
+            <span class="post-date" title="2022-10-13 01:56:00">2022/10/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2022/10/12/%E5%AE%9E%E9%AA%8C%E4%BA%94%E5%9F%BA%E4%BA%8EUDP%E7%9A%84%E7%BC%96%E7%A8%8B/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="实验五基于UDP的编程">实验五基于UDP的编程</span>
+            <span class="post-date" title="2022-10-12 05:25:05">2022/10/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 安卓逆向 "
+           href="/2022/10/11/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-day1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安卓逆向学习日记-day1">安卓逆向学习日记-day1</span>
+            <span class="post-date" title="2022-10-11 05:21:16">2022/10/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 CTF "
+           href="/2022/10/06/NewStarCTF-%E5%85%AC%E5%BC%80%E8%B5%9B%E8%B5%9B%E9%81%93-week-2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NewStarCTF-公开赛赛道-week-2">NewStarCTF-公开赛赛道-week-2</span>
+            <span class="post-date" title="2022-10-06 05:21:16">2022/10/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 CTF "
+           href="/2022/10/04/NewStarCTF-%E5%85%AC%E5%BC%80%E8%B5%9B%E8%B5%9B%E9%81%93-week-1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="NewStarCTF-公开赛赛道-week-1">NewStarCTF-公开赛赛道-week-1</span>
+            <span class="post-date" title="2022-10-04 06:42:12">2022/10/04</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-NewStarCTF-公开赛赛道-week-3" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">NewStarCTF-公开赛赛道-week-3</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="CTF">CTF</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-10-13 01:57:43'>2022-10-13 01:56</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#misc"><span class="toc-text">misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Whats-HTTP"><span class="toc-text">1.Whats HTTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-qsdz%E2%80%99s-girlfriend"><span class="toc-text">2.qsdz’s girlfriend</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-WebShell"><span class="toc-text">3.WebShell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Yesec-no-drumsticks-3"><span class="toc-text">4.Yesec no drumsticks 3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%B7%B7%E6%B2%8C%E7%9A%84%E5%9B%BE%E5%83%8F"><span class="toc-text">5.混沌的图像</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reverse"><span class="toc-text">reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-EzTea"><span class="toc-text">1.EzTea</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Zzzzzz3333"><span class="toc-text">2.Zzzzzz3333</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <meta name="referrer" content="no-referrer" />
+
+<h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><h3 id="1-Whats-HTTP"><a href="#1-Whats-HTTP" class="headerlink" title="1.Whats HTTP"></a>1.Whats HTTP</h3><blockquote>
+<p>这是什么东西？好像是HTTP，WireShark看看吧</p>
+</blockquote>
+<p>根据提示直接去导出http文件看下，在里面发现了一个sssssercet文件，导出</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013111822501.png" alt="image-20221013111822501" style="zoom: 50%;" />
+
+<p>查看是base64</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013111929856.png" alt="image-20221013111929856" style="zoom:50%;" />
+
+<p>base64  —&gt; hex ，得到flag</p>
+<p><code>flag&#123;4f33649d030c6778426971b54dd72ece&#125;</code></p>
+<h3 id="2-qsdz’s-girlfriend"><a href="#2-qsdz’s-girlfriend" class="headerlink" title="2.qsdz’s girlfriend"></a>2.qsdz’s girlfriend</h3><blockquote>
+<p>我们入侵了qsdz的服务器，你可以在服务器中找到他真实的女朋友吗？qsdz的用户密码是Hikari（请用SSH连接）</p>
+</blockquote>
+<p>简单提权的题目，启动靶机。使用xshell进行连接</p>
+<p>简单用ls -ll查看当前目录的信息：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013112515777.png" alt="image-20221013112515777" style="zoom:50%;" />
+
+
+
+<p>查看下flag文件</p>
+<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013112550206.png" alt="image-20221013112550206"></p>
+<p>得知道flag所在的文件夹，在root目录，得root权限，查看下自己的权限：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013112654759.png" alt="image-20221013112654759" style="zoom:50%;" />
+
+<p>权限不足，去&#x2F;usr&#x2F;bin目录中，查看下是否有suid设置有问题功能</p>
+<p>中间可能胜略了一点操作，正常做题是现在用户目录查看文件，再去根目录查看</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013112825909.png" alt="image-20221013112825909" style="zoom:50%;" />
+
+<p>发现了典型的suid提权find。</p>
+<p>去<a target="_blank" rel="noopener" href="https://gtfobins.github.io/#">GTFOBins</a>查看下find的提权</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013113056788.png" alt="image-20221013113056788" style="zoom: 36%;" />
+
+<p>用suid中的第二行，获取root的shell</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013113156815.png" alt="image-20221013113156815" style="zoom:50%;" />
+
+<p>成功获得root权限，去flag所在目录查看下</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013113349918.png" alt="image-20221013113349918" style="zoom: 43%;" />
+
+<p>获得flag</p>
+<p><code>flag&#123;376ff441-f51c-4601-8941-37abf5990b2a&#125;</code></p>
+<h3 id="3-WebShell"><a href="#3-WebShell" class="headerlink" title="3.WebShell"></a>3.WebShell</h3><blockquote>
+<p>溯源攻击者窃取的文件内容！他用了蚁剑诶？ Flag格式为：flag{WebShell密码_黑客获取的用户名_机密文件内容} 例如flag{cmd_root_secret}</p>
+</blockquote>
+<p>需要从流量中获取到webshell的连接密码，黑客获取的用户明及机密文件内容</p>
+<p>先过滤下流量，选取 http,前面好多404，就先<del>机制</del>的从后往前看了把</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013114155881.png" alt="image-20221013114155881" style="zoom: 25%;" />
+
+<p>将箭头着的地方用分组字节流查看</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013114628856.png" alt="image-20221013114628856" style="zoom: 36%;" />
+
+<p>解码选为base64，开始为 1</p>
+<p>这个流就列举了下目录，继续用这个方法往前看</p>
+<p>查看流1209时，发现</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013114816475.png" alt="image-20221013114816475" style="zoom:36%;" />
+
+<p>查看下返回信息</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013114951408.png" alt="image-20221013114951408" style="zoom:50%;" />
+
+<p>秘密文件内容就应该是 <code>Y0uAr3G00D</code></p>
+<p>继续往上看</p>
+<p>流1185，发现了查看<strong>whoami</strong></p>
+<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115114308.png" alt="image-20221013115114308"></p>
+<p>看回显</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115209828.png" alt="image-20221013115209828" style="zoom:50%;" />
+
+<p>据此，可知黑客获取的用户为 <code>www-data</code></p>
+<p>继续</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115314255.png" alt="image-20221013115314255" style="zoom:50%;" />
+
+<p>一般指令输入的地方就是webshell连接的密码。<code>n3wst4r</code>多次出现，可知密钥就是它了。</p>
+<p>把以上拼接在一起就得到了flag</p>
+<p><code>flag&#123;n3wst4r_www-data_Y0uAr3G00D&#125;</code></p>
+<h3 id="4-Yesec-no-drumsticks-3"><a href="#4-Yesec-no-drumsticks-3" class="headerlink" title="4.Yesec no drumsticks 3"></a>4.Yesec no drumsticks 3</h3><blockquote>
+<p>如果你愿意一层一层一层地剥开出题人的心…注：这是一道多选题</p>
+</blockquote>
+<pre><code class="a">hint
+一切内容都跟压缩包相关，除了压缩包还是压缩包，我来讲下面几个要点：first不要用file指令; second忽略extrafield的东西; third你看到的已加密不一定是真的加密，你看到的未恢复密码不一定未恢复密钥; fourth图片真的没用，不要再纠结图片了，是qsdz的恶趣味罢了;
+一切内容都跟压缩包相关，除了压缩包还是压缩包，我来讲下面几个要点：first不要用file指令; second忽略extrafield的东西; third你看到的已加密不一定是真的加密，你看到的未恢复密码不一定未恢复密钥; fourth图片真的没用，不要再纠结图片了，是qsdz的恶趣味罢了。
+</code></pre>
+<p>这里我选的是third，其他两个看了下，不怎么会，┭┮﹏┭┮（<del>我是菜狗</del>）</p>
+<p><strong>第一层</strong></p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115838948.png" alt="image-20221013115838948" style="zoom:50%;" />
+
+<p>弱密码，直接爆破</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013115941619.png" alt="image-20221013115941619" style="zoom:50%;" />
+
+<p>这里先记下dialogue.txt的crc32，后面有用</p>
+<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120133480.png" alt="image-20221013120133480"></p>
+<p>得到密码</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120154912.png" alt="image-20221013120154912" style="zoom:50%;" />
+
+<p>解压得出第二层</p>
+<p><strong>第二层</strong></p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120252019.png" alt="image-20221013120252019" style="zoom: 33%;" />
+
+<p>用kali里面的rockyou.txt进行字典爆破，kali里有，解压出来就行了。</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120525044.png" alt="image-20221013120525044" style="zoom:50%;" />
+
+<p>得到第三层</p>
+<p><strong>第三层</strong></p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120618587.png" alt="image-20221013120618587" style="zoom:33%;" />
+
+<p>掩码爆破</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120721540.png" alt="image-20221013120721540" style="zoom: 50%;" />
+
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120745878.png" alt="image-20221013120745878" style="zoom:50%;" />
+
+<p>得到第四层</p>
+<p><strong>第四层</strong></p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013120830612.png" alt="image-20221013120830612" style="zoom: 33%;" />
+
+<p>发现有哥txt文件跟我们第一层解压出来txt的crc32值是一样的，直接明文爆破，用<code>相同压缩方式</code>压缩解压出的txt文件。</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013121611501.png" alt="image-20221013121611501" style="zoom: 30%;" />
+
+<p>成功进入第5层</p>
+<p><strong>第5层</strong></p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013121733423.png" alt="image-20221013121733423" style="zoom: 33%;" />
+
+<p>看似坚硬的外壳，都是虚假的罢了？感觉像对伪加密的描述</p>
+<p>确实是</p>
+<p><code>flag&#123;I_r3ally_Want_tO_be_1I1I1&#125;</code></p>
+<h3 id="5-混沌的图像"><a href="#5-混沌的图像" class="headerlink" title="5.混沌的图像"></a>5.混沌的图像</h3><blockquote>
+<p>“ 听说之前考过LSB，那你还记得那道密码题吗？”</p>
+</blockquote>
+<p>下载附件task.png，将图片放进stegsolve中进行查看，发现了lsb隐藏了一张png图片</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013145849113.png" alt="image-20221013145849113" style="zoom:50%;" />
+
+<p>将其分离出来，得到一种图片1.png。将其放到010editor中进行查看发现文件尾有多余的数据：<br><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013150047157.png" alt="image-20221013150047157" style="zoom:50%;" /></p>
+<p>其中的可打印数据</p>
+<pre><code>k1=3.5606267076894413,
+k2=3.9101741242346346,
+k=[106,80,198,220,47,18,19,230,42,202,207,196,214,132,188,190]
+</code></pre>
+<p>再根据提示，发现与第一周的密码题 chaos很像，去网上找到这个题目的exp</p>
+<pre><code class="py">from PIL import Image
+sum, r, k = 0, 1, [106,80,198,220,47,18,19,230,42,202,207,196,214,132,188,190]
+k1=3.5606267076894413
+k2=3.9101741242346346
+for i in k:
+    sum += i
+    r ^= i
+a_1 = (sum / 256) % 1
+timea1 = 3 + int(1000 * a_1) % 30
+b_1 = (r / 256)
+timeb1 = 3 + int(1000 * b_1) % 30
+xc_1 = a_1 * b_1
+yc_1 = (a_1 + b_1) % 1
+
+data = (a_1, timea1, b_1, timeb1, xc_1, yc_1)
+
+key = (k1, k2)
+
+def LC(key, x, times, flags):
+    (k1, k2) = key
+    xn = []
+    xn.append(x)
+    if flags:
+        xn.append(1 - 2 * xn[0] ** 2)
+    else:
+        xn.append(k2 * xn[0] ** 3 + (1 - k2) * xn[0])
+    for i in range(times):
+        assert xn[i] &gt;= -1 and xn[i] &lt;= 1 and xn[i + 1] &gt;= -1 and xn[i + 1] &lt;= 1
+        if flags:
+            xn.append((1 - 2 * xn[i] ** 2) * (k1 * xn[i + 1] ** 3 + (1 - k1) * xn[i + 1]))
+        else:
+            xn.append((k2 * xn[i] ** 3 + (1 - k2) * xn[i]) * (1 - 2 * xn[i + 1] ** 2))
+    return xn[times + 1]
+
+
+m, c = [], []
+img1 = Image.open(r&quot;C:\Users\sheshe\Desktop\flag1.png&quot;).convert(&#39;RGBA&#39;)
+w, h = img1.size
+
+
+for i in range(w):
+    for j in range(h):
+        r,g,b,a=img1.getpixel((i,j))
+        c.append(r)
+        c.append(g)
+        c.append(b)
+
+miu, omiga = [], []
+ta = timea1
+tb = timeb1
+
+res = []
+for flag in c:
+    miu.append(LC(key, a_1, ta, 1))
+    omiga.append(LC(key, b_1, tb, 0))
+    res.append(((int(miu[-1] * 1000) + int(omiga[-1] * 1000)) % 256) ^ flag)
+    delta = flag / 256
+    for i in range(3):
+        y = (yc_1 + delta) % 1
+        y = k1 * y ** 3 + (1 - k1) * y
+        x = xc_1
+        x = k2 * x ** 3 + (1 - k2) * x
+    ta = 3 + int(1000 * x) % 30
+    tb = 3 + int(1000 * y) % 30
+
+width, height = 1300, 867
+n=0
+for i in range(width):
+    for j in range(height):
+        img1.putpixel((i,j),(res[n],res[n+1],res[n+2]))
+        n+=3
+img1.save(r&quot;C:\Users\sheshe\Desktop\flag11111.png&quot;,&quot;png&quot;)
+print(&quot;It is OK!&quot;)
+img1.show()
+</code></pre>
+<p>得到图片</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/QQ%E5%9B%BE%E7%89%8720221013164749.jpg" alt="QQ图片20221013164749" style="zoom:49%;" />
+
+<p>查看下stegsolve</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013164854042.png" alt="image-20221013164854042" style="zoom:45%;" />
+
+<p>得到flag</p>
+<p><code>flag&#123;easy_chaos_encrypt!!!_776e6d30&#125;</code></p>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><h3 id="1-EzTea"><a href="#1-EzTea" class="headerlink" title="1.EzTea"></a>1.EzTea</h3><blockquote>
+<p>送你昏睡红茶，敬红茶一杯</p>
+</blockquote>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011230328579.png" alt="image-20221011230328579" style="zoom:50%;" />
+
+<p>64位exe文件，无壳。</p>
+<p>查看main函数</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011230412331.png" alt="image-20221011230412331" style="zoom:60%;" />
+
+<p>将输入的值放到tea函数进行对比，最后跟cipher数组中的数值进行对比。查看tea</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011230513720.png" alt="image-20221011230513720" style="zoom: 50%;" />
+
+<p>三种tea加密中的xxtea，去网上找个加解密脚本：</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+
+
+#define DELTA 0x9e3779b9
+#define MX (((z&gt;&gt;5^y&lt;&lt;2) + (y&gt;&gt;3^z&lt;&lt;4)) ^ ((sum^y) + (key[(p&amp;3)^e] ^ z)))
+
+
+void xxtea(uint32_t* v, int n, uint32_t* key)
+&#123;
+    uint32_t y, z, sum;
+    unsigned p, rounds, e;
+
+    if (n &gt; 1)             // encrypt
+    &#123;
+        rounds = 6 + 52/n;
+        sum = 0;
+        z = v[n-1];
+        do
+        &#123;
+            sum += DELTA;
+            e = (sum &gt;&gt; 2) &amp; 3;
+            for (p=0; p&lt;n-1; p++)
+            &#123;
+                y = v[p+1];
+                z = v[p] += MX;
+            &#125;
+            y = v[0];
+            z = v[n-1] += MX;
+        &#125;
+        while (--rounds);
+    &#125;
+    else if (n &lt; -1)      // decrypt
+    &#123;
+        n = -n;
+        rounds = 6 + 52/n;
+        sum = rounds * DELTA;
+        y = v[0];
+        do
+        &#123;
+            e = (sum &gt;&gt; 2) &amp; 3;
+            for (p=n-1; p&gt;0; p--)
+            &#123;
+                z = v[p-1];
+                y = v[p] -= MX;
+            &#125;
+            z = v[n-1];
+            y = v[0] -= MX;
+            sum -= DELTA;
+        &#125;
+        while (--rounds);
+    &#125;
+&#125;
+
+// test
+int main()
+&#123;
+    // 两个32位无符号整数，即待加密的64bit明文数据
+    uint32_t v[2] = &#123;0x12345678, 0x78563412&#125;;
+    // 四个32位无符号整数，即128bit的key
+    uint32_t k[4]= &#123;0x1, 0x2, 0x3, 0x4&#125;;
+    //n的绝对值表示v的长度，取正表示加密，取负表示解密
+    int n = 2;
+
+    printf(&quot;Data is : %x %x\n&quot;, v[0], v[1]);
+    xxtea(v, n, k);
+    printf(&quot;Encrypted data is : %x %x\n&quot;, v[0], v[1]);
+    xxtea(v, -n, k);
+    printf(&quot;Decrypted data is : %x %x\n&quot;, v[0], v[1]);
+
+    return 0;
+&#125;
+</code></pre>
+<p>不过需要进行修改DELTA，MX.</p>
+<p><code>DELTA 0x11451400</code></p>
+<p><code>#define MX (((z&gt;&gt;4^y&lt;&lt;2) + (y&gt;&gt;3^z&lt;&lt;5)) ^ ((sum^y) + (key[(p&amp;3)^e] ^ z)))</code></p>
+<p>修改后的解密的exp:</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+#define DELTA 0x11451400
+#define MX (((z&gt;&gt;4^y&lt;&lt;2) + (y&gt;&gt;3^z&lt;&lt;5)) ^ ((sum^y) + (key[(p&amp;3)^e] ^ z)))
+
+
+void xxtea(uint32_t* v, int n, uint32_t* key)
+&#123;
+    uint32_t y, z, sum;
+    unsigned p, rounds, e;
+
+    if (n &gt; 1)             // encrypt
+    &#123;
+        rounds = 6 + 52/n;
+        sum = 0;
+        z = v[n-1];
+        do
+        &#123;
+            sum += DELTA;
+            e = (sum &gt;&gt; 2) &amp; 3;
+            for (p=0; p&lt;n-1; p++)
+            &#123;
+                y = v[p+1];
+                z = v[p] += MX;
+            &#125;
+            y = v[0];
+            z = v[n-1] += MX;
+        &#125;
+        while (--rounds);
+    &#125;
+    else if (n &lt; -1)      // decrypt
+    &#123;
+        n = -n;
+        rounds = 6 + 52/n;
+        sum = rounds * DELTA;
+        y = v[0];
+        do
+        &#123;
+            e = (sum &gt;&gt; 2) &amp; 3;
+            for (p=n-1; p&gt;0; p--)
+            &#123;
+                z = v[p-1];
+                y = v[p] -= MX;
+            &#125;
+            z = v[n-1];
+            y = v[0] -= MX;
+            sum -= DELTA;
+        &#125;
+        while (--rounds);
+    &#125;
+&#125;
+
+int main() &#123;
+    unsigned char enc[] =
+    &#123;
+      0x82, 0x8A, 0xFA, 0x38, 0x80, 0x13, 0x50, 0xD7, 0x9D, 0x96,
+      0x40, 0x0E, 0x20, 0x91, 0x16, 0x4E, 0xAB, 0x29, 0x3A, 0x71,
+      0x3D, 0x39, 0xE5, 0x6C, 0x2E, 0x75, 0x9D, 0xB6, 0xE6, 0x88,
+      0x1A, 0x84, 0x59, 0xB4, 0x31, 0x6F, 0x00, 0x00, 0x00, 0x00
+    &#125;;
+
+    uint32_t key[] = &#123; 0x19,0x19,0x8,0x10 &#125;;
+        // -9代表解密 
+    xxtea((uint32_t*)enc, -9, (uint32_t*)key);
+
+    cout &lt;&lt; enc &lt;&lt; endl;
+    return 0;
+&#125;
+</code></pre>
+<p><code>flag&#123;H0P3_U_L1k3_Th15_CUP_0f_TEa.&#125;</code></p>
+<h3 id="2-Zzzzzz3333"><a href="#2-Zzzzzz3333" class="headerlink" title="2.Zzzzzz3333"></a>2.Zzzzzz3333</h3><blockquote>
+<p>System of equations</p>
+</blockquote>
+<p>经典的z3约束求解</p>
+<p>查看mian函数逻辑</p>
+<pre><code class="c">int __cdecl main(int argc, const char **argv, const char **envp)
+&#123;
+  char v3; // di
+  int i; // edi
+  char v6; // [esp-10h] [ebp-30h]
+  char Arglist[8]; // [esp+0h] [ebp-20h] BYREF
+  int v8; // [esp+8h] [ebp-18h]
+  int v9; // [esp+Ch] [ebp-14h]
+  int v10; // [esp+10h] [ebp-10h]
+  int v11; // [esp+14h] [ebp-Ch]
+  int v12; // [esp+18h] [ebp-8h]
+  int v13; // [esp+1Ch] [ebp-4h]
+
+  *(_DWORD *)&amp;Arglist[4] = 0;
+  sub_401020(&quot;Please Give the Key:&quot;, 0);
+  sub_401050(&quot;%s&quot;, (char)Arglist);
+  if ( strlen(Arglist) != 8 )
+    exit(0);
+  v13 = Arglist[5];
+  v11 = Arglist[4];
+  v9 = Arglist[1];
+  v12 = Arglist[3];
+  v8 = Arglist[7];
+  v10 = Arglist[0];
+  if ( Arglist[3]
+     + 4 * Arglist[2]
+     + Arglist[7]
+     + 4 * (Arglist[3] + 4 * Arglist[2])
+     + 3 * (Arglist[4] + 4 * Arglist[0])
+     + 2 * (Arglist[5] + 4 * Arglist[6])
+     + 11 * Arglist[1] == 6426
+    &amp;&amp; 11 * (v10 + v8 + v12) + 4 * (v13 + 2 * v11) + Arglist[2] + 45 * v9 + 7 * Arglist[6] == 9801
+    &amp;&amp; 5 * v9
+     + 2 * (v11 + Arglist[6] + v13 + 2 * (v8 + v12) + Arglist[2] + 2 * (Arglist[6] + v13 + 2 * (v8 + v12)) + 8 * v10) == 6021
+    &amp;&amp; 19 * v10 + 9 * v9 + 67 * v8 + 5 * (Arglist[2] + Arglist[6]) + 7 * (v13 + 4 * v12) + 4 * v11 == 14444
+    &amp;&amp; 22 * v13 + 5 * (v11 + 2 * (v12 + v9 + 2 * v10)) + 4 * (v8 + Arglist[6]) + 6 * Arglist[2] == 7251
+    &amp;&amp; 19 * v12
+     + 3 * (v8 + Arglist[2] + 4 * v8 + Arglist[6] + 2 * (v8 + Arglist[2] + 4 * v8))
+     + 4 * (v10 + v13 + v9 + 2 * (v10 + v13)) == 10054
+    &amp;&amp; (v9 *= 2,
+        7 * v10 + 17 * (v12 + v9) + 11 * (v11 + 2 * v13) + 2 * (Arglist[2] + Arglist[6] + 4 * Arglist[2] + 6 * v8) == 10735)
+    &amp;&amp; Arglist[6] + v11 + 11 * Arglist[2] + 15 * (v12 + 2 * v8) + v9 + 43 * v10 + 21 * v13 == 11646 )
+  &#123;
+    sub_401020(&quot;The Key is Right!!\n&quot;, v3);
+    sub_401020(&quot;Your flag is here:)\n&quot;, v6);
+    for ( i = 0; i &lt; 24; ++i )
+      sub_401020(
+        &quot;%c&quot;,
+        byte_402168[i] &amp; (Arglist[i &amp; 7] ^ byte_402168[i]) | ~byte_402168[i] &amp; (~byte_402168[i] ^ ~Arglist[i &amp; 7]));
+    return 0;
+  &#125;
+  else
+  &#123;
+    sub_401020(&quot;Your Key is Wrong\n&quot;, v3);
+    return 0;
+  &#125;
+&#125;
+</code></pre>
+<p>直接使用z3求解器就可以得到flag了。</p>
+<p>exp</p>
+<pre><code class="py">import z3
+s = z3.Solver()
+pwd = [z3.Int(&quot;pwd%d&quot;%x) for x in range(8)]
+
+s.add(pwd[3]
+     + 4 * pwd[2]
+     + pwd[7]
+     + 4 * (pwd[3] + 4 * pwd[2])
+     + 3 * (pwd[4] + 4 * pwd[0])
+     + 2 * (pwd[5] + 4 * pwd[6])
+     + 11 * pwd[1] == 6426)
+s.add(11 * (pwd[0] + pwd[7] + pwd[3]) + 4 * (pwd[5] + 2 * pwd[4]) + pwd[2] + 45 * pwd[1] + 7 * pwd[6] == 9801)
+s.add(5 * pwd[1] + 2 * (pwd[4] + pwd[6] + pwd[5] + 2 * (pwd[7] + pwd[3]) + pwd[2] + 2 * (pwd[6] + pwd[5] + 2 * (pwd[7] + pwd[3])) + 8 * pwd[0]) == 6021)
+s.add(19 * pwd[0] + 9 * pwd[1] + 67 * pwd[7] + 5 * (pwd[2] + pwd[6]) + 7 * (pwd[5] + 4 * pwd[3]) + 4 * pwd[4] == 14444)
+s.add(22 * pwd[5] + 5 * (pwd[4] + 2 * (pwd[3] + pwd[1] + 2 * pwd[0])) + 4 * (pwd[7] + pwd[6]) + 6 * pwd[2] == 7251)
+s.add(19 * pwd[3]
+     + 3 * (pwd[7] + pwd[2] + 4 * pwd[7] + pwd[6] + 2 * (pwd[7] + pwd[2] + 4 * pwd[7]))
+     + 4 * (pwd[0] + pwd[5] + pwd[1] + 2 * (pwd[0] + pwd[5])) == 10054)
+pwd[1] *= 2
+s.add(7 * pwd[0] + 17 * (pwd[3] + pwd[1]) + 11 * (pwd[4] + 2 * pwd[5]) + 2 * (pwd[2] + pwd[6] + 4 * pwd[2] + 6 * pwd[7]) == 10735)
+s.add(pwd[6] + pwd[4] + 11 * pwd[2] + 15 * (pwd[3] + 2 * pwd[7]) + pwd[1] + 43 * pwd[0] + 21 * pwd[5] == 11646)
+
+key = [0]*8
+
+# s.model()先调用s.check()，看看有沒有解
+if s.check():
+    res = s.model()
+    for e in res:
+     index = ord(e.name()[-1:]) - ord(&#39;0&#39;)
+     key[index] = res[e].as_long()
+
+for e in key:
+     print(chr(e),end=&quot;&quot;) # fallw1nd
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
