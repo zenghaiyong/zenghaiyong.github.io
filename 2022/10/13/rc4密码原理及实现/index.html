@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>安卓逆向学习日记-day1 | xzenge</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="安卓逆向学习日记-day1 | xzenge">
+  <title>rc4密码原理及实现 | xzenge</title>
+  <meta name="keywords" content=" crypto ">
+  <meta name="description" content="rc4密码原理及实现 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="实验目的rc4密码原理的了解，以及rc4代码实现 rc4密码原理RC4密码算法原理: 　　RC4算法是一种流密码，密钥长度可变，面向字节操作。以下是原理说明中使用的主要变量。 （1）密钥流：RC4算法的关键是根据明文和密钥生成相应的密钥流，密钥流的长度和明文的长度是对应的，也就是说，如果明文的长度是500字节，那么密钥流的长度也是500字节，加密生成的密文也是500字节，因为密文第i字节&amp;#x">
 <meta property="og:type" content="article">
@@ -421,9 +421,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-安卓逆向学习日记-day1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-rc4密码原理及实现" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">安卓逆向学习日记-day1</h1>
+        <h1 class="article-title">rc4密码原理及实现</h1>
     
     <div class="article-meta">
         
@@ -433,20 +433,27 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="安卓逆向">安卓逆向</a>
+            <a  data-rel="密码学">密码学</a>
             
         </span>
         
         
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">crypto</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-10-11 05:29:48'>2022-10-11 05:21</time>
+            发布时间 : <time class="date" title='最后更新: 2022-10-13 02:14:31'>2022-10-13 02:13</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.4k</span>
+        <span>字数:943</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -465,7 +472,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E8%AF%86APK%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E3%80%81%E5%8F%8C%E5%BC%80%E3%80%81%E6%B1%89%E5%8C%96%E3%80%81%E5%9F%BA%E7%A1%80%E4%BF%AE%E6%94%B9"><span class="toc-text">初识APK文件结构、双开、汉化、基础修改</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87"><span class="toc-text">1.课程目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B7%A5%E5%85%B7"><span class="toc-text">2.工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9"><span class="toc-text">3.课程内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Apk%E7%BB%93%E6%9E%84"><span class="toc-text">1.Apk结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%8C%E5%BC%80%E5%8F%8A%E5%8E%9F%E7%90%86"><span class="toc-text">2.双开及原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B1%89%E5%8C%96APK"><span class="toc-text">3.汉化APK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%88%9D%E8%AF%86AndroidManifest-xml"><span class="toc-text">4.初识AndroidManifest.xml</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BD%9C%E4%B8%9A"><span class="toc-text">4.作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%8C%E5%BC%80"><span class="toc-text">1.双开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2%E5%8F%8A%E6%96%87%E5%AD%97%E6%B1%89%E5%8C%96"><span class="toc-text">2.图片替换及文字汉化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%8F%8A%E5%90%8D%E7%A7%B0"><span class="toc-text">3.修改应用图标及名称</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">实验目的</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#rc4%E5%AF%86%E7%A0%81%E5%8E%9F%E7%90%86"><span class="toc-text">rc4密码原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -483,176 +490,95 @@
       
         <meta name="referrer" content="no-referrer" />
 
-<h1 id="初识APK文件结构、双开、汉化、基础修改"><a href="#初识APK文件结构、双开、汉化、基础修改" class="headerlink" title="初识APK文件结构、双开、汉化、基础修改"></a>初识APK文件结构、双开、汉化、基础修改</h1><img src="http://pic.rmb.bdstatic.com/bjh/0805127fa851ed69cc1b88602b4e030f.png" alt="MT" style="zoom: 50%;" />
+<h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><p>rc4密码原理的了解，以及rc4代码实现</p>
+<h2 id="rc4密码原理"><a href="#rc4密码原理" class="headerlink" title="rc4密码原理"></a>rc4密码原理</h2><p><strong>RC4密码算法原理:</strong></p>
+<p>　　RC4算法是一种流密码，密钥长度可变，面向字节操作。以下是原理说明中使用的主要变量。</p>
+<p>（1）密钥流：RC4算法的关键是根据明文和密钥生成相应的密钥流，密钥流的长度和明文的长度是对应的，也就是说，如果明文的长度是500字节，那么密钥流的长度也是500字节，加密生成的密文也是500字节，因为密文第i字节&#x3D;明文第i字节⊕密钥流第i字节。</p>
+<p>（2）状态数组S：长度为256字节，各单元为S[0]，S[1]，…，S[255]。每个单元为1字节，在算法运行的任何时候，S都包括0～255之间所有的8位二进制数，只不过值的位置发生了变化。</p>
+<p>（3）临时数组T：长度为256字节，每个单元为1字节。如果密钥的长度是256字节，就直接把密钥的值赋给T，否则轮转地将密钥的每字节赋给T。</p>
+<p>（4）密钥K：长度为1～256字节，密钥的长度与明文的长度、密钥流的长度没有必然关系，通常密钥的长度为16字节（128位）。</p>
+<p>（5）密钥流Ks：由从S的256个单元中按一种系统化的方式选出的一个单元生成，每生成一个Ks，S中的单元就被重新置换一次。</p>
+<p>RC4算法首先使用密钥编排算法（Key Scheduling Algorithm，KSA）来完成𝑆和𝑇的初始化及𝑆的初始置换。在置换时使用密钥𝐾，其长度一般取5～16字节，即40～128位，也可以更长，通常不超过256字节。首先用0～255初始化𝑆，然后使用密钥进行替换。</p>
+<p>完成𝑆的初始化和初始置换后，密钥𝐾就不再被使用了。在𝑆[0]，𝑆[1]，…，𝑆[255]中，对每个𝑆[𝑖]，根据𝑆的当前配置，将𝑆[𝑖]与另一字节置换，输出1字节的密钥流。当𝑆[255]完成置换后，从𝑆[0]开始进行重复操作。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code class="c">#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+typedef unsigned longULONG;
 
+//初始化函数
+void rc4_init(unsigned char *s, unsigned char *key ,long len)
+&#123;
+    int i=0,j=0;
+    char k[256]=&#123;0&#125;;
+    unsigned char tmp=0;
+    for( i = 0; i &lt; 256; i++)
+    &#123;
+        s[i]=i;      //对s表进行线性填充
+        k[i]=key[i%len]; //对k表用种子密钥进行填充
+    &#125;
+    for(i=0;i&lt;256;i++)    
+    &#123;
+        j=(j+s[i]+k[i])%256; //用k表对s表进行初始置换
+        tmp=s[i];
+        s[i]=s[j];
+        s[j]=tmp;		
+    &#125;
+        
+&#125;
 
+void rc4_crypt(unsigned char *s ,unsigned char *data, unsigned long len)
+&#123;
+    int i=0,j=0,t=0;
+    unsigned long k=0;
+    unsigned char tmp;
+    for(k= 0; k&lt;len ; k++)
+    &#123;
+        i=(i+1)%256;
+        j=(j+s[i])%256;
+        tmp=s[i];
+        s[i]=s[j];
+        s[j]=tmp;
+        t=(s[i]+s[j])%256;
+        data[k]^=s[t];
+    &#125;
+&#125;
 
-<h2 id="1-课程目标"><a href="#1-课程目标" class="headerlink" title="1.课程目标"></a>1.课程目标</h2><p>1.了解APK文件结构<br>2.双开APK，简单了解原理<br>3.汉化APK<br>4.简单修改APK名字、图标</p>
-<h2 id="2-工具"><a href="#2-工具" class="headerlink" title="2.工具"></a>2.工具</h2><p>1.教程Demo<br>2.MT管理器&#x2F;NP管理器<br>3.开发者助手<br>4.雷电模拟器</p>
-<h2 id="3-课程内容"><a href="#3-课程内容" class="headerlink" title="3.课程内容"></a>3.课程内容</h2><h3 id="1-Apk结构"><a href="#1-Apk结构" class="headerlink" title="1.Apk结构"></a>1.Apk结构</h3><p>apk 全称 Android Package，它相当于一个压缩文件，只要在电脑上将apk后缀改为zip即可解压。</p>
-<table>
-<thead>
-<tr>
-<th align="left">文件</th>
-<th align="left">注释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">assets目录</td>
-<td align="left">存放APK的静态资源文件，比如视频，音频，图片等</td>
-</tr>
-<tr>
-<td align="left">lib 目录</td>
-<td align="left">armeabi-v7a基本通用所有android设备，arm64-v8a只适用于64位的android设备，x86常见用于android模拟器，其目录下的.so文件是c或c++编译的动态链接库文件</td>
-</tr>
-<tr>
-<td align="left">META-INF目录</td>
-<td align="left">保存应用的签名信息，签名信息可以验证APK文件的完整性，相当于APK的身份证(验证文件是否又被修改)</td>
-</tr>
-<tr>
-<td align="left">res目录</td>
-<td align="left">res目录存放资源文件，包括图片，字符串等等，APK的脸蛋由他的layout文件设计</td>
-</tr>
-<tr>
-<td align="left">AndroidMainfest.xml文件</td>
-<td align="left">APK的应用清单信息，它描述了应用的名字，版本，权限，引用的库文件等等信息</td>
-</tr>
-<tr>
-<td align="left">classes.dex文件</td>
-<td align="left">classes.dex是java源码编译后生成的java字节码文件，APK运行的主要逻辑</td>
-</tr>
-<tr>
-<td align="left">resources.arsc文件</td>
-<td align="left">resources.arsc是编译后的二进制资源文件，它是一个映射表，映射着资源和id，通过R文件中的id就可以找到对应的资源</td>
-</tr>
-</tbody></table>
-<h3 id="2-双开及原理"><a href="#2-双开及原理" class="headerlink" title="2.双开及原理"></a>2.双开及原理</h3><p>双开：简单来说，就是手机同时运行两个或多个相同的应用，例如同时运行两个微信</p>
-<table>
-<thead>
-<tr>
-<th align="left">原理</th>
-<th align="left">解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">修改包名</td>
-<td align="left">让手机系统认为这是2个APP，这样的话就能生成2个数据存储路径，此时的多开就等于你打开了两个互不干扰的APP(如果安装者配置了签名的话，这种方法实现的双开就可能出现闪退)</td>
-</tr>
-<tr>
-<td align="left">修改Framework</td>
-<td align="left">对于有系统修改权限的厂商，可以修改Framework来实现双开的目的，例如：小米自带多开</td>
-</tr>
-<tr>
-<td align="left">通过虚拟化技术实现</td>
-<td align="left">虚拟Framework层、虚拟文件系统、模拟Android对组件的管理、虚拟应用进程管理 等一整套虚拟技术，将APK复制一份到虚拟空间中运行，例如：平行空间</td>
-</tr>
-<tr>
-<td align="left">以插件机制运行</td>
-<td align="left">利用反射替换，动态代{过}{滤}理，hook了系统的大部分与system—server进程通讯的函数，以此作为“欺上瞒下”的目的，欺骗系统“以为”只有一个apk在运行，瞒过插件让其“认为”自己已经安装。例如：VirtualApp</td>
-</tr>
-</tbody></table>
-<h3 id="3-汉化APK"><a href="#3-汉化APK" class="headerlink" title="3.汉化APK"></a>3.汉化APK</h3><p>汉化：使用专门的工具对外文版的软件资源进行读取、翻译、修改、回写等一系列处理，使软件的菜单、对话框、提示等用户界面显示为中文，而程序的内核和功能保持不变，这个过程即为软件汉化</p>
-<p><strong>基本上字符串都是在arsc里，建议一键汉化，然后再润色。<br>少量没汉化到的字符串参考视频中的方法定位去逐个汉化。</strong></p>
-<p><strong>流程图</strong></p>
-<p>这里还需要注意的是，如果要直装应用，那就应该先签名安装，看看是否有签名校验导致的闪退</p>
-<p><img src="http://pic.rmb.bdstatic.com/bjh/cb35179c3ff8786b19fc1d2d2ecae12e.png" alt="|1|800"></p>
-<h3 id="4-初识AndroidManifest-xml"><a href="#4-初识AndroidManifest-xml" class="headerlink" title="4.初识AndroidManifest.xml"></a>4.初识AndroidManifest.xml</h3><p>AndroidManifest.xml文件是整个应用程序的信息描述文件，定义了应用程序中包含的Activity,Service,Content provider和BroadcastReceiver组件信息。每个应用程序在根目录下必须包含一个AndroidManifest.xml文件，且文件名不能修改。它描述了package中暴露的组件，他们各自的实现类，各种能被处理的数据和启动位置。</p>
-<table>
-<thead>
-<tr>
-<th align="left">属性</th>
-<th align="left">定义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">versionCode</td>
-<td align="left">版本号，主要用来更新，例如:12</td>
-</tr>
-<tr>
-<td align="left">versionName</td>
-<td align="left">版本名，给用户看的，例如:1.2</td>
-</tr>
-<tr>
-<td align="left">package</td>
-<td align="left">包名，例如：com.zj.52pj.demo</td>
-</tr>
-<tr>
-<td align="left">uses-permission android:name&#x3D;””</td>
-<td align="left">应用权限，例如：android.permission.INTERNET 代表网络权限</td>
-</tr>
-<tr>
-<td align="left">android:label&#x3D;”@string&#x2F;app_name”</td>
-<td align="left">应用名称</td>
-</tr>
-<tr>
-<td align="left">android:icon&#x3D;”@mipmap&#x2F;ic_launcher”</td>
-<td align="left">应用图标路径</td>
-</tr>
-<tr>
-<td align="left">android:debuggable&#x3D;”true”</td>
-<td align="left">应用是否开启debug权限</td>
-</tr>
-</tbody></table>
-<h2 id="4-作业"><a href="#4-作业" class="headerlink" title="4.作业"></a>4.作业</h2><h3 id="1-双开"><a href="#1-双开" class="headerlink" title="1.双开"></a>1.双开</h3><p>NP管理器–&gt;安装包提取，选种我们要双开的软件，点击选择功能中APK共存，</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011190758845.png" alt="image-20221011190758845" style="zoom:50%;" />
+int main()
+&#123;
+    unsigned char s[256]=&#123;0&#125;, s2[256]=&#123;0&#125;;
+    char key[256]=&#123;&quot;123&quot;&#125;;
+    char mdata[512]=&quot;flag111&quot;;
+    int i;
 
-<p>安装，桌面上成功出现两个一样的软件了。</p>
-<h3 id="2-图片替换及文字汉化"><a href="#2-图片替换及文字汉化" class="headerlink" title="2.图片替换及文字汉化"></a>2.图片替换及文字汉化</h3><p>打开第一关</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011190912266.png" alt="image-20221011190912266" style="zoom:50%;" />
-
-<p>先替换了第一处的 <code>Hello 52pojie</code></p>
-<p>打开MT管理器，定位安装包，选择搜索功能，查找Hello (选中高级搜索)</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191138642.png" alt="image-20221011191138642" style="zoom:50%;" />
-
-<p>成功找到文字所在位置Jf.xml</p>
-<p>将<code>Hello 52pojie</code>改成<code>你好 xzenge</code></p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191327914.png" alt="image-20221011191327914" style="zoom:33%;" />
-
-<p>保存，退出。对其进行更新</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191405897.png" alt="image-20221011191405897" style="zoom:50%;" />
-
-<p>更新软件（安装）</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191523304.png" alt="image-20221011191523304" style="zoom:50%;" />
-
-<p>第一步成功，</p>
-<p>在res中中找到图片的位置：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191952308.png" alt="image-20221011191952308" style="zoom: 43%;" />
-
-<p>找张jpg图片改成跟cf.jpg替换掉它（共享文件夹，长按添加）。</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194108232.png" alt="image-20221011194108232" style="zoom:50%;" />
-
-<p>进行下一行，将修改</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194227979.png" alt="image-20221011194227979" style="zoom:50%;" />
-
-<p>此时需要借助开发者助手：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194440223.png" alt="image-20221011194440223" style="zoom:33%;" />
-
-<p>复制红色框框中的，其余与第一处汉化相同：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011195404865.png" alt="image-20221011195404865" style="zoom:50%;" />
-
-<p>成功，最后一步：</p>
-<p>依旧搜索一下，在class.dex中发现了字符串进入进行修改，</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011202859021.png" alt="image-20221011202859021" style="zoom:50%;" />
-
-<p>成功完成所有步骤。</p>
-<h3 id="3-修改应用图标及名称"><a href="#3-修改应用图标及名称" class="headerlink" title="3.修改应用图标及名称"></a>3.修改应用图标及名称</h3><p>根据课程的学习，可以知道相关信息在AndroidManifest.xml中</p>
-<p>打开AndroidManifest.xml</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200001891.png" alt="image-20221011200001891" style="zoom:39%;" />
-
-<p><code>android:icon=&quot;@mipmap/ic_launcher&quot;  应用图标路径</code></p>
-<p><code>android:label=&quot;@string/app_name&quot;  应用名称</code></p>
-<p>根据AndroidManifest.xml信息可以得知相关文件的位置</p>
-<p>使用NP管理器的通用编程即可进行相关修改</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200531149.png" alt="image-20221011200531149" style="zoom:35%;" />
-
-<p>修改完成后，保存即可</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200611624.png" alt="image-20221011200611624" style="zoom:35%;" />
-
-<p>安装后，启动软件</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200737562.png" alt="image-20221011200737562" style="zoom:60%;" />
-
-<p>成功修改了桌面的图标.</p>
-<p>完结，撒花！！！</p>
+    printf(&quot;被加密的数据m=&quot;);
+    scanf(&quot;%s&quot;,mdata);
+    printf(&quot;key=&quot;);
+    scanf(&quot;%s&quot;,key);
+    rc4_init(s,(unsigned char*)key,strlen(key)); //密钥初始化；
+    printf(&quot;\n完成了对s[i]的初始化：\n\n&quot;);
+    for(i=0;i&lt;256;i++)
+    &#123;
+        printf(&quot;%02X&quot;,s[i]);
+        if(i&amp;&amp;(i+1)%16==0) printf(&quot;\n&quot;);
+     &#125; 
+    printf(&quot;\n\n&quot;); 
+     for (i = 0; i&lt;256; i++)//用s2[i]暂时保留经过初始化的s[i]，很重要的！！！
+    &#123;
+        s2[i] = s[i];
+    &#125;
+    printf(&quot;\n&quot;);
+    int len=strlen(mdata);
+    printf(&quot;已经初始化，进行加密：\n\n&quot;);
+    rc4_crypt(s,(unsigned char*)mdata,len);   //加密 
+    printf(&quot;mdata=%s\n\n&quot;,mdata);
+    rc4_crypt(s2, (unsigned char*)mdata, len);//解密
+    printf(&quot;mdata=%s\n\n&quot;, mdata);
+    
+    return 0; 
+    
+&#125;
+</code></pre>
+<p>代码运行效果：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013171227556.png" alt="image-20221013171227556" style="zoom:50%;" />
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
