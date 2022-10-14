@@ -6,20 +6,16 @@
   <meta name="keywords" content="">
   <meta name="description" content="安卓逆向学习日记-day1 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="实验目的rc4密码原理的了解，以及rc4代码实现 rc4密码原理RC4密码算法原理: 　　RC4算法是一种流密码，密钥长度可变，面向字节操作。以下是原理说明中使用的主要变量。 （1）密钥流：RC4算法的关键是根据明文和密钥生成相应的密钥流，密钥流的长度和明文的长度是对应的，也就是说，如果明文的长度是500字节，那么密钥流的长度也是500字节，加密生成的密文也是500字节，因为密文第i字节&amp;#x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="rc4密码原理及实现">
-<meta property="og:url" content="http://example.com/2022/10/13/rc4%E5%AF%86%E7%A0%81%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:title" content="vulnhub 靶场 PYLINGTON 1">
+<meta property="og:url" content="http://example.com/2022/10/14/vulnhub-%E9%9D%B6%E5%9C%BA-PYLINGTON-1/index.html">
 <meta property="og:site_name" content="xzenge">
-<meta property="og:description" content="实验目的rc4密码原理的了解，以及rc4代码实现 rc4密码原理RC4密码算法原理: 　　RC4算法是一种流密码，密钥长度可变，面向字节操作。以下是原理说明中使用的主要变量。 （1）密钥流：RC4算法的关键是根据明文和密钥生成相应的密钥流，密钥流的长度和明文的长度是对应的，也就是说，如果明文的长度是500字节，那么密钥流的长度也是500字节，加密生成的密文也是500字节，因为密文第i字节&amp;#x">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013171227556.png">
-<meta property="article:published_time" content="2022-10-13T01:13:32.000Z">
-<meta property="article:modified_time" content="2022-10-13T09:16:29.185Z">
+<meta property="article:published_time" content="2022-10-14T07:40:33.000Z">
+<meta property="article:modified_time" content="2022-10-14T07:41:16.657Z">
 <meta property="article:author" content="xzenge">
-<meta property="article:tag" content="crypto">
+<meta property="article:tag" content="靶机实战">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221013171227556.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -221,7 +217,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(6)</small>
+                <small>(7)</small>
             
         </div>
     </li>
@@ -246,6 +242,20 @@
                     <div data-rel="密码学">
                         
                         密码学
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="渗透测试">
+                        
+                        渗透测试
                         <small>(1)</small>
                         
                     </div>
@@ -288,7 +298,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="6">
+<input type="hidden" id="yelog_site_posts_number" value="7">
 <input type="hidden" id="yelog_site_word_count" value="12.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -335,6 +345,10 @@
     <div class="tag-wrapper">
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>靶机实战</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>网络编程</a>
             </li>
         
@@ -348,6 +362,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 渗透测试 "
+           href="/2022/10/14/vulnhub-%E9%9D%B6%E5%9C%BA-PYLINGTON-1/"
+           data-tag="靶机实战"
+           data-author="" >
+            <span class="post-title" title="vulnhub 靶场 PYLINGTON 1">vulnhub 靶场 PYLINGTON 1</span>
+            <span class="post-date" title="2022-10-14 15:40:33">2022/10/14</span>
+        </a>
         
         
         <a  class="全部文章 密码学 "

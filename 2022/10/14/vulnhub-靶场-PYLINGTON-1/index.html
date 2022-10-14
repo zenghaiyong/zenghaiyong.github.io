@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>实验五基于UDP的编程 | xzenge</title>
-  <meta name="keywords" content=" 网络编程 ">
-  <meta name="description" content="实验五基于UDP的编程 | xzenge">
+  <title>vulnhub 靶场 PYLINGTON 1 | xzenge</title>
+  <meta name="keywords" content=" 靶机实战 ">
+  <meta name="description" content="vulnhub 靶场 PYLINGTON 1 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vulnhub 靶场 PYLINGTON 1">
@@ -444,31 +444,39 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-实验五基于UDP的编程" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-vulnhub-靶场-PYLINGTON-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">实验五基于UDP的编程</h1>
+        <h1 class="article-title">vulnhub 靶场 PYLINGTON 1</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="渗透测试">渗透测试</a>
+            
+        </span>
+        
         
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">网络编程</a>
+            <a class="color5">靶机实战</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-10-12 20:26:56'>2022-10-12 05:25</time>
+            发布时间 : <time class="date" title='最后更新: 2022-10-14 15:41:16'>2022-10-14 15:40</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1k</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -487,7 +495,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%94%E5%9F%BA%E4%BA%8EUDP%E7%9A%84%E7%BC%96%E7%A8%8B"><span class="toc-text">实验五基于UDP的编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82"><span class="toc-text">实验要求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">一实验目的:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">二、实验内容：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%95%88%E6%9E%9C%E8%A6%81%E6%B1%82"><span class="toc-text">三效果要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%B1%82%E8%A7%A3"><span class="toc-text">实验求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1"><span class="toc-text">实验1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C2"><span class="toc-text">实验2</span></a></li></ol></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -504,226 +512,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <meta name="referrer" content="no-referrer" />
-
-<h1 id="实验五基于UDP的编程"><a href="#实验五基于UDP的编程" class="headerlink" title="实验五基于UDP的编程"></a>实验五基于UDP的编程</h1><h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><h3 id="一实验目的"><a href="#一实验目的" class="headerlink" title="一实验目的:"></a>一实验目的:</h3><p>熟练掌握UDP下的网络编程</p>
-<h3 id="二、实验内容："><a href="#二、实验内容：" class="headerlink" title="二、实验内容："></a>二、实验内容：</h3><p>1、回射程序的基本功能：即回声，客户端发送什么数据，服务器端就客户端返回什么数据，服务器并显示客户端的IP地址即端口号。服务器端口号为4000.</p>
-<p>2、计算面积功能：</p>
-<p>服务器端口号为4000，客户端将矩形的长和宽发给服务器，服务器计算出矩形的面积，并把面积发送给客户端，客户端收到后，显示出来。</p>
-<h3 id="三效果要求"><a href="#三效果要求" class="headerlink" title="三效果要求"></a>三效果要求</h3><p>实验1：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012195718007.png" alt="image-20221012195718007" style="zoom: 67%;" />
-
-
-
-<p>实验2：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012195740742.png" alt="image-20221012195740742" style="zoom: 80%;" />
-
-
-
-<h2 id="实验求解"><a href="#实验求解" class="headerlink" title="实验求解"></a>实验求解</h2><h3 id="实验1"><a href="#实验1" class="headerlink" title="实验1"></a>实验1</h3><pre><code>ntohs()    			网络字节位转主机字节位
-inet_ntoa()			将网络地址转换成“.”点隔的字符串格式。
-</code></pre>
-<p><strong>服务器代码：</strong></p>
-<pre><code class="c">// 实验服务端.cpp : Defines the entry point for the console application.
-//
-
-#include &quot;stdafx.h&quot;
-#include&lt;winsock2.h&gt;
-int main(int argc, char* argv[])
-&#123;
-    WSADATA data;
-    
-    WSAStartup(MAKEWORD(2,2),&amp;data);
-    SOCKET s=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
-    if(s==INVALID_SOCKET)
-    &#123;
-        printf(&quot;套接字初始化失败!\n&quot;);
-        return -1;
-    &#125;
-    struct sockaddr_in hint;
-    hint.sin_port=htons(4000);
-    hint.sin_family=AF_INET;
-    hint.sin_addr.S_un.S_addr=inet_addr(&quot;172.22.60.78&quot;);
-    bind(s,(const struct sockaddr *)&amp;hint,sizeof(hint));
-    printf(&quot;服务器创建成功！\n&quot;);
-    char buf[100]=&#123;0&#125;;
-    struct sockaddr_in addr;
-    int len=sizeof(addr);
-    while(1)&#123;
-    memset(buf,0,sizeof(buf));
-    int i=recvfrom(s,buf,100,0,(struct sockaddr *)&amp;addr,&amp;len);
-    if(i&gt;=0)
-    &#123;
-        printf(&quot;接收成功，数据为：%s,来自IP=%s,prot=%d\n&quot;,buf,inet_ntoa(addr.sin_addr),ntohs(addr.sin_port));
-    &#125;
-    else
-    &#123;
-        printf(&quot;接收失败\n&quot;);
-    &#125;
-    &#125;
-    WSACleanup();
-
-&#125;
-</code></pre>
-<p><strong>客户端代码：</strong></p>
-<pre><code class="c">// 实验客户端.cpp : Defines the entry point for the console application.
-//
-
-#include &quot;stdafx.h&quot;
-#include&lt;winsock2.h&gt;
-int main(int argc, char* argv[])
-&#123;
-    WSADATA data;	
-
-    WSAStartup(MAKEWORD(2,2),&amp;data);
-    SOCKET s=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
-    if(s==INVALID_SOCKET)
-    &#123;
-        printf(&quot;套接字初始化失败!\n&quot;);
-        return -1;
-    &#125;
-    struct sockaddr_in hint;
-    hint.sin_port=htons(4000);
-    hint.sin_family=AF_INET;
-    hint.sin_addr.S_un.S_addr=inet_addr(&quot;172.22.60.78&quot;);
-
-    char buf[100]=&#123;0&#125;;
-    int len=sizeof(hint);
-    int a,b;
-    struct sockaddr_in addr;
-    printf(&quot;输入要发送数据：\n&quot;);
-    scanf(&quot;%s&quot;,buf);
-    int i=sendto(s,buf,100,0,(struct sockaddr *)&amp;hint,len);
-    if(i&gt;=0)
-    &#123;
-        printf(&quot;接收成功，数据为：%s\n&quot;,buf);
-    &#125;
-    else
-    &#123;
-        printf(&quot;接收失败\n&quot;);
-    &#125;
-    memset(buf,0,sizeof(buf));
-    int h=recvfrom(s,buf,100,0,(struct sockaddr *)&amp;addr,&amp;len);
-    if(h&gt;=0)
-    &#123;
-        printf(&quot;接收成功，数据为：%s\n&quot;,buf);
-    &#125;
-    else
-    &#123;
-        printf(&quot;接收失败\n&quot;);
-    &#125;
-    WSACleanup();
-
-&#125;
-</code></pre>
-<p><strong>实验截图：</strong></p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/QQ%E5%9B%BE%E7%89%8720221012200203.jpg" alt="图片20221012200203" style="zoom:50%;" />
-
-
-
-<h3 id="实验2"><a href="#实验2" class="headerlink" title="实验2"></a>实验2</h3><p><strong>服务器代码</strong></p>
-<pre><code class="c">// 实验服务端.cpp : Defines the entry point for the console application.
-//
-
-#include &quot;stdafx.h&quot;
-#include&lt;winsock2.h&gt;
-int main(int argc, char* argv[])
-&#123;
-    WSADATA data;
-    
-    WSAStartup(MAKEWORD(2,2),&amp;data);
-    SOCKET s=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
-    if(s==INVALID_SOCKET)
-    &#123;
-        printf(&quot;套接字初始化失败!\n&quot;);
-        return -1;
-    &#125;
-    struct sockaddr_in hint;
-    hint.sin_port=htons(4000);
-    hint.sin_family=AF_INET;
-    hint.sin_addr.S_un.S_addr=inet_addr(&quot;172.22.60.78&quot;);
-    bind(s,(const struct sockaddr *)&amp;hint,sizeof(hint));
-    printf(&quot;服务器创建成功！\n&quot;);
-    char buf[100]=&#123;0&#125;;
-    struct sockaddr_in addr;
-    int len=sizeof(addr);
-    int a,b;
-    
-    int i=recvfrom(s,buf,100,0,(struct sockaddr *)&amp;addr,&amp;len);
-    a=*(int *)buf;
-    b=*(int *)(buf+sizeof(int));
-    if(i&gt;=0)
-    &#123;
-        printf(&quot;接收到长：%d,宽：%d，来自IP=%s,prot=%d\n&quot;,a,b,inet_ntoa(addr.sin_addr),ntohs(addr.sin_port));
-    &#125;
-    else
-    &#123;
-        printf(&quot;接收失败\n&quot;);
-    &#125;
-    int c=a*b;
-    memset(buf,0,sizeof(buf));
-    *(int *)buf=c;
-    int j=sendto(s,buf,sizeof(int),0,(struct sockaddr *)&amp;addr,len);
-    
-
-    WSACleanup();
-
-&#125;
-</code></pre>
-<p><strong>客户端代码</strong></p>
-<pre><code class="c">// 实验客户端.cpp : Defines the entry point for the console application.
-//
-
-#include &quot;stdafx.h&quot;
-#include&lt;winsock2.h&gt;
-int main(int argc, char* argv[])
-&#123;
-    WSADATA data;	
-
-    WSAStartup(MAKEWORD(2,2),&amp;data);
-    SOCKET s=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
-    if(s==INVALID_SOCKET)
-    &#123;
-        printf(&quot;套接字初始化失败!\n&quot;);
-        return -1;
-    &#125;
-    struct sockaddr_in hint;
-    hint.sin_port=htons(4000);
-    hint.sin_family=AF_INET;
-    hint.sin_addr.S_un.S_addr=inet_addr(&quot;172.22.60.78&quot;);
-
-    char buf[100]=&#123;0&#125;;
-    int len=sizeof(hint);
-    int a,b;
-    struct sockaddr_in addr;
-    printf(&quot;输入宽：\n&quot;);
-    scanf(&quot;%d&quot;,&amp;a);
-    printf(&quot;输入长：\n&quot;);
-    scanf(&quot;%d&quot;,&amp;b);
-    *(int *)buf=a;
-    *(int *)(buf+sizeof(int))=b;
-    int i=sendto(s,buf,100,0,(struct sockaddr *)&amp;hint,len);
-    if(i&lt;0)
-    &#123;
-        printf(&quot;发送失败\n&quot;);
-    &#125;
-    int len1=sizeof(addr);
-    
-    int h=recvfrom(s,buf,100,0,(struct sockaddr *)&amp;addr,&amp;len1);
-    int c=*(int *)buf;
-    if(h&gt;=0)
-    &#123;
-        printf(&quot;面积为：%d\n&quot;,c);
-    &#125;
-    else
-    &#123;
-        printf(&quot;接收失败\n&quot;);
-    &#125;
-    WSACleanup();
-
-&#125;
-</code></pre>
-<p>实验截图：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012200408243.png" alt="image-20221012200408243" style="zoom:50%;" />
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
