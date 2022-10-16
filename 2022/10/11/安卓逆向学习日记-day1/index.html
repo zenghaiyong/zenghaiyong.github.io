@@ -6,39 +6,36 @@
   <meta name="keywords" content="">
   <meta name="description" content="安卓逆向学习日记-day1 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="#vulnhub 靶场 PYLINGTON: 1 一，信息收集1.使用nmap对目标靶机进行扫描   发现开放了22和80端口。 2.80端口 查看源码也没发现什么，扫一下目录：   发现有 robots.txt 文件，查看一下：   &#x2F;zbir7mn240soxhicso2z 有点可疑，访问一下：   发现了一组用户名和密码。 Username: steve  Password:">
+<meta name="description" content="web 1.easy_html 2.2048 3.easy_upload 4.Interesting_include 5.Interesting_http      web1.easy_html在htmL源码中发现 查看下cookie  发现了一个子目录&#x2F;f14g.php   输入手机号码，但是输入框只能输入10个数字，去前端修改下   将箭头处改成11即可，访问     2.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vulnhub 靶场 PYLINGTON 1">
-<meta property="og:url" content="http://example.com/2022/10/14/vulnhub-%E9%9D%B6%E5%9C%BA-PYLINGTON-1/index.html">
+<meta property="og:title" content="HNCTF week-1">
+<meta property="og:url" content="http://example.com/2022/10/16/HNCTF-week-1/index.html">
 <meta property="og:site_name" content="xzenge">
-<meta property="og:description" content="#vulnhub 靶场 PYLINGTON: 1 一，信息收集1.使用nmap对目标靶机进行扫描   发现开放了22和80端口。 2.80端口 查看源码也没发现什么，扫一下目录：   发现有 robots.txt 文件，查看一下：   &#x2F;zbir7mn240soxhicso2z 有点可疑，访问一下：   发现了一组用户名和密码。 Username: steve  Password:">
+<meta property="og:description" content="web 1.easy_html 2.2048 3.easy_upload 4.Interesting_include 5.Interesting_http      web1.easy_html在htmL源码中发现 查看下cookie  发现了一个子目录&#x2F;f14g.php   输入手机号码，但是输入框只能输入10个数字，去前端修改下   将箭头处改成11即可，访问     2.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014130814948.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014133559374.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014141655256.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014141757452.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014141931233.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014142307407.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014142320530.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014142808605.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014145537128.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014143654886.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014143841156.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014143918634.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144042931.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144224823.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144319052.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144800761.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014145753959.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014150213122.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014150450397.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014150610242.png">
-<meta property="article:published_time" content="2022-10-14T07:40:33.000Z">
-<meta property="article:modified_time" content="2022-10-14T15:01:59.944Z">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016163855319.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016163937631.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164045408.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164108855.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164411566.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164511664.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164950292.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165230832.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165519665.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165720294.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165759074.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016171510361.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016172027411.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210457999.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210527105.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210742200.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210806000.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210905264.png">
+<meta property="article:published_time" content="2022-10-16T13:27:48.000Z">
+<meta property="article:modified_time" content="2022-10-16T13:28:54.314Z">
 <meta property="article:author" content="xzenge">
-<meta property="article:tag" content="靶机实战">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014130814948.png">
+<meta name="twitter:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016163855319.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -240,7 +237,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(7)</small>
+                <small>(8)</small>
             
         </div>
     </li>
@@ -321,8 +318,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="7">
-<input type="hidden" id="yelog_site_word_count" value="12.9k">
+<input type="hidden" id="yelog_site_posts_number" value="8">
+<input type="hidden" id="yelog_site_word_count" value="13.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -385,6 +382,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 "
+           href="/2022/10/16/HNCTF-week-1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HNCTF week-1">HNCTF week-1</span>
+            <span class="post-date" title="2022-10-16 21:27:48">2022/10/16</span>
+        </a>
         
         
         <a  class="全部文章 渗透测试 "
@@ -487,12 +493,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-10-11 20:29:48'>2022-10-11 05:21</time>
+            发布时间 : <time class="date" title='最后更新: 2022-10-16 21:25:55'>2022-10-11 05:21</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.4k</span>
+        <span>字数:1.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -511,7 +517,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E8%AF%86APK%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E3%80%81%E5%8F%8C%E5%BC%80%E3%80%81%E6%B1%89%E5%8C%96%E3%80%81%E5%9F%BA%E7%A1%80%E4%BF%AE%E6%94%B9"><span class="toc-text">初识APK文件结构、双开、汉化、基础修改</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87"><span class="toc-text">1.课程目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B7%A5%E5%85%B7"><span class="toc-text">2.工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9"><span class="toc-text">3.课程内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Apk%E7%BB%93%E6%9E%84"><span class="toc-text">1.Apk结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%8C%E5%BC%80%E5%8F%8A%E5%8E%9F%E7%90%86"><span class="toc-text">2.双开及原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B1%89%E5%8C%96APK"><span class="toc-text">3.汉化APK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%88%9D%E8%AF%86AndroidManifest-xml"><span class="toc-text">4.初识AndroidManifest.xml</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BD%9C%E4%B8%9A"><span class="toc-text">4.作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%8C%E5%BC%80"><span class="toc-text">1.双开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2%E5%8F%8A%E6%96%87%E5%AD%97%E6%B1%89%E5%8C%96"><span class="toc-text">2.图片替换及文字汉化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%8F%8A%E5%90%8D%E7%A7%B0"><span class="toc-text">3.修改应用图标及名称</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">初识APK文件结构、双开、汉化、基础修改</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">1.课程目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">2.工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">3.课程内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">1.Apk结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">2.双开及原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">3.汉化APK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">4.初识AndroidManifest.xml</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">4.作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">1.双开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">2.图片替换及文字汉化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">3.修改应用图标及名称</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -527,15 +533,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <meta name="referrer" content="no-referrer" />
+        <meta name="referrer" content="no-referrer">
 
-<h1 id="初识APK文件结构、双开、汉化、基础修改"><a href="#初识APK文件结构、双开、汉化、基础修改" class="headerlink" title="初识APK文件结构、双开、汉化、基础修改"></a>初识APK文件结构、双开、汉化、基础修改</h1><img src="http://pic.rmb.bdstatic.com/bjh/0805127fa851ed69cc1b88602b4e030f.png" alt="MT" style="zoom: 50%;" />
+<!-- toc -->
+
+<ul>
+<li><a href="#%E5%88%9D%E8%AF%86apk%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84-%E5%8F%8C%E5%BC%80-%E6%B1%89%E5%8C%96-%E5%9F%BA%E7%A1%80%E4%BF%AE%E6%94%B9">初识APK文件结构、双开、汉化、基础修改</a><ul>
+<li><a href="#1%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87">1.课程目标</a></li>
+<li><a href="#2%E5%B7%A5%E5%85%B7">2.工具</a></li>
+<li><a href="#3%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9">3.课程内容</a><ul>
+<li><a href="#1apk%E7%BB%93%E6%9E%84">1.Apk结构</a></li>
+<li><a href="#2%E5%8F%8C%E5%BC%80%E5%8F%8A%E5%8E%9F%E7%90%86">2.双开及原理</a></li>
+<li><a href="#3%E6%B1%89%E5%8C%96apk">3.汉化APK</a></li>
+<li><a href="#4%E5%88%9D%E8%AF%86androidmanifestxml">4.初识AndroidManifest.xml</a></li>
+</ul>
+</li>
+<li><a href="#4%E4%BD%9C%E4%B8%9A">4.作业</a><ul>
+<li><a href="#1%E5%8F%8C%E5%BC%80">1.双开</a></li>
+<li><a href="#2%E5%9B%BE%E7%89%87%E6%9B%BF%E6%8D%A2%E5%8F%8A%E6%96%87%E5%AD%97%E6%B1%89%E5%8C%96">2.图片替换及文字汉化</a></li>
+<li><a href="#3%E4%BF%AE%E6%94%B9%E5%BA%94%E7%94%A8%E5%9B%BE%E6%A0%87%E5%8F%8A%E5%90%8D%E7%A7%B0">3.修改应用图标及名称</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="初识apk文件结构-双开-汉化-基础修改">初识APK文件结构、双开、汉化、基础修改</span></h1><img src="http://pic.rmb.bdstatic.com/bjh/0805127fa851ed69cc1b88602b4e030f.png" alt="MT" style="zoom: 50%;">
 
 
 
-<h2 id="1-课程目标"><a href="#1-课程目标" class="headerlink" title="1.课程目标"></a>1.课程目标</h2><p>1.了解APK文件结构<br>2.双开APK，简单了解原理<br>3.汉化APK<br>4.简单修改APK名字、图标</p>
-<h2 id="2-工具"><a href="#2-工具" class="headerlink" title="2.工具"></a>2.工具</h2><p>1.教程Demo<br>2.MT管理器&#x2F;NP管理器<br>3.开发者助手<br>4.雷电模拟器</p>
-<h2 id="3-课程内容"><a href="#3-课程内容" class="headerlink" title="3.课程内容"></a>3.课程内容</h2><h3 id="1-Apk结构"><a href="#1-Apk结构" class="headerlink" title="1.Apk结构"></a>1.Apk结构</h3><p>apk 全称 Android Package，它相当于一个压缩文件，只要在电脑上将apk后缀改为zip即可解压。</p>
+<h2><span id="1课程目标">1.课程目标</span></h2><p>1.了解APK文件结构<br>2.双开APK，简单了解原理<br>3.汉化APK<br>4.简单修改APK名字、图标</p>
+<h2><span id="2工具">2.工具</span></h2><p>1.教程Demo<br>2.MT管理器&#x2F;NP管理器<br>3.开发者助手<br>4.雷电模拟器</p>
+<h2><span id="3课程内容">3.课程内容</span></h2><h3><span id="1apk结构">1.Apk结构</span></h3><p>apk 全称 Android Package，它相当于一个压缩文件，只要在电脑上将apk后缀改为zip即可解压。</p>
 <table>
 <thead>
 <tr>
@@ -572,7 +602,7 @@
 <td align="left">resources.arsc是编译后的二进制资源文件，它是一个映射表，映射着资源和id，通过R文件中的id就可以找到对应的资源</td>
 </tr>
 </tbody></table>
-<h3 id="2-双开及原理"><a href="#2-双开及原理" class="headerlink" title="2.双开及原理"></a>2.双开及原理</h3><p>双开：简单来说，就是手机同时运行两个或多个相同的应用，例如同时运行两个微信</p>
+<h3><span id="2双开及原理">2.双开及原理</span></h3><p>双开：简单来说，就是手机同时运行两个或多个相同的应用，例如同时运行两个微信</p>
 <table>
 <thead>
 <tr>
@@ -597,12 +627,12 @@
 <td align="left">利用反射替换，动态代{过}{滤}理，hook了系统的大部分与system—server进程通讯的函数，以此作为“欺上瞒下”的目的，欺骗系统“以为”只有一个apk在运行，瞒过插件让其“认为”自己已经安装。例如：VirtualApp</td>
 </tr>
 </tbody></table>
-<h3 id="3-汉化APK"><a href="#3-汉化APK" class="headerlink" title="3.汉化APK"></a>3.汉化APK</h3><p>汉化：使用专门的工具对外文版的软件资源进行读取、翻译、修改、回写等一系列处理，使软件的菜单、对话框、提示等用户界面显示为中文，而程序的内核和功能保持不变，这个过程即为软件汉化</p>
+<h3><span id="3汉化apk">3.汉化APK</span></h3><p>汉化：使用专门的工具对外文版的软件资源进行读取、翻译、修改、回写等一系列处理，使软件的菜单、对话框、提示等用户界面显示为中文，而程序的内核和功能保持不变，这个过程即为软件汉化</p>
 <p><strong>基本上字符串都是在arsc里，建议一键汉化，然后再润色。<br>少量没汉化到的字符串参考视频中的方法定位去逐个汉化。</strong></p>
 <p><strong>流程图</strong></p>
 <p>这里还需要注意的是，如果要直装应用，那就应该先签名安装，看看是否有签名校验导致的闪退</p>
 <p><img src="http://pic.rmb.bdstatic.com/bjh/cb35179c3ff8786b19fc1d2d2ecae12e.png" alt="|1|800"></p>
-<h3 id="4-初识AndroidManifest-xml"><a href="#4-初识AndroidManifest-xml" class="headerlink" title="4.初识AndroidManifest.xml"></a>4.初识AndroidManifest.xml</h3><p>AndroidManifest.xml文件是整个应用程序的信息描述文件，定义了应用程序中包含的Activity,Service,Content provider和BroadcastReceiver组件信息。每个应用程序在根目录下必须包含一个AndroidManifest.xml文件，且文件名不能修改。它描述了package中暴露的组件，他们各自的实现类，各种能被处理的数据和启动位置。</p>
+<h3><span id="4初识androidmanifestxml">4.初识AndroidManifest.xml</span></h3><p>AndroidManifest.xml文件是整个应用程序的信息描述文件，定义了应用程序中包含的Activity,Service,Content provider和BroadcastReceiver组件信息。每个应用程序在根目录下必须包含一个AndroidManifest.xml文件，且文件名不能修改。它描述了package中暴露的组件，他们各自的实现类，各种能被处理的数据和启动位置。</p>
 <table>
 <thead>
 <tr>
@@ -639,63 +669,63 @@
 <td align="left">应用是否开启debug权限</td>
 </tr>
 </tbody></table>
-<h2 id="4-作业"><a href="#4-作业" class="headerlink" title="4.作业"></a>4.作业</h2><h3 id="1-双开"><a href="#1-双开" class="headerlink" title="1.双开"></a>1.双开</h3><p>NP管理器–&gt;安装包提取，选种我们要双开的软件，点击选择功能中APK共存，</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011190758845.png" alt="image-20221011190758845" style="zoom:50%;" />
+<h2><span id="4作业">4.作业</span></h2><h3><span id="1双开">1.双开</span></h3><p>NP管理器–&gt;安装包提取，选种我们要双开的软件，点击选择功能中APK共存，</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011190758845.png" alt="image-20221011190758845" style="zoom:50%;">
 
 <p>安装，桌面上成功出现两个一样的软件了。</p>
-<h3 id="2-图片替换及文字汉化"><a href="#2-图片替换及文字汉化" class="headerlink" title="2.图片替换及文字汉化"></a>2.图片替换及文字汉化</h3><p>打开第一关</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011190912266.png" alt="image-20221011190912266" style="zoom:50%;" />
+<h3><span id="2图片替换及文字汉化">2.图片替换及文字汉化</span></h3><p>打开第一关</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011190912266.png" alt="image-20221011190912266" style="zoom:50%;">
 
 <p>先替换了第一处的 <code>Hello 52pojie</code></p>
 <p>打开MT管理器，定位安装包，选择搜索功能，查找Hello (选中高级搜索)</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191138642.png" alt="image-20221011191138642" style="zoom:50%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191138642.png" alt="image-20221011191138642" style="zoom:50%;">
 
 <p>成功找到文字所在位置Jf.xml</p>
 <p>将<code>Hello 52pojie</code>改成<code>你好 xzenge</code></p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191327914.png" alt="image-20221011191327914" style="zoom:33%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191327914.png" alt="image-20221011191327914" style="zoom:33%;">
 
 <p>保存，退出。对其进行更新</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191405897.png" alt="image-20221011191405897" style="zoom:50%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191405897.png" alt="image-20221011191405897" style="zoom:50%;">
 
 <p>更新软件（安装）</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191523304.png" alt="image-20221011191523304" style="zoom:50%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191523304.png" alt="image-20221011191523304" style="zoom:50%;">
 
 <p>第一步成功，</p>
 <p>在res中中找到图片的位置：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191952308.png" alt="image-20221011191952308" style="zoom: 43%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011191952308.png" alt="image-20221011191952308" style="zoom: 43%;">
 
 <p>找张jpg图片改成跟cf.jpg替换掉它（共享文件夹，长按添加）。</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194108232.png" alt="image-20221011194108232" style="zoom:50%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194108232.png" alt="image-20221011194108232" style="zoom:50%;">
 
 <p>进行下一行，将修改</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194227979.png" alt="image-20221011194227979" style="zoom:50%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194227979.png" alt="image-20221011194227979" style="zoom:50%;">
 
 <p>此时需要借助开发者助手：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194440223.png" alt="image-20221011194440223" style="zoom:33%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011194440223.png" alt="image-20221011194440223" style="zoom:33%;">
 
 <p>复制红色框框中的，其余与第一处汉化相同：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011195404865.png" alt="image-20221011195404865" style="zoom:50%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011195404865.png" alt="image-20221011195404865" style="zoom:50%;">
 
 <p>成功，最后一步：</p>
 <p>依旧搜索一下，在class.dex中发现了字符串进入进行修改，</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011202859021.png" alt="image-20221011202859021" style="zoom:50%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011202859021.png" alt="image-20221011202859021" style="zoom:50%;">
 
 <p>成功完成所有步骤。</p>
-<h3 id="3-修改应用图标及名称"><a href="#3-修改应用图标及名称" class="headerlink" title="3.修改应用图标及名称"></a>3.修改应用图标及名称</h3><p>根据课程的学习，可以知道相关信息在AndroidManifest.xml中</p>
+<h3><span id="3修改应用图标及名称">3.修改应用图标及名称</span></h3><p>根据课程的学习，可以知道相关信息在AndroidManifest.xml中</p>
 <p>打开AndroidManifest.xml</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200001891.png" alt="image-20221011200001891" style="zoom:39%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200001891.png" alt="image-20221011200001891" style="zoom:39%;">
 
 <p><code>android:icon=&quot;@mipmap/ic_launcher&quot;  应用图标路径</code></p>
 <p><code>android:label=&quot;@string/app_name&quot;  应用名称</code></p>
 <p>根据AndroidManifest.xml信息可以得知相关文件的位置</p>
 <p>使用NP管理器的通用编程即可进行相关修改</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200531149.png" alt="image-20221011200531149" style="zoom:35%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200531149.png" alt="image-20221011200531149" style="zoom:35%;">
 
 <p>修改完成后，保存即可</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200611624.png" alt="image-20221011200611624" style="zoom:35%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200611624.png" alt="image-20221011200611624" style="zoom:35%;">
 
 <p>安装后，启动软件</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200737562.png" alt="image-20221011200737562" style="zoom:60%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221011200737562.png" alt="image-20221011200737562" style="zoom:60%;">
 
 <p>成功修改了桌面的图标.</p>
 <p>完结，撒花！！！</p>

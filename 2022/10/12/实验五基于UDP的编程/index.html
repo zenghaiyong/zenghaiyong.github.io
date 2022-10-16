@@ -6,39 +6,36 @@
   <meta name="keywords" content=" 网络编程 ">
   <meta name="description" content="实验五基于UDP的编程 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="#vulnhub 靶场 PYLINGTON: 1 一，信息收集1.使用nmap对目标靶机进行扫描   发现开放了22和80端口。 2.80端口 查看源码也没发现什么，扫一下目录：   发现有 robots.txt 文件，查看一下：   &#x2F;zbir7mn240soxhicso2z 有点可疑，访问一下：   发现了一组用户名和密码。 Username: steve  Password:">
+<meta name="description" content="web 1.easy_html 2.2048 3.easy_upload 4.Interesting_include 5.Interesting_http      web1.easy_html在htmL源码中发现 查看下cookie  发现了一个子目录&#x2F;f14g.php   输入手机号码，但是输入框只能输入10个数字，去前端修改下   将箭头处改成11即可，访问     2.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vulnhub 靶场 PYLINGTON 1">
-<meta property="og:url" content="http://example.com/2022/10/14/vulnhub-%E9%9D%B6%E5%9C%BA-PYLINGTON-1/index.html">
+<meta property="og:title" content="HNCTF week-1">
+<meta property="og:url" content="http://example.com/2022/10/16/HNCTF-week-1/index.html">
 <meta property="og:site_name" content="xzenge">
-<meta property="og:description" content="#vulnhub 靶场 PYLINGTON: 1 一，信息收集1.使用nmap对目标靶机进行扫描   发现开放了22和80端口。 2.80端口 查看源码也没发现什么，扫一下目录：   发现有 robots.txt 文件，查看一下：   &#x2F;zbir7mn240soxhicso2z 有点可疑，访问一下：   发现了一组用户名和密码。 Username: steve  Password:">
+<meta property="og:description" content="web 1.easy_html 2.2048 3.easy_upload 4.Interesting_include 5.Interesting_http      web1.easy_html在htmL源码中发现 查看下cookie  发现了一个子目录&#x2F;f14g.php   输入手机号码，但是输入框只能输入10个数字，去前端修改下   将箭头处改成11即可，访问     2.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014130814948.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014133559374.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014141655256.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014141757452.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014141931233.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014142307407.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014142320530.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014142808605.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014145537128.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014143654886.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014143841156.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014143918634.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144042931.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144224823.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144319052.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144800761.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014145753959.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014150213122.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014150450397.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014150610242.png">
-<meta property="article:published_time" content="2022-10-14T07:40:33.000Z">
-<meta property="article:modified_time" content="2022-10-14T15:01:59.944Z">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016163855319.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016163937631.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164045408.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164108855.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164411566.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164511664.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164950292.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165230832.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165519665.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165720294.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165759074.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016171510361.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016172027411.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210457999.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210527105.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210742200.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210806000.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210905264.png">
+<meta property="article:published_time" content="2022-10-16T13:27:48.000Z">
+<meta property="article:modified_time" content="2022-10-16T13:28:54.314Z">
 <meta property="article:author" content="xzenge">
-<meta property="article:tag" content="靶机实战">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014130814948.png">
+<meta name="twitter:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016163855319.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -240,7 +237,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(7)</small>
+                <small>(8)</small>
             
         </div>
     </li>
@@ -321,8 +318,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="7">
-<input type="hidden" id="yelog_site_word_count" value="12.9k">
+<input type="hidden" id="yelog_site_posts_number" value="8">
+<input type="hidden" id="yelog_site_word_count" value="13.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -385,6 +382,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 "
+           href="/2022/10/16/HNCTF-week-1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="HNCTF week-1">HNCTF week-1</span>
+            <span class="post-date" title="2022-10-16 21:27:48">2022/10/16</span>
+        </a>
         
         
         <a  class="全部文章 渗透测试 "
@@ -486,12 +492,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-10-12 20:26:56'>2022-10-12 05:25</time>
+            发布时间 : <time class="date" title='最后更新: 2022-10-16 21:26:01'>2022-10-12 05:25</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1k</span>
+        <span>字数:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -510,7 +516,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%94%E5%9F%BA%E4%BA%8EUDP%E7%9A%84%E7%BC%96%E7%A8%8B"><span class="toc-text">实验五基于UDP的编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82"><span class="toc-text">实验要求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">一实验目的:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">二、实验内容：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%95%88%E6%9E%9C%E8%A6%81%E6%B1%82"><span class="toc-text">三效果要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%B1%82%E8%A7%A3"><span class="toc-text">实验求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1"><span class="toc-text">实验1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C2"><span class="toc-text">实验2</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">实验五基于UDP的编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验要求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">一实验目的:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">二、实验内容：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">三效果要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">实验1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">实验2</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -526,23 +532,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <meta name="referrer" content="no-referrer" />
+        <meta name="referrer" content="no-referrer">
 
-<h1 id="实验五基于UDP的编程"><a href="#实验五基于UDP的编程" class="headerlink" title="实验五基于UDP的编程"></a>实验五基于UDP的编程</h1><h2 id="实验要求"><a href="#实验要求" class="headerlink" title="实验要求"></a>实验要求</h2><h3 id="一实验目的"><a href="#一实验目的" class="headerlink" title="一实验目的:"></a>一实验目的:</h3><p>熟练掌握UDP下的网络编程</p>
-<h3 id="二、实验内容："><a href="#二、实验内容：" class="headerlink" title="二、实验内容："></a>二、实验内容：</h3><p>1、回射程序的基本功能：即回声，客户端发送什么数据，服务器端就客户端返回什么数据，服务器并显示客户端的IP地址即端口号。服务器端口号为4000.</p>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E4%BA%94%E5%9F%BA%E4%BA%8Eudp%E7%9A%84%E7%BC%96%E7%A8%8B">实验五基于UDP的编程</a><ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82">实验要求</a><ul>
+<li><a href="#%E4%B8%80%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">一实验目的:</a></li>
+<li><a href="#%E4%BA%8C-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">二、实验内容：</a></li>
+<li><a href="#%E4%B8%89%E6%95%88%E6%9E%9C%E8%A6%81%E6%B1%82">三效果要求</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E6%B1%82%E8%A7%A3">实验求解</a><ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C1">实验1</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C2">实验2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="实验五基于udp的编程">实验五基于UDP的编程</span></h1><h2><span id="实验要求">实验要求</span></h2><h3><span id="一实验目的">一实验目的:</span></h3><p>熟练掌握UDP下的网络编程</p>
+<h3><span id="二-实验内容">二、实验内容：</span></h3><p>1、回射程序的基本功能：即回声，客户端发送什么数据，服务器端就客户端返回什么数据，服务器并显示客户端的IP地址即端口号。服务器端口号为4000.</p>
 <p>2、计算面积功能：</p>
 <p>服务器端口号为4000，客户端将矩形的长和宽发给服务器，服务器计算出矩形的面积，并把面积发送给客户端，客户端收到后，显示出来。</p>
-<h3 id="三效果要求"><a href="#三效果要求" class="headerlink" title="三效果要求"></a>三效果要求</h3><p>实验1：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012195718007.png" alt="image-20221012195718007" style="zoom: 67%;" />
+<h3><span id="三效果要求">三效果要求</span></h3><p>实验1：</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012195718007.png" alt="image-20221012195718007" style="zoom: 67%;">
 
 
 
 <p>实验2：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012195740742.png" alt="image-20221012195740742" style="zoom: 80%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012195740742.png" alt="image-20221012195740742" style="zoom: 80%;">
 
 
 
-<h2 id="实验求解"><a href="#实验求解" class="headerlink" title="实验求解"></a>实验求解</h2><h3 id="实验1"><a href="#实验1" class="headerlink" title="实验1"></a>实验1</h3><pre><code>ntohs()    			网络字节位转主机字节位
+<h2><span id="实验求解">实验求解</span></h2><h3><span id="实验1">实验1</span></h3><pre><code>ntohs()    			网络字节位转主机字节位
 inet_ntoa()			将网络地址转换成“.”点隔的字符串格式。
 </code></pre>
 <p><strong>服务器代码：</strong></p>
@@ -639,11 +665,11 @@ int main(int argc, char* argv[])
 &#125;
 </code></pre>
 <p><strong>实验截图：</strong></p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/QQ%E5%9B%BE%E7%89%8720221012200203.jpg" alt="图片20221012200203" style="zoom:50%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/QQ%E5%9B%BE%E7%89%8720221012200203.jpg" alt="图片20221012200203" style="zoom:50%;">
 
 
 
-<h3 id="实验2"><a href="#实验2" class="headerlink" title="实验2"></a>实验2</h3><p><strong>服务器代码</strong></p>
+<h3><span id="实验2">实验2</span></h3><p><strong>服务器代码</strong></p>
 <pre><code class="c">// 实验服务端.cpp : Defines the entry point for the console application.
 //
 
@@ -746,7 +772,7 @@ int main(int argc, char* argv[])
 &#125;
 </code></pre>
 <p>实验截图：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012200408243.png" alt="image-20221012200408243" style="zoom:50%;" />
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221012200408243.png" alt="image-20221012200408243" style="zoom:50%;">
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
