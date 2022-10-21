@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>HNCTF week-1 | xzenge</title>
+  <title>安卓逆向学习日记-day2 | xzenge</title>
   <meta name="keywords" content="">
-  <meta name="description" content="HNCTF week-1 | xzenge">
+  <meta name="description" content="安卓逆向学习日记-day2 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="三、初识smali，vip终结者 一、课程目标 二、工具 三、课程内容 1.什么是JVM、Dalvik、ART 2.smali及其语法 3.寄存器   四、课后小作业 1.自己实现强制跳转 2.将作业进行破解        学习自吾爱破解-正己 三、初识smali，vip终结者  一、课程目标 1.了解JVM、Dalvik、ART2.初识smali语法3.实战修改smali 二、工具 1">
 <meta property="og:type" content="article">
@@ -482,9 +482,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-HNCTF-week-1" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-安卓逆向学习日记-day2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">HNCTF week-1</h1>
+        <h1 class="article-title">安卓逆向学习日记-day2</h1>
     
     <div class="article-meta">
         
@@ -494,12 +494,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-10-16 21:28:54'>2022-10-16 21:27</time>
+            发布时间 : <time class="date" title='最后更新: 2022-10-21 21:13:37'>2022-10-21 21:12</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:696</span>
+        <span>字数:1.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -518,7 +518,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">web</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">1.easy_html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">2.2048</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">3.easy_upload</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">4.Interesting_include</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">5.Interesting_http</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">三、初识smali，vip终结者</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">一、课程目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">二、工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">三、课程内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">1.什么是JVM、Dalvik、ART</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">2.smali及其语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">3.寄存器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">四、课后小作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">1.自己实现强制跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">2.将作业进行破解</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -539,139 +539,383 @@
 <!-- toc -->
 
 <ul>
-<li><a href="#web">web</a><ul>
-<li><a href="#1easy_html">1.easy_html</a></li>
-<li><a href="#22048">2.2048</a></li>
-<li><a href="#3easy_upload">3.easy_upload</a></li>
-<li><a href="#4interesting_include">4.Interesting_include</a></li>
-<li><a href="#5interesting_http">5.Interesting_http</a></li>
+<li><a href="#%E4%B8%89-%E5%88%9D%E8%AF%86smalivip%E7%BB%88%E7%BB%93%E8%80%85">三、初识smali，vip终结者</a><ul>
+<li><a href="#%E4%B8%80-%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87">一、课程目标</a></li>
+<li><a href="#%E4%BA%8C-%E5%B7%A5%E5%85%B7">二、工具</a></li>
+<li><a href="#%E4%B8%89-%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9">三、课程内容</a><ul>
+<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AFjvm-dalvik-art">1.什么是JVM、Dalvik、ART</a></li>
+<li><a href="#2smali%E5%8F%8A%E5%85%B6%E8%AF%AD%E6%B3%95">2.smali及其语法</a></li>
+<li><a href="#3%E5%AF%84%E5%AD%98%E5%99%A8">3.寄存器</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%9B-%E8%AF%BE%E5%90%8E%E5%B0%8F%E4%BD%9C%E4%B8%9A">四、课后小作业</a><ul>
+<li><a href="#1%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E5%BC%BA%E5%88%B6%E8%B7%B3%E8%BD%AC">1.自己实现强制跳转</a></li>
+<li><a href="#2%E5%B0%86%E4%BD%9C%E4%B8%9A%E8%BF%9B%E8%A1%8C%E7%A0%B4%E8%A7%A3">2.将作业进行破解</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
 
-<h2><span id="web">web</span></h2><h3><span id="1easy_html">1.easy_html</span></h3><p>在htmL源码中发现</p>
-<p>查看下cookie</p>
-<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016163855319.png" alt="image-20221016163855319"></p>
-<p>发现了一个子目录&#x2F;f14g.php</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016163937631.png" alt="image-20221016163937631" style="zoom:50%;">
+<p><code>学习自吾爱破解-正己</code></p>
+<h1><span id="三-初识smalivip终结者">三、初识smali，vip终结者</span></h1><img src="http://pic.rmb.bdstatic.com/bjh/96c49239b5565c8b8e8e55e724a08a79.png" alt="|400" style="zoom: 80%;">
 
-<p>输入手机号码，但是输入框只能输入10个数字，去前端修改下</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164045408.png" alt="image-20221016164045408" style="zoom:43%;">
+<h2><span id="一-课程目标">一、课程目标</span></h2><hr>
+<p>1.了解JVM、Dalvik、ART<br>2.初识smali语法<br>3.实战修改smali</p>
+<h2><span id="二-工具">二、工具</span></h2><hr>
+<p>1.教程Demo(更新)<br>2.MT管理器&#x2F;NP管理器<br>3.雷电模拟器<br>4.jadx-gui<br>5.核心破解</p>
+<h2><span id="三-课程内容">三、课程内容</span></h2><hr>
+<h3><span id="1什么是jvm-dalvik-art">1.什么是JVM、Dalvik、ART</span></h3><p>JVM是JAVA虚拟机，运行JAVA字节码程序<br>Dalvik是Google专门为Android设计的一个虚拟机，Dalvik有专属的文件执行格式dex(Dalvik executable)<br>Art(Android Runtime)相当于Dalvik的升级版，本质与Dalvik无异</p>
+<h3><span id="2smali及其语法">2.smali及其语法</span></h3><p>smali是Dalvik的寄存器语言，smali代码是dex反编译而来的。</p>
+<p>关键字</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">.class</td>
+<td align="left">类名</td>
+</tr>
+<tr>
+<td align="left">.super</td>
+<td align="left">父类名，继承的上级类名名称</td>
+</tr>
+<tr>
+<td align="left">.source</td>
+<td align="left">源名</td>
+</tr>
+<tr>
+<td align="left">.field</td>
+<td align="left">变量</td>
+</tr>
+<tr>
+<td align="left">.method</td>
+<td align="left">方法名</td>
+</tr>
+<tr>
+<td align="left">.register</td>
+<td align="left">寄存器</td>
+</tr>
+<tr>
+<td align="left">.end method</td>
+<td align="left">方法名的结束</td>
+</tr>
+<tr>
+<td align="left">public</td>
+<td align="left">公有</td>
+</tr>
+<tr>
+<td align="left">protected</td>
+<td align="left">半公开，只有同一家人才能用</td>
+</tr>
+<tr>
+<td align="left">private</td>
+<td align="left">私有，只能自己使用</td>
+</tr>
+<tr>
+<td align="left">.parameter</td>
+<td align="left">方法参数</td>
+</tr>
+<tr>
+<td align="left">.prologue</td>
+<td align="left">方法开始</td>
+</tr>
+<tr>
+<td align="left">.line xxx</td>
+<td align="left">位于第xxx行</td>
+</tr>
+</tbody></table>
+<p>数据类型对应</p>
+<table>
+<thead>
+<tr>
+<th align="left">smali类型</th>
+<th align="left">java类型</th>
+<th align="left">注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">V</td>
+<td align="left">void</td>
+<td align="left">无返回值</td>
+</tr>
+<tr>
+<td align="left">Z</td>
+<td align="left">boolean</td>
+<td align="left">布尔值类型，返回0或1</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="left">byte</td>
+<td align="left">字节类型，返回字节</td>
+</tr>
+<tr>
+<td align="left">S</td>
+<td align="left">short</td>
+<td align="left">短整数类型，返回数字</td>
+</tr>
+<tr>
+<td align="left">C</td>
+<td align="left">char</td>
+<td align="left">字符类型，返回字符</td>
+</tr>
+<tr>
+<td align="left">I</td>
+<td align="left">int</td>
+<td align="left">整数类型，返回数字</td>
+</tr>
+<tr>
+<td align="left">J</td>
+<td align="left">long （64位 需要2个寄存器存储）</td>
+<td align="left">长整数类型，返回数字</td>
+</tr>
+<tr>
+<td align="left">F</td>
+<td align="left">float</td>
+<td align="left">单浮点类型，返回数字</td>
+</tr>
+<tr>
+<td align="left">D</td>
+<td align="left">double （64位 需要2个寄存器存储）</td>
+<td align="left">双浮点类型，返回数字</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="left">String</td>
+<td align="left">文本类型，返回字符串</td>
+</tr>
+<tr>
+<td align="left">Lxxx&#x2F;xxx&#x2F;xxx</td>
+<td align="left">object</td>
+<td align="left">对象类型，返回对象</td>
+</tr>
+</tbody></table>
+<p>常用指令</p>
+<table>
+<thead>
+<tr>
+<th align="left">关键字</th>
+<th align="left">注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">const</td>
+<td align="left">重写整数属性，真假属性内容，只能是数字类型  （赋值）</td>
+</tr>
+<tr>
+<td align="left">const-string</td>
+<td align="left">重写字符串内容 （赋值）</td>
+</tr>
+<tr>
+<td align="left">const-wide</td>
+<td align="left">重写长整数类型，多用于修改到期时间。 （赋值）</td>
+</tr>
+<tr>
+<td align="left">return</td>
+<td align="left">返回指令</td>
+</tr>
+<tr>
+<td align="left">if-eq</td>
+<td align="left">全称equal(a&#x3D;b)，比较寄存器ab内容，相同则跳</td>
+</tr>
+<tr>
+<td align="left">if-ne</td>
+<td align="left">全称not equal(a!&#x3D;b)，ab内容不相同则跳</td>
+</tr>
+<tr>
+<td align="left">if-eqz</td>
+<td align="left">全称equal zero(a&#x3D;0)，z即是0的标记，a等于0则跳</td>
+</tr>
+<tr>
+<td align="left">if-nez</td>
+<td align="left">全称not equal zero(a!&#x3D;0)，a不等于0则跳</td>
+</tr>
+<tr>
+<td align="left">if-ge</td>
+<td align="left">全称garden equal(a&gt;&#x3D;b)，a大于或等于则跳</td>
+</tr>
+<tr>
+<td align="left">if-le</td>
+<td align="left">全称little equal(a&lt;&#x3D;b)，a小于或等于则跳</td>
+</tr>
+<tr>
+<td align="left">goto</td>
+<td align="left">强制跳到指定位置</td>
+</tr>
+<tr>
+<td align="left">switch</td>
+<td align="left">分支跳转，一般会有多个分支线，并根据指令跳转到适当位置</td>
+</tr>
+<tr>
+<td align="left">iget</td>
+<td align="left">获取寄存器数据</td>
+</tr>
+</tbody></table>
+<p>其余指令可用语法工具查询</p>
+<p>定位方法：搜索弹窗关键字、抓取按钮id</p>
+<p>例子：</p>
+<pre><code class="java"> 复制代码 隐藏代码//一个私有、静态、不可变的方法   方法名
+.method private static final onCreate$lambda-2(Lkotlin/jvm/internal/Ref$IntRef;Lcom/zj/wuaipojie/ui/ChallengeSecond;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/view/View;)Z //(这里面是方法的参数)这里是方法返回值类型，表示布尔值类型，返回假或真
+    .registers 7  //寄存器数量
 
-<p>将箭头处改成11即可，访问</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164108855.png" alt="image-20221016164108855" style="zoom:50%;">
+    .line 33  //代码所在的行数
+    iget p0, p0, Lkotlin/jvm/internal/Ref$IntRef;-&gt;element:I  //读取p0(第一个参数，参考寄存器知识)中element的值赋值给p0
 
+    const/4 p5, 0x1  //p5赋值1
 
+    const/16 v0, 0xa //v0赋值10，在16进制里a表示10
 
-<h3><span id="22048">2.2048</span></h3><blockquote>
-<p>你能达到20000分吗 获得的flag以NSSCTF{}格式提交</p>
-</blockquote>
-<p>打开页面，是2048这个游戏，根据提示得得到20000才能获取flag。</p>
-<p>直接在搜索框中搜锁20000，去到查找到的源码处</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164411566.png" alt="image-20221016164411566" style="zoom: 40%;">
+    if-ge p0, v0, :cond_15  //判断p0的值是否大于或等于v0的值(即p0的值是否大于或等于10)，如果大于或等于则跳转到:cond_15
 
-<p>将if语句中的子句放到控制台运行，就可以得到flag</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164511664.png" alt="image-20221016164511664" style="zoom: 50%;">
+    .line 34  //以下是常见的Toast弹窗代码
+    check-cast p1, Landroid/content/Context; //检查Context对象引用
 
+    const-string p0, &quot;请先获取10个硬币哦&quot; //弹窗文本信息，把&quot;&quot;里的字符串数据赋值给p0
 
+    check-cast p0, Ljava/lang/CharSequence; //检查CharSequence对象引用
 
-<h3><span id="3easy_upload">3.easy_upload</span></h3><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016164950292.png" alt="image-20221016164950292" style="zoom:50%;">
+    invoke-static &#123;p1, p0, p5&#125;, Landroid/widget/Toast;-&gt;makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast; 
+    //将弹窗文本、显示时间等信息传给p1
 
-<p>简单的文件上传，</p>
-<p>直接上传一句话木马试试</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165230832.png" alt="image-20221016165230832" style="zoom:50%;">
+    move-result-object p0  //结果传递给p0
 
-<p>测试下成功了没</p>
-<p><img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165519665.png" alt="image-20221016165519665"></p>
-<p>查看根目录</p>
-<pre><code class="php">shell=system(&quot;ls /&quot;);
+    invoke-virtual &#123;p0&#125;, Landroid/widget/Toast;-&gt;show()V  //当看到这个Toast;-&gt;show你就应该反应过来这里是弹窗代码
+
+    goto :goto_31  //跳转到:goto_31
+
+    :cond_15 //跳转的一个地址
+
+    invoke-virtual &#123;p1&#125;, Lcom/zj/wuaipojie/ui/ChallengeSecond;-&gt;isvip()Z  //判断isvip方法的返回值是否为真(即结果是否为1)
+
+    move-result p0  //结果赋值给p0
+
+    if-eqz p0, :cond_43 //如果结果为0则跳转cond_43地址
+
+    const p0, 0x7f0d0018  //在arsc中的id索引，这个值可以进行查询
+
+    .line 37
+    invoke-virtual &#123;p2, p0&#125;, Landroid/widget/ImageView;-&gt;setImageResource(I)V //设置图片资源
+
+    const p0, 0x7f0d0008
+
+    .line 38
+    invoke-virtual &#123;p3, p0&#125;, Landroid/widget/ImageView;-&gt;setImageResource(I)V
+
+    const p0, 0x7f0d000a
+
+    .line 39
+    invoke-virtual &#123;p4, p0&#125;, Landroid/widget/ImageView;-&gt;setImageResource(I)V
+
+    .line 40
+    sget-object p0, Lcom/zj/wuaipojie/util/SPUtils;-&gt;INSTANCE:Lcom/zj/wuaipojie/util/SPUtils; 
+
+    check-cast p1, Landroid/content/Context;
+
+    const/4 p2, 0x2 //p2赋值2
+
+    const-string p3, &quot;level&quot; //sp的索引
+
+    invoke-virtual &#123;p0, p1, p3, p2&#125;, Lcom/zj/wuaipojie/util/SPUtils;-&gt;saveInt(Landroid/content/Context;Ljava/lang/String;I)V //写入数据
+
+    goto :goto_50 //跳转地址
+
+    :cond_43
+
+    check-cast p1, Landroid/content/Context;
+
+    const-string p0, &quot;\u8bf7\u5148\u5145\u503c\u5927\u4f1a\u5458\u54e6\uff01&quot; //请先充值大会员哦！
+
+    check-cast p0, Ljava/lang/CharSequence;
+
+    invoke-static &#123;p1, p0, p5&#125;, Landroid/widget/Toast;-&gt;makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object p0
+
+    invoke-virtual &#123;p0&#125;, Landroid/widget/Toast;-&gt;show()V
+
+    :goto_50
+    return p5  //返回p5的值
+.end method //方法结束
+
+//判断是否是大会员的方法
+.method public final isvip()Z
+    .registers 2
+
+    const/4 v0, 0x0 //v0赋值0
+
+    return v0 //返回v0的值
+
+.end method
 </code></pre>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165720294.png" alt="image-20221016165720294" style="zoom: 33%;">
+<p>修改方法：修改判断、强制跳转、修改寄存器的值</p>
+<p><img src="http://pic.rmb.bdstatic.com/bjh/fe7852e13a354ab54af29ff3a3361b3f.png" alt="img"></p>
+<h3><span id="3寄存器">3.寄存器</span></h3><p>在smali里的所有操作都必须经过寄存器来进行:</p>
+<p>本地寄存器用v开头数字结尾的符号来表示，如v0、 v1、v2。 </p>
+<p>参数寄存器则使用p开头数字结尾的符号来表示，如p0、p1、p2。</p>
+<p>特别注意的是，p0不一定是函数中的第一个参数，在非static函数中，p0代指“this”，p1表示函数的第一个 参数，p2代表函数中的第二个参数。而在static函数中p0才对应第一个参数(因为Java的static方法中没有this方法）</p>
+<h2><span id="四-课后小作业">四、课后小作业</span></h2><h3><span id="1自己实现强制跳转">1.自己实现强制跳转</span></h3><p>在对应位置设置一个跳转点 <code>:goto_a</code>a</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205430211.png" alt="image-20221021205430211" style="zoom:50%;">
 
-<p><strong>cat flag</strong></p>
-<pre><code>shell=system(&quot;cat /ffflllaaaggg&quot;);
+<p>再将上面判断是否有10个硬币的判断改为强制跳转</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205546415.png" alt="image-20221021205546415" style="zoom:50%;">
+
+
+
+<h3><span id="2将作业进行破解">2.将作业进行破解</span></h3><p>安装</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205748530.png" alt="image-20221021205748530" style="zoom:50%;">
+
+<p>打开查看</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205808321.png" alt="image-20221021205808321" style="zoom:50%;">
+
+<p>简单登入</p>
+<p>但需要正确的用户名和密码</p>
+<p>用MT管理器进入安装包提取</p>
+<p>反编译dex文件</p>
+<p>搜索登录</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021210017976.png" alt="image-20221021210017976" style="zoom:50%;">
+
+<p>查看关键代码</p>
+<pre><code class="java">   .registers 5
+    .param p1, &quot;name&quot;  # Ljava/lang/String;
+    .param p2, &quot;pass&quot;  # Ljava/lang/String;
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 28
+    const-string v0, &quot;hfdcxy&quot; //赋值给v0
+
+    invoke-virtual &#123;p1, v0&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z  //将p1和v0进行对比，将返回值给v0
+
+    move-result v0          
+
+    if-nez v0, :cond_1b   //判断返回值是否为真
+
+    const-string v0, &quot;1234&quot;     //赋值给v0
+
+    invoke-virtual &#123;p2, v0&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z       //将p2和v0进行对比，将返回值给v0
+
+    move-result v0
+
+    if-nez v0, :cond_1b          //判断返回值是否为真
+
+    .line 30
+    const-string v0, &quot;登录成功&quot;
 </code></pre>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016165759074.png" alt="image-20221016165759074" style="zoom: 33%;">
+<p>这两个值也就是用户名和密码了</p>
+<p>方法一：强制跳转</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021210659259.png" alt="image-20221021210659259" style="zoom:50%;">
 
-<p>得到flag!!!</p>
-<h3><span id="4interesting_include">4.Interesting_include</span></h3><blockquote>
-<p>web手要懂得搜索</p>
-</blockquote>
-<pre><code class="php">&lt;?php
-//WEB手要懂得搜索
-//flag in ./flag.php
+<p>在登录成功的位置定义一个跳转点，再在上面的判断前加上强制跳转。</p>
+<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021210816965.png" alt="image-20221021210816965" style="zoom:50%;">
 
-if(isset($_GET[&#39;filter&#39;]))&#123;
-    $file = $_GET[&#39;filter&#39;];
-    if(!preg_match(&quot;/flag/i&quot;, $file))&#123;
-        die(&quot;error&quot;);
-    &#125;
-    include($file);
-&#125;else&#123;
-    highlight_file(__FILE__);
-&#125;
-</code></pre>
-<p>查找下不动的函数</p>
-<p><strong>isset( )函数</strong></p>
-<pre><code>isset() 函数用于检测变量是否已设置并且非 NULL。
-
-如果已经使用 unset() 释放了一个变量之后，再通过 isset() 判断将返回 FALSE。
-
-若使用 isset() 测试一个被设置成 NULL 的变量，将返回 FALSE。
-
-同时要注意的是 null 字符（&quot;\0&quot;）并不等同于 PHP 的 NULL 常量。
-
-PHP 版本要求: PHP 4, PHP 5, PHP 7
-</code></pre>
-<p><strong>preg_match() 函数</strong></p>
-<pre><code class="php">preg_match 函数用于执行一个正则表达式匹配。
-&lt;?php
-//模式分隔符后的&quot;i&quot;标记这是一个大小写不敏感的搜索
-if (preg_match(&quot;/php/i&quot;, &quot;PHP is the web scripting language of choice.&quot;)) &#123;
-    echo &quot;查找到匹配的字符串 php。&quot;;
-&#125; else &#123;
-    echo &quot;未发现匹配的字符串 php。&quot;;
-&#125;
-?&gt;
-
-执行结果如下所示：
-php
-</code></pre>
-<p>也就是传参中一定得直接包含<code>flag</code></p>
-<p>去查找一下文件包含的讲解</p>
-<p><strong>php:&#x2F;&#x2F;filter</strong></p>
-<p><strong>php:&#x2F;&#x2F;filter</strong>可以获取指定文件源码。当它与包含函数结合时，php:&#x2F;&#x2F;filter流会被当作php文件执行。所以我们一般对其进行编码，让其不执行。从而导致 任意文件读取。</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016171510361.png" alt="image-20221016171510361" style="zoom:50%;">
-
-<p>POC1直接读取xxx.php文件，但大多数时候很多信息无法直接显示在浏览器页面上，所以需要采取POC2中方法将文件内容进行base64编码后显示在浏览器上，再自行解码。</p>
-<p>尝试下第二个payload</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016172027411.png" alt="image-20221016172027411" style="zoom:33%;">
-
-<p>解密得到flag</p>
-<p><code>NSSCTF&#123;ad78c5bd-a9ff-4b52-9ea8-cdb36d00c596&#125;</code></p>
-<h3><span id="5interesting_http">5.Interesting_http</span></h3><blockquote>
-<p>Give me your want!</p>
-</blockquote>
-<p>开启环境</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210457999.png" alt="image-20221016210457999" style="zoom:33%;">
-
-<p>post传参</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210527105.png" alt="image-20221016210527105" style="zoom:33%;">
-
-<p>bp抓包看下，放到repeater</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210742200.png" alt="image-20221016210742200" style="zoom: 67%;">
-
-<p>将user&#x3D;notadmin改成user&#x3D;admin</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210806000.png" alt="image-20221016210806000" style="zoom: 50%;">
-
-<p>not location，猜测是得本地访问</p>
-<p>加上 <code>X-Forwarded-For: 127.0.0.1</code></p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221016210905264.png" alt="image-20221016210905264" style="zoom: 47%;">
-
-<p>perfect！！！</p>
-<p>得到flag!</p>
-<p><del>索嘎</del></p>
+<p>空密码成功登入。</p>
+<p>方法二：修改判断</p>
+<p>将判断为真的 if-nez修改为if-eqz即可。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
