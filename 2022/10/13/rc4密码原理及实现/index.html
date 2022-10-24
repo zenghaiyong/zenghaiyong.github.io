@@ -6,27 +6,41 @@
   <meta name="keywords" content=" crypto ">
   <meta name="description" content="rc4密码原理及实现 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="三、初识smali，vip终结者 一、课程目标 二、工具 三、课程内容 1.什么是JVM、Dalvik、ART 2.smali及其语法 3.寄存器   四、课后小作业 1.自己实现强制跳转 2.将作业进行破解        学习自吾爱破解-正己 三、初识smali，vip终结者  一、课程目标 1.了解JVM、Dalvik、ART2.初识smali语法3.实战修改smali 二、工具 1">
+<meta name="description" content="misc 1.Crack Me 2.Coding In Time 3.Cycle Again 4.Coffee Please 5.Call the Alien 6.Cover Removed 7.Continue 8.Convert Something 9.Capture!      misc1.Crack Me decompressing in different ways  压缩包c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安卓逆向学习日记-day2">
-<meta property="og:url" content="http://example.com/2022/10/21/%E5%AE%89%E5%8D%93%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0-day2/index.html">
+<meta property="og:title" content="SWPU NSS新生赛-misc">
+<meta property="og:url" content="http://example.com/2022/10/24/SWPU-NSS%E6%96%B0%E7%94%9F%E8%B5%9B-misc/index.html">
 <meta property="og:site_name" content="xzenge">
-<meta property="og:description" content="三、初识smali，vip终结者 一、课程目标 二、工具 三、课程内容 1.什么是JVM、Dalvik、ART 2.smali及其语法 3.寄存器   四、课后小作业 1.自己实现强制跳转 2.将作业进行破解        学习自吾爱破解-正己 三、初识smali，vip终结者  一、课程目标 1.了解JVM、Dalvik、ART2.初识smali语法3.实战修改smali 二、工具 1">
+<meta property="og:description" content="misc 1.Crack Me 2.Coding In Time 3.Cycle Again 4.Coffee Please 5.Call the Alien 6.Cover Removed 7.Continue 8.Convert Something 9.Capture!      misc1.Crack Me decompressing in different ways  压缩包c">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://pic.rmb.bdstatic.com/bjh/96c49239b5565c8b8e8e55e724a08a79.png">
-<meta property="og:image" content="http://pic.rmb.bdstatic.com/bjh/fe7852e13a354ab54af29ff3a3361b3f.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205430211.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205546415.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205748530.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205808321.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021210017976.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021210659259.png">
-<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021210816965.png">
-<meta property="article:published_time" content="2022-10-21T13:12:39.000Z">
-<meta property="article:modified_time" content="2022-10-21T13:13:37.981Z">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024212029580.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024212057669.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024210758503.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024210836521.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024210932250.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024211047782.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024211205340.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024212711536.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024212747423.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024212908802.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024213208665.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024213319075.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024213451305.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024213458253.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024213807117.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024214202858.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024214548875.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024220349785.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024221015642.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024221308524.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024221402474.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024221621703.png">
+<meta property="og:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024221721800.png">
+<meta property="article:published_time" content="2022-10-24T14:19:07.000Z">
+<meta property="article:modified_time" content="2022-10-24T14:19:39.455Z">
 <meta property="article:author" content="xzenge">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://pic.rmb.bdstatic.com/bjh/96c49239b5565c8b8e8e55e724a08a79.png">
+<meta name="twitter:image" content="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221024212029580.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -228,7 +242,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(10)</small>
+                <small>(11)</small>
             
         </div>
     </li>
@@ -281,7 +295,7 @@
                     <div data-rel="CTF">
                         
                         CTF
-                        <small>(3)</small>
+                        <small>(4)</small>
                         
                     </div>
                     
@@ -309,8 +323,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="10">
-<input type="hidden" id="yelog_site_word_count" value="16.9k">
+<input type="hidden" id="yelog_site_posts_number" value="11">
+<input type="hidden" id="yelog_site_word_count" value="18.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -373,6 +387,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 CTF "
+           href="/2022/10/24/SWPU-NSS%E6%96%B0%E7%94%9F%E8%B5%9B-misc/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SWPU NSS新生赛-misc">SWPU NSS新生赛-misc</span>
+            <span class="post-date" title="2022-10-24 22:19:07">2022/10/24</span>
+        </a>
         
         
         <a  class="全部文章 "
