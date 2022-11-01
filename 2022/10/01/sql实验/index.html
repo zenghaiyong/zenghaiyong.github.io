@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>安卓逆向学习日记-day2 | xzenge</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="安卓逆向学习日记-day2 | xzenge">
+  <title>sql实验 | xzenge</title>
+  <meta name="keywords" content=" 数据库实验 ">
+  <meta name="description" content="sql实验 | xzenge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="web 1.webdog1__start 2.奇妙的MD5 3.XFF 4.where_am_i 5.ez_ez_php 6.ez_ez_php(revenge) 7.ez_rce 8.Ez_upload 9.numgame 10.1z_unserialize 11.js_sign      web1.webdog1__start 年轻的webdog哦，如果连这关都创不过还是去卷pwn和">
 <meta property="og:type" content="article">
@@ -551,24 +551,31 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-安卓逆向学习日记-day2" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sql实验" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">安卓逆向学习日记-day2</h1>
+        <h1 class="article-title">sql实验</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">数据库实验</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2022-10-21 21:13:37'>2022-10-21 21:12</time>
+            发布时间 : <time class="date" title='最后更新: 2022-11-01 16:20:17'>2022-10-01 16:19</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.9k</span>
+        <span>字数:2.9k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -587,7 +594,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">三、初识smali，vip终结者</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">一、课程目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">二、工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">三、课程内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">1.什么是JVM、Dalvik、ART</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">2.smali及其语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">3.寄存器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">四、课后小作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">1.自己实现强制跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">2.将作业进行破解</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">实验内容：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验一：创建数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验二：创建表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验三：表的维护</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验四：简单数据查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验五 复杂查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验六 创建视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验七 数据安全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验八 流程控制语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验九 索引的创建与使用，默认与规则的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验十存储过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验十一触发器实验</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -608,383 +615,392 @@
 <!-- toc -->
 
 <ul>
-<li><a href="#%E4%B8%89-%E5%88%9D%E8%AF%86smalivip%E7%BB%88%E7%BB%93%E8%80%85">三、初识smali，vip终结者</a><ul>
-<li><a href="#%E4%B8%80-%E8%AF%BE%E7%A8%8B%E7%9B%AE%E6%A0%87">一、课程目标</a></li>
-<li><a href="#%E4%BA%8C-%E5%B7%A5%E5%85%B7">二、工具</a></li>
-<li><a href="#%E4%B8%89-%E8%AF%BE%E7%A8%8B%E5%86%85%E5%AE%B9">三、课程内容</a><ul>
-<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AFjvm-dalvik-art">1.什么是JVM、Dalvik、ART</a></li>
-<li><a href="#2smali%E5%8F%8A%E5%85%B6%E8%AF%AD%E6%B3%95">2.smali及其语法</a></li>
-<li><a href="#3%E5%AF%84%E5%AD%98%E5%99%A8">3.寄存器</a></li>
-</ul>
-</li>
-<li><a href="#%E5%9B%9B-%E8%AF%BE%E5%90%8E%E5%B0%8F%E4%BD%9C%E4%B8%9A">四、课后小作业</a><ul>
-<li><a href="#1%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E5%BC%BA%E5%88%B6%E8%B7%B3%E8%BD%AC">1.自己实现强制跳转</a></li>
-<li><a href="#2%E5%B0%86%E4%BD%9C%E4%B8%9A%E8%BF%9B%E8%A1%8C%E7%A0%B4%E8%A7%A3">2.将作业进行破解</a></li>
-</ul>
-</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">实验内容：</a><ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E4%B8%80%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93">实验一：创建数据库</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C%E5%88%9B%E5%BB%BA%E8%A1%A8">实验二：创建表</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E4%B8%89%E8%A1%A8%E7%9A%84%E7%BB%B4%E6%8A%A4">实验三：表的维护</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%9B%9B%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2">实验四：简单数据查询</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E4%BA%94-%E5%A4%8D%E6%9D%82%E6%9F%A5%E8%AF%A2">实验五 复杂查询</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%85%AD-%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE">实验六 创建视图</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E4%B8%83-%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8">实验七 数据安全</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%85%AB-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5">实验八 流程控制语句</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E4%B9%9D-%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E4%B8%8E%E8%A7%84%E5%88%99%E7%9A%84%E5%88%9B%E5%BB%BA">实验九 索引的创建与使用，默认与规则的创建</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%8D%81%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B">实验十存储过程</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%8D%81%E4%B8%80%E8%A7%A6%E5%8F%91%E5%99%A8%E5%AE%9E%E9%AA%8C">实验十一触发器实验</a></li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
 
-<p><code>学习自吾爱破解-正己</code></p>
-<h1><span id="三-初识smalivip终结者">三、初识smali，vip终结者</span></h1><img src="http://pic.rmb.bdstatic.com/bjh/96c49239b5565c8b8e8e55e724a08a79.png" alt="|400" style="zoom: 80%;">
-
-<h2><span id="一-课程目标">一、课程目标</span></h2><hr>
-<p>1.了解JVM、Dalvik、ART<br>2.初识smali语法<br>3.实战修改smali</p>
-<h2><span id="二-工具">二、工具</span></h2><hr>
-<p>1.教程Demo(更新)<br>2.MT管理器&#x2F;NP管理器<br>3.雷电模拟器<br>4.jadx-gui<br>5.核心破解</p>
-<h2><span id="三-课程内容">三、课程内容</span></h2><hr>
-<h3><span id="1什么是jvm-dalvik-art">1.什么是JVM、Dalvik、ART</span></h3><p>JVM是JAVA虚拟机，运行JAVA字节码程序<br>Dalvik是Google专门为Android设计的一个虚拟机，Dalvik有专属的文件执行格式dex(Dalvik executable)<br>Art(Android Runtime)相当于Dalvik的升级版，本质与Dalvik无异</p>
-<h3><span id="2smali及其语法">2.smali及其语法</span></h3><p>smali是Dalvik的寄存器语言，smali代码是dex反编译而来的。</p>
-<p>关键字</p>
-<table>
-<thead>
-<tr>
-<th align="left">名称</th>
-<th align="left">注释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">.class</td>
-<td align="left">类名</td>
-</tr>
-<tr>
-<td align="left">.super</td>
-<td align="left">父类名，继承的上级类名名称</td>
-</tr>
-<tr>
-<td align="left">.source</td>
-<td align="left">源名</td>
-</tr>
-<tr>
-<td align="left">.field</td>
-<td align="left">变量</td>
-</tr>
-<tr>
-<td align="left">.method</td>
-<td align="left">方法名</td>
-</tr>
-<tr>
-<td align="left">.register</td>
-<td align="left">寄存器</td>
-</tr>
-<tr>
-<td align="left">.end method</td>
-<td align="left">方法名的结束</td>
-</tr>
-<tr>
-<td align="left">public</td>
-<td align="left">公有</td>
-</tr>
-<tr>
-<td align="left">protected</td>
-<td align="left">半公开，只有同一家人才能用</td>
-</tr>
-<tr>
-<td align="left">private</td>
-<td align="left">私有，只能自己使用</td>
-</tr>
-<tr>
-<td align="left">.parameter</td>
-<td align="left">方法参数</td>
-</tr>
-<tr>
-<td align="left">.prologue</td>
-<td align="left">方法开始</td>
-</tr>
-<tr>
-<td align="left">.line xxx</td>
-<td align="left">位于第xxx行</td>
-</tr>
-</tbody></table>
-<p>数据类型对应</p>
-<table>
-<thead>
-<tr>
-<th align="left">smali类型</th>
-<th align="left">java类型</th>
-<th align="left">注释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">V</td>
-<td align="left">void</td>
-<td align="left">无返回值</td>
-</tr>
-<tr>
-<td align="left">Z</td>
-<td align="left">boolean</td>
-<td align="left">布尔值类型，返回0或1</td>
-</tr>
-<tr>
-<td align="left">B</td>
-<td align="left">byte</td>
-<td align="left">字节类型，返回字节</td>
-</tr>
-<tr>
-<td align="left">S</td>
-<td align="left">short</td>
-<td align="left">短整数类型，返回数字</td>
-</tr>
-<tr>
-<td align="left">C</td>
-<td align="left">char</td>
-<td align="left">字符类型，返回字符</td>
-</tr>
-<tr>
-<td align="left">I</td>
-<td align="left">int</td>
-<td align="left">整数类型，返回数字</td>
-</tr>
-<tr>
-<td align="left">J</td>
-<td align="left">long （64位 需要2个寄存器存储）</td>
-<td align="left">长整数类型，返回数字</td>
-</tr>
-<tr>
-<td align="left">F</td>
-<td align="left">float</td>
-<td align="left">单浮点类型，返回数字</td>
-</tr>
-<tr>
-<td align="left">D</td>
-<td align="left">double （64位 需要2个寄存器存储）</td>
-<td align="left">双浮点类型，返回数字</td>
-</tr>
-<tr>
-<td align="left">string</td>
-<td align="left">String</td>
-<td align="left">文本类型，返回字符串</td>
-</tr>
-<tr>
-<td align="left">Lxxx&#x2F;xxx&#x2F;xxx</td>
-<td align="left">object</td>
-<td align="left">对象类型，返回对象</td>
-</tr>
-</tbody></table>
-<p>常用指令</p>
-<table>
-<thead>
-<tr>
-<th align="left">关键字</th>
-<th align="left">注释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">const</td>
-<td align="left">重写整数属性，真假属性内容，只能是数字类型  （赋值）</td>
-</tr>
-<tr>
-<td align="left">const-string</td>
-<td align="left">重写字符串内容 （赋值）</td>
-</tr>
-<tr>
-<td align="left">const-wide</td>
-<td align="left">重写长整数类型，多用于修改到期时间。 （赋值）</td>
-</tr>
-<tr>
-<td align="left">return</td>
-<td align="left">返回指令</td>
-</tr>
-<tr>
-<td align="left">if-eq</td>
-<td align="left">全称equal(a&#x3D;b)，比较寄存器ab内容，相同则跳</td>
-</tr>
-<tr>
-<td align="left">if-ne</td>
-<td align="left">全称not equal(a!&#x3D;b)，ab内容不相同则跳</td>
-</tr>
-<tr>
-<td align="left">if-eqz</td>
-<td align="left">全称equal zero(a&#x3D;0)，z即是0的标记，a等于0则跳</td>
-</tr>
-<tr>
-<td align="left">if-nez</td>
-<td align="left">全称not equal zero(a!&#x3D;0)，a不等于0则跳</td>
-</tr>
-<tr>
-<td align="left">if-ge</td>
-<td align="left">全称garden equal(a&gt;&#x3D;b)，a大于或等于则跳</td>
-</tr>
-<tr>
-<td align="left">if-le</td>
-<td align="left">全称little equal(a&lt;&#x3D;b)，a小于或等于则跳</td>
-</tr>
-<tr>
-<td align="left">goto</td>
-<td align="left">强制跳到指定位置</td>
-</tr>
-<tr>
-<td align="left">switch</td>
-<td align="left">分支跳转，一般会有多个分支线，并根据指令跳转到适当位置</td>
-</tr>
-<tr>
-<td align="left">iget</td>
-<td align="left">获取寄存器数据</td>
-</tr>
-</tbody></table>
-<p>其余指令可用语法工具查询</p>
-<p>定位方法：搜索弹窗关键字、抓取按钮id</p>
-<p>例子：</p>
-<pre><code class="java"> 复制代码 隐藏代码//一个私有、静态、不可变的方法   方法名
-.method private static final onCreate$lambda-2(Lkotlin/jvm/internal/Ref$IntRef;Lcom/zj/wuaipojie/ui/ChallengeSecond;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/view/View;)Z //(这里面是方法的参数)这里是方法返回值类型，表示布尔值类型，返回假或真
-    .registers 7  //寄存器数量
-
-    .line 33  //代码所在的行数
-    iget p0, p0, Lkotlin/jvm/internal/Ref$IntRef;-&gt;element:I  //读取p0(第一个参数，参考寄存器知识)中element的值赋值给p0
-
-    const/4 p5, 0x1  //p5赋值1
-
-    const/16 v0, 0xa //v0赋值10，在16进制里a表示10
-
-    if-ge p0, v0, :cond_15  //判断p0的值是否大于或等于v0的值(即p0的值是否大于或等于10)，如果大于或等于则跳转到:cond_15
-
-    .line 34  //以下是常见的Toast弹窗代码
-    check-cast p1, Landroid/content/Context; //检查Context对象引用
-
-    const-string p0, &quot;请先获取10个硬币哦&quot; //弹窗文本信息，把&quot;&quot;里的字符串数据赋值给p0
-
-    check-cast p0, Ljava/lang/CharSequence; //检查CharSequence对象引用
-
-    invoke-static &#123;p1, p0, p5&#125;, Landroid/widget/Toast;-&gt;makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast; 
-    //将弹窗文本、显示时间等信息传给p1
-
-    move-result-object p0  //结果传递给p0
-
-    invoke-virtual &#123;p0&#125;, Landroid/widget/Toast;-&gt;show()V  //当看到这个Toast;-&gt;show你就应该反应过来这里是弹窗代码
-
-    goto :goto_31  //跳转到:goto_31
-
-    :cond_15 //跳转的一个地址
-
-    invoke-virtual &#123;p1&#125;, Lcom/zj/wuaipojie/ui/ChallengeSecond;-&gt;isvip()Z  //判断isvip方法的返回值是否为真(即结果是否为1)
-
-    move-result p0  //结果赋值给p0
-
-    if-eqz p0, :cond_43 //如果结果为0则跳转cond_43地址
-
-    const p0, 0x7f0d0018  //在arsc中的id索引，这个值可以进行查询
-
-    .line 37
-    invoke-virtual &#123;p2, p0&#125;, Landroid/widget/ImageView;-&gt;setImageResource(I)V //设置图片资源
-
-    const p0, 0x7f0d0008
-
-    .line 38
-    invoke-virtual &#123;p3, p0&#125;, Landroid/widget/ImageView;-&gt;setImageResource(I)V
-
-    const p0, 0x7f0d000a
-
-    .line 39
-    invoke-virtual &#123;p4, p0&#125;, Landroid/widget/ImageView;-&gt;setImageResource(I)V
-
-    .line 40
-    sget-object p0, Lcom/zj/wuaipojie/util/SPUtils;-&gt;INSTANCE:Lcom/zj/wuaipojie/util/SPUtils; 
-
-    check-cast p1, Landroid/content/Context;
-
-    const/4 p2, 0x2 //p2赋值2
-
-    const-string p3, &quot;level&quot; //sp的索引
-
-    invoke-virtual &#123;p0, p1, p3, p2&#125;, Lcom/zj/wuaipojie/util/SPUtils;-&gt;saveInt(Landroid/content/Context;Ljava/lang/String;I)V //写入数据
-
-    goto :goto_50 //跳转地址
-
-    :cond_43
-
-    check-cast p1, Landroid/content/Context;
-
-    const-string p0, &quot;\u8bf7\u5148\u5145\u503c\u5927\u4f1a\u5458\u54e6\uff01&quot; //请先充值大会员哦！
-
-    check-cast p0, Ljava/lang/CharSequence;
-
-    invoke-static &#123;p1, p0, p5&#125;, Landroid/widget/Toast;-&gt;makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object p0
-
-    invoke-virtual &#123;p0&#125;, Landroid/widget/Toast;-&gt;show()V
-
-    :goto_50
-    return p5  //返回p5的值
-.end method //方法结束
-
-//判断是否是大会员的方法
-.method public final isvip()Z
-    .registers 2
-
-    const/4 v0, 0x0 //v0赋值0
-
-    return v0 //返回v0的值
-
-.end method
+<h1><span id="实验内容">实验内容：</span></h1><h2><span id="实验一创建数据库">实验一：创建数据库</span></h2><p>1.使用企业管理器或sql语句创建一个名为“SM”的数据库，初始大小为10MB，最大为50MB，数据库自动增长，增长方式按10%；<br>日志文件初始大小为2MB，最大大小不受限制，按1MB增长。<br>sql代码：</p>
+<pre><code class="SQL">create database SM1
+on
+(name=xsxx,
+ filename=&#39;d:\MS1.mdf&#39;,
+ size=10,
+ maxsize=500,
+ filegrowth=10%)
+log on
+(name=xsxx_log,
+ filename=&#39;d:\MS1.ldf&#39;,
+ size=2,
+ maxsize=UNLIMITED,
+ filegrowth=1)
 </code></pre>
-<p>修改方法：修改判断、强制跳转、修改寄存器的值</p>
-<p><img src="http://pic.rmb.bdstatic.com/bjh/fe7852e13a354ab54af29ff3a3361b3f.png" alt="img"></p>
-<h3><span id="3寄存器">3.寄存器</span></h3><p>在smali里的所有操作都必须经过寄存器来进行:</p>
-<p>本地寄存器用v开头数字结尾的符号来表示，如v0、 v1、v2。 </p>
-<p>参数寄存器则使用p开头数字结尾的符号来表示，如p0、p1、p2。</p>
-<p>特别注意的是，p0不一定是函数中的第一个参数，在非static函数中，p0代指“this”，p1表示函数的第一个 参数，p2代表函数中的第二个参数。而在static函数中p0才对应第一个参数(因为Java的static方法中没有this方法）</p>
-<h2><span id="四-课后小作业">四、课后小作业</span></h2><h3><span id="1自己实现强制跳转">1.自己实现强制跳转</span></h3><p>在对应位置设置一个跳转点 <code>:goto_a</code>a</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205430211.png" alt="image-20221021205430211" style="zoom:50%;">
-
-<p>再将上面判断是否有10个硬币的判断改为强制跳转</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205546415.png" alt="image-20221021205546415" style="zoom:50%;">
-
-
-
-<h3><span id="2将作业进行破解">2.将作业进行破解</span></h3><p>安装</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205748530.png" alt="image-20221021205748530" style="zoom:50%;">
-
-<p>打开查看</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021205808321.png" alt="image-20221021205808321" style="zoom:50%;">
-
-<p>简单登入</p>
-<p>但需要正确的用户名和密码</p>
-<p>用MT管理器进入安装包提取</p>
-<p>反编译dex文件</p>
-<p>搜索登录</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021210017976.png" alt="image-20221021210017976" style="zoom:50%;">
-
-<p>查看关键代码</p>
-<pre><code class="java">   .registers 5
-    .param p1, &quot;name&quot;  # Ljava/lang/String;
-    .param p2, &quot;pass&quot;  # Ljava/lang/String;
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 28
-    const-string v0, &quot;hfdcxy&quot; //赋值给v0
-
-    invoke-virtual &#123;p1, v0&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z  //将p1和v0进行对比，将返回值给v0
-
-    move-result v0          
-
-    if-nez v0, :cond_1b   //判断返回值是否为真
-
-    const-string v0, &quot;1234&quot;     //赋值给v0
-
-    invoke-virtual &#123;p2, v0&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z       //将p2和v0进行对比，将返回值给v0
-
-    move-result v0
-
-    if-nez v0, :cond_1b          //判断返回值是否为真
-
-    .line 30
-    const-string v0, &quot;登录成功&quot;
+<h2><span id="实验二创建表">实验二：创建表</span></h2><p><strong>注：identity(1,1) 自动增长 1</strong></p>
+<ol>
+<li><p>在数据库SM中创建学生表student,课程表course,选课表sc<br>student(sid,sno,clno,sname,ssex,sage,sbir)<br>说明：sid int identity(1,1)       序号<br>   sno 为主关系键，为字符类型     学号<br>clno 字符类型，            班级号<br>sname 字符类型，并不为空<br>ssex 字符类型，check的值的范围为男女<br>sbir 日期类型            出生日期<br>sage  int；<br><strong>sql语句：</strong></p>
+<pre><code class="sql">use SM1
+create table student
+( sid int identity(1,1),
+  sno varchar(6) PRIMARY KEY,
+  clno varchar(10),
+  sname varchar(12) not null,
+  ssex  char(2) constraint xbgl check(ssex=&#39;男&#39; or ssex=&#39;女&#39;),
+  sbir date,
+  sage int
+  )
 </code></pre>
-<p>这两个值也就是用户名和密码了</p>
-<p>方法一：强制跳转</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021210659259.png" alt="image-20221021210659259" style="zoom:50%;">
+</li>
+<li><p>course(cno,cname,ccredits,ctno,cpno,ctime)<br>说明：cno 字符类型，主关系键<br>   cname 字符类型，唯一键<br>   ccredits 学分，精确数值型，精确长度为2，小数位为0<br>   ctno（课程类型） ，cpno  字符类型<br>   ctime 日期类型</p>
+<p><strong>sql语句：</strong></p>
+<pre><code class="sql">use SM1
+create table course
+( cno varchar(6) PRIMARY KEY,
+  ccredits  decimal(2,0) constraint xl UNIQUE,
+  ctno  char(10),
+  cpno  char(10),
+  ctime date
+  )
+</code></pre>
+</li>
+<li><p>sc(sno,cno,score)<br>说明：sno+cno为主键，并且sno是student的外部键，cno是course的外部键。<br>score精确数值型，精确长度为3，小数位为1</p>
+<p><strong>sql语句：</strong></p>
+</li>
+</ol>
+<pre><code class="sql">use SM1
+create table sc
+( sno varchar(6) constraint sc_sno_for foreign key references student(sno),
+  cno  varchar(6) constraint sc_cno_for foreign key references course(cno),
+  score decimal(3,1),
+  constraint sc_sno_cno_pk primary key(sno,cno)
+ 
+  )
+</code></pre>
+<p><code>查询s表中学号倒数第5个数字为9，最后一个数在1至5之间的学号</code></p>
+<pre><code class="sql">select sno from student
+where sno like&#39;%9____&#39; and sno like&#39;%[0-9]&#39;
+</code></pre>
+<h2><span id="实验三表的维护">实验三：表的维护</span></h2><p>1.用sql语句修改表course的列属性,将cname的长度改为40,且不允许空</p>
+<pre><code class="sql">alter table course
+alter column
+cname nvarchar(40) not null
+</code></pre>
+<p>2.用sql语句向表student中增加列email,且要求输入的电子邮件地址必须包括”@”</p>
+<pre><code class="sql">alter table student
+add
+email nvarchar(40) constraint jiancha check(email like &#39;%@%&#39;)
+</code></pre>
+<p>3.用sql语句删除表student中的列sbir</p>
+<pre><code class="sql">alter table student
+drop column sbir
+</code></pre>
+<p>4.删除sname列上的约束。</p>
+<p>先找到sname的约束名，给sname添加一个约束</p>
+<pre><code>alter table student
+add constraint DF_stuAddress default(&#39;地址不详&#39;) for sname
 
-<p>在登录成功的位置定义一个跳转点，再在上面的判断前加上强制跳转。</p>
-<img src="https://gitee.com/zeng-haiyong/md-picture-library/raw/master/image-20221021210816965.png" alt="image-20221021210816965" style="zoom:50%;">
 
-<p>空密码成功登入。</p>
-<p>方法二：修改判断</p>
-<p>将判断为真的 if-nez修改为if-eqz即可。</p>
+alter table student
+drop DF_stuAddress
+</code></pre>
+<h2><span id="实验四简单数据查询">实验四：简单数据查询</span></h2><p>在实验二的基础上，再在sm数据库中新建表teacher，包括如下数据项<br>   teacher(tno,tname,age,sal,dno)<br> tno为教职工编号，tname姓名，age年龄，sal为月薪，dno为部门号</p>
+<pre><code class="sql">use sm1
+
+create table s
+(	tno  int ,
+    tname nvarchar(10) not null,
+    age int,
+    sal int,
+    dno nvarchar(20))
+</code></pre>
+<p>在student，course，sc，teacher四张表中进行下列查询</p>
+<p>1，查询所有2部门职工的信息；</p>
+<pre><code class="sql">select * 
+from s
+where dno=2
+</code></pre>
+<p>2，查询1984年和1985年出生的女生的信息；</p>
+<pre><code class="sql">select *
+from student
+where  (year(sbir)=1985 or year(sbir)=1984) and ssex=&#39;女&#39; 
+</code></pre>
+<p>3，查询0001部门、0002部门或0003部门的职工信息；</p>
+<pre><code class="sql">select * from s
+where  dno=3 or dno=1 or dno=2
+</code></pre>
+<p>4，查询学号为03004的同学正在学习的课程；</p>
+<pre><code class="sql">select  cname from course
+where  sno like &#39;%03004%&#39;
+</code></pre>
+<p>5，查询姓王的同学的信息。</p>
+<pre><code class="sql">select * from student
+where sname like &#39;王%&#39;
+</code></pre>
+<p>6，查询有多少名学生的物理课成绩不及格；</p>
+<pre><code class="sql">select count(sname) as num
+from sc ,course
+where score&lt;60 and sc.cno=course.cno and cname=&#39;物理&#39;
+</code></pre>
+<p>7，求女学生的学生总数；</p>
+<pre><code class="sql">select COUNT(sname) as num
+from student
+where ssex=&#39;女&#39;
+</code></pre>
+<p>8，求职工的最高工资、最低工资和平均工资；</p>
+<pre><code class="sql">select MAX(sal) as z1 ,min(sal) as z2, AVG(sal) as z3
+from s
+</code></pre>
+<p>9，查询职工的年薪，并按年薪的升序排列；</p>
+<pre><code class="sql">select tname ,sal
+from s
+order by sal as
+</code></pre>
+<p>10，求每个班的学生数</p>
+<pre><code class="sql">select count(*) as S_num
+from  student
+group by clno
+</code></pre>
+<p>11，查询每个学生已获得的学分（成绩及格即得相应课程的学分）。</p>
+<pre><code>select sname,sum(ccredits) as xuefen
+from student,sc,course
+where student.sno=sc.sno and course.cno=sc.cno and score&gt;60
+group by sname
+</code></pre>
+<h2><span id="实验五-复杂查询">实验五 复杂查询</span></h2><ol>
+<li>查询体育课成绩不及格的男生名单</li>
+</ol>
+<pre><code class="sql">select * from sc,student,course
+where sc.cno=course.cno and student.sno=sc.sno  and cname=&#39;体育&#39; and score&lt;60 and ssex=&#39;男&#39;
+</code></pre>
+<ul>
+<li>将2027001班全体学生的成绩置0</li>
+</ul>
+<pre><code class="sql">update sc
+set  score=0
+where sc.sno in (
+select sc.sno from sc,student
+where sc.sno=student.sno and clno=&#39;2027001&#39;)
+</code></pre>
+<ul>
+<li>删除2027002班全体学生的选课记录</li>
+</ul>
+<pre><code class="sql">delete 
+from sc 
+where sc.sno in (
+select sc.sno from sc,student
+where sc.sno=student.sno and clno=&#39;2027002&#39;)
+</code></pre>
+<ul>
+<li>使用 exists关键字查询所有选修了1号课程的学生的姓名</li>
+</ul>
+<pre><code class="sql">select sname from student
+where  exists (select * from sc where  student.sno=sc.sno and cno=&#39;1&#39;)
+</code></pre>
+<ul>
+<li>查询其他班中比2027002班所有学生年龄都小的学生，并按年龄的降序输出</li>
+</ul>
+<pre><code class="sql">select *
+from student
+where clno &lt;&gt;&#39;2027002&#39; and sage&lt;(select MIN(sage) from student where clno=&#39;2027002&#39;)
+</code></pre>
+<h2><span id="实验六-创建视图">实验六 创建视图</span></h2><p>1.建立2027001班学生的视图</p>
+<pre><code class="sql">create view id_2027001
+as select * from student
+where  clno=2027001
+</code></pre>
+<p>2.建立2027002班学生的视图，输出其学号、姓名、和年龄，并且更换列名</p>
+<pre><code class="sql">create view id_2027002
+as select sname,sno,sage 
+from student 
+where clno=2027002
+</code></pre>
+<p>3.将学生的学号和平均成绩建立一个视图</p>
+<pre><code class="sql">create view AV_all(SNO,Avg1)
+as select sno,AVG(score)
+from sc
+</code></pre>
+<p>4.建立2027001班学生选修了1号课程的学生的视图.</p>
+<pre><code class="sql">create view id_2027001_1
+as select sid,student.sno,sname,clno,ssex,email,sbir,sage,cno from student,sc
+where  clno=2027001 and student.sno=sc.sno and cno=1
+</code></pre>
+<h2><span id="实验七-数据安全">实验七 数据安全</span></h2><p>1.在sm中创建yy数据库的用户和登陆用户。</p>
+<pre><code class="sql">create login user1 with password=&#39;Admin888&#39;, default_database=master; 
+create user user1 for login  yy
+</code></pre>
+<p>2.把对表sc的插入权授予给用户yy，并允许将此权限再授予其他用户</p>
+<pre><code class="sql">GRANT insert
+ON TABLE sc
+TO yy with grant option;
+</code></pre>
+<p>赋权操作为GRANT权限ON TABLE xxx TO USER_XX。若允许其将此权限再授予其他用户则需要带WITH GRANT OPTION子句</p>
+<p>3.把在sm数据库中的建表权限授予给用户yy。</p>
+<pre><code class="sql">GRANT CREATE TABLE
+on database sm
+to yy
+</code></pre>
+<p>4.把查询表teacher和修改教师编号tno的权限授予给用户yy。</p>
+<pre><code class="sql">GRANT select and update(tno)
+on table teacher
+to yy
+</code></pre>
+<p>5.收回用户yy在sm数据库中的建表权。</p>
+<pre><code class="sql">revoke CREATE TABLE
+on database sm
+from yy
+</code></pre>
+<h2><span id="实验八-流程控制语句">实验八 流程控制语句</span></h2><p>1.在学生表中，查找名字为“王刚”的同学，如果存在，显示该同学的信息，否则显示“查无此人”（使用if……else语句）</p>
+<pre><code class="sql">use SM1
+go
+if exists( select sname from student where sname=&#39;王刚&#39;)
+    select * from student where sname=&#39;王刚&#39;
+else
+    print &#39;查无此人&#39;
+go
+</code></pre>
+<p>2.查看有无选修0008号课程的记录，如果有，则显示“有”，并查询选修0008号课程的人数。</p>
+<pre><code class="sql">go
+if exists( select cno from course where cno=8)
+    print &#39;有&#39;
+    select COUNT(*) SUM1 from sc where cno=8
+go
+</code></pre>
+<p>3.假设变量x的初始值为0，每次加1，直至x的值为3。（使用while语句）</p>
+<pre><code class="sql">declare @x int
+set @x=0
+while(@x!=3)
+begin
+ set @x=@x+1
+end
+</code></pre>
+<p>4.使用case表达式，判断课程表中ctno列的值，如果为“00”，则显示“专业基础课”；如果为“01”，则显示“公共基础课”；<br>如果为“02”，则显示“专业课”；否则显示“待定”。</p>
+<pre><code class="sql">use SM1
+go
+select ctno=
+        case ctno
+         when &#39;00&#39; then &#39;专业基础课&#39;
+         when &#39;01&#39; then &#39;公共基础课&#39;
+         when &#39;02&#39; then &#39;专业课&#39;
+         else &#39;待定&#39;
+         end
+    from course
+go
+select * from course
+</code></pre>
+<h2><span id="实验九-索引的创建与使用默认与规则的创建">实验九 索引的创建与使用，默认与规则的创建</span></h2><p>使用sql语句在表course上创建一个唯一性的聚集索引，索引排列顺序为降序。</p>
+<pre><code class="sql">create unique  index C1
+on course(cno desc)
+</code></pre>
+<p>使用sql语句在表course上创建一个非唯一性的非聚集索引。</p>
+<pre><code class="sql">create nonclustered index C2
+on course(cno desc)
+</code></pre>
+<p>在sm数据库中创建一个学生年龄的默认值，并将默认值捆绑到sm数据库表student的sage列上。</p>
+<pre><code class="sql">use sm
+create default age
+as &#39;19&#39;
+exec sp_bindefault age ,&#39;student.sage&#39;
+</code></pre>
+<p>在sm数据库中定义规则，使用该规则的列的值被限制为必须大于0，并将规则捆绑到sm数据库表teacher的sal列上。最后对表teacher<br>执行插入语句，查看执行结果。insert into teacher (tno,tname,sal) values (‘00006’,’wang’,0)</p>
+<pre><code class="sql">use sm
+create rule rule1
+as @rule1 &gt; 0
+exec sp_bindrule &#39;rule1&#39;,&#39;teacher.sal&#39;
+</code></pre>
+<h2><span id="实验十存储过程">实验十存储过程</span></h2><p>创建表tbl_operator及其表tbl_operator_old(做备份用)</p>
+<pre><code class="sql">use SM1
+create table tbl_operator
+( name char(10) not null,
+  sfz  varchar(100) not null,
+  restdate datetime not null,
+  lasttime datetime not null,
+  )
+use SM1
+create table tbl_operator_old
+( name char(10) not null,
+  sfz  varchar(100) not null,
+  restdate datetime not null,
+  lasttime datetime not null,
+  )
+</code></pre>
+<p>该表的表包含列：姓名，身份证号码，注册日期，最后登录日期，各列均不为空<br>本表为一个网站人员注册表<br>要求：<br>    1、创建一个存储过程对tbl_operator进行维护，把指定日期内未登录的人员信息转移到<br>       表tbl_operator_old中并删除原始数据；<br>    2、该存储过程需要带参数。</p>
+<pre><code class="sql">use sm1
+go
+create proc weihu5
+ ( @jiange int)
+as
+select *
+from tbl_operator  
+where  DATEDIFF(DAY,lasttime,GETDATE())&gt;@jiange
+
+insert into tbl_operator_old 
+select *
+from tbl_operator  
+where  DATEDIFF(DAY,lasttime,GETDATE())&gt;@jiange
+
+delete 
+from tbl_operator  
+where(name in(select name
+from tbl_operator  
+where  DATEDIFF(DAY,lasttime,GETDATE())&gt;@jiange))
+
+exec weihu5 10
+</code></pre>
+<h2><span id="实验十一触发器实验">实验十一触发器实验</span></h2><p><strong>说明：</strong></p>
+<p>例:   在系别表（department表）中增加一个学生人数字段(snumber)表示该系当前最新的学生人数，该字段的值随着学生信息表中的记录数发生改变，即：当学生表(student表)中新增学生记录，并且分配了具体的所属系别后，该系的学生人数自动加1；当学生表中删除某记录并且删除的记录原有所属系别时，该系的学生人数自动减1；当学生信息表中的所属系别值发生改变时，原来系别的学生人数自动减1，新的系别的学生人数自动加1。<br>    以上处理要求分别用insert、delete、update触发器实现其处理功能。<br>student表: Sno（学号）， Sn（姓名）， Sex（性别），Age （年龄）， Depart（系编号）。<br>department表：Deno（系编号）， Dname（系名）， Lead（系主任）， Tel。 </p>
+<p><strong>建表：</strong></p>
+<pre><code class="sql">CREATE TABLE [student] (
+    [sno] [int]  NOT NULL ,
+    [sn] [nvarchar] (20) COLLATE Chinese_PRC_CI_AS ,
+    [sex] [nvarchar] (10) COLLATE Chinese_PRC_CI_AS  ,
+    [age] [int] ,
+    [Depart] [nvarchar] (10) )
+
+CREATE TABLE [department] (
+    [Deno] [nvarchar] (10)  NOT NULL ,
+    [Dname] [nvarchar] (20) ,
+    [Lead] [nvarchar] (10) ,
+    [Tel] [nvarchar] (20) )
+select * from student
+
+select * from department
+/*
+insert into student values(1,&#39;dsa&#39;,&#39;男&#39;,22,&#39;a&#39;)
+insert into student values(2,&#39;dsfa&#39;,&#39;女&#39;,23,&#39;b&#39;)
+insert into student values(3,&#39;dsa&#39;,&#39;女&#39;,24,&#39;c&#39;)
+insert into student values(4,&#39;da&#39;,&#39;女&#39;,26,&#39;b&#39;)
+insert into student values(5,&#39;dfa&#39;,&#39;男&#39;,26,&#39;c&#39;)
+insert into student values(6,&#39;dfda&#39;,&#39;男&#39;,24,&#39;a&#39;)
+
+insert into department values(&#39;a&#39;,&#39;计算机&#39;,&#39;李&#39;,0)
+insert into department values(&#39;b&#39;,&#39;数学&#39;,&#39;刘&#39;,0)
+insert into department values(&#39;c&#39;,&#39;物理&#39;,&#39;王&#39;,0)
+*/
+ALTER TABLE department ADD snumber int; 
+</code></pre>
+<p><strong>触发器</strong></p>
+<pre><code class="sql">create  trigger de_num
+on student
+for insert,update,delete
+as 
+begin
+ update department 
+ set snumber=snumber-1 where deno in (select depart from deleted)
+ update department 
+ set snumber=snumber+1 where deno in (select depart from inserted)
+ end
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1936971269@qq.com </span>
